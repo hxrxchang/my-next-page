@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
+interface MenuProps {
+  route: string;
+}
 const StyledMenu = styled.div`
   border-bottom: 1px solid #efefef;
 
@@ -16,19 +19,21 @@ const StyledMenu = styled.div`
     cursor: pointer;
   }
 
-  .focused {
+  .selected {
     border-bottom: 2px solid red;
   }
 `;
 
-export const Menu: React.FC<{}> = () => (
-  <>
-    <StyledMenu>
-      <div className="menu-list">
-        <div className="menu-item">Profile</div>
-        <div className="menu-item">Social</div>
-        <div className="menu-item">Works</div>
-      </div>
-    </StyledMenu>
-  </>
-);
+export const Menu: React.FC<MenuProps> = ({ route }: MenuProps) => {
+  return (
+    <>
+      <StyledMenu>
+        <div className="menu-list">
+          <div className={route === 'profile' ? 'menu-item selected' : 'menu-item'}>Profile</div>
+          <div className={route === 'socials' ? 'menu-item selected' : 'menu-item'}>Social</div>
+          <div className={route === 'works' ? 'menu-item selected' : 'menu-item'}>Works</div>
+        </div>
+      </StyledMenu>
+    </>
+  );
+};

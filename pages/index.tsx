@@ -13,7 +13,7 @@ const PageContainer = styled.div`
 const IndexPage: React.FC<{}> = () => (
   <PageContainer>
     <Header />
-    <Menu />
+    <Menu route="profile" />
   </PageContainer>
 );
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import styled from 'styled-components';
 
 interface MenuProps {
@@ -26,6 +27,11 @@ const StyledMenu = styled.div`
   .not-selected:hover {
     border-bottom: 2px solid gray;
   }
+
+  a {
+    text-decoration: none;
+    color: black;
+  }
 `;
 
 export const Menu: React.FC<MenuProps> = ({ route }: MenuProps) => {
@@ -33,9 +39,21 @@ export const Menu: React.FC<MenuProps> = ({ route }: MenuProps) => {
     <>
       <StyledMenu>
         <div className="menu-list">
-          <div className={route === 'profile' ? 'menu-item selected' : 'menu-item not-selected'}>Profile</div>
-          <div className={route === 'accounts' ? 'menu-item selected' : 'menu-item not-selected'}>Accounts</div>
-          <div className={route === 'works' ? 'menu-item selected' : 'menu-item not-selected'}>Works</div>
+          <div className={route === 'profile' ? 'menu-item selected' : 'menu-item not-selected'}>
+            <Link href="/">
+              <a>Profile</a>
+            </Link>
+          </div>
+          <div className={route === 'accounts' ? 'menu-item selected' : 'menu-item not-selected'}>
+            <Link href="/accounts">
+              <a>Accounts</a>
+            </Link>
+          </div>
+          <div className={route === 'works' ? 'menu-item selected' : 'menu-item not-selected'}>
+            <Link href="/works">
+              <a>Works</a>
+            </Link>
+          </div>
         </div>
       </StyledMenu>
     </>

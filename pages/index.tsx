@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Header, Menu } from './../components/index';
 
-const PageContainer = styled.div`
+export const PageContainer = styled.div`
   padding: 0 14%;
 
   @media (max-width: 700px) {

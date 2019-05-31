@@ -1,20 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Header } from './../components/header';
 
-const Wrapper = styled.div`
-  height: 200px;
-`;
+const PageContainer = styled.div`
+  padding: 0 14%;
 
-const StyledHeader = styled.header`
-  margin-bottom: ${(props: { margin: string }) => props.margin};
+  @media (max-width: 700px) {
+    padding: 0 2%;
+  }
 `;
 
 const IndexPage: React.FC<{}> = () => (
-  <Wrapper>
-    <StyledHeader margin="200px">header</StyledHeader>
-    <h1>Welcome to Next.js for TypeScript!</h1>
-    <img src="/static/chowder.jpeg" alt="" />
-  </Wrapper>
+  <PageContainer>
+    <Header />
+  </PageContainer>
 );
 
 export default IndexPage;

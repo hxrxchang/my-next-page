@@ -22,6 +22,10 @@ const StyledMenu = styled.div`
   .selected {
     border-bottom: 2px solid red;
   }
+
+  .not-selected:hover {
+    border-bottom: 2px solid gray;
+  }
 `;
 
 export const Menu: React.FC<MenuProps> = ({ route }: MenuProps) => {
@@ -29,9 +33,9 @@ export const Menu: React.FC<MenuProps> = ({ route }: MenuProps) => {
     <>
       <StyledMenu>
         <div className="menu-list">
-          <div className={route === 'profile' ? 'menu-item selected' : 'menu-item'}>Profile</div>
-          <div className={route === 'accounts' ? 'menu-item selected' : 'menu-item'}>Accounts</div>
-          <div className={route === 'works' ? 'menu-item selected' : 'menu-item'}>Works</div>
+          <div className={route === 'profile' ? 'menu-item selected' : 'menu-item not-selected'}>Profile</div>
+          <div className={route === 'accounts' ? 'menu-item selected' : 'menu-item not-selected'}>Accounts</div>
+          <div className={route === 'works' ? 'menu-item selected' : 'menu-item not-selected'}>Works</div>
         </div>
       </StyledMenu>
     </>

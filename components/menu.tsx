@@ -30,7 +30,7 @@ export const Menu: React.FC<MenuProps> = ({ route }: MenuProps) => {
       <StyledMenu>
         <div className="menu-list">
           <div className={route === 'profile' ? 'menu-item selected' : 'menu-item'}>Profile</div>
-          <div className={route === 'socials' ? 'menu-item selected' : 'menu-item'}>Social</div>
+          <div className={route === 'accounts' ? 'menu-item selected' : 'menu-item'}>Accounts</div>
           <div className={route === 'works' ? 'menu-item selected' : 'menu-item'}>Works</div>
         </div>
       </StyledMenu>

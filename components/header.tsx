@@ -5,7 +5,6 @@ const StyledHeader = styled.header`
   display: flex;
   justify-content: space-around;
   padding-bottom: 20px;
-  border-bottom: 1px solid #efefef;
 
   .profile-image-wrapper {
     flex-basis: 50%;

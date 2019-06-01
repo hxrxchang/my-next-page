@@ -16,7 +16,6 @@ const StyledMenu = styled.div`
 
   .menu-item {
     font-weight: bold;
-    padding-bottom: 10px;
     cursor: pointer;
   }
 
@@ -31,6 +30,8 @@ const StyledMenu = styled.div`
   a {
     text-decoration: none;
     color: black;
+    display: block;
+    padding-bottom: 10px;
   }
 `;
 

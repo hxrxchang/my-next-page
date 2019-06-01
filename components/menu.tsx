@@ -20,11 +20,11 @@ const StyledMenu = styled.div`
   }
 
   .selected {
-    border-bottom: 2px solid red;
+    border-bottom: 4px solid red;
   }
 
   .not-selected:hover {
-    border-bottom: 2px solid gray;
+    border-bottom: 4px solid silver;
   }
 
   a {

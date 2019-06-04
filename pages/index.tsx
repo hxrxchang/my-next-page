@@ -5,6 +5,11 @@ import { Header, Menu, Profile } from './../components/index';
 export const PageContainer = styled.div`
   padding: 0 14%;
 
+  .contents {
+    display: flex;
+    justify-content: space-around;
+  }
+
   @media (max-width: 700px) {
     padding: 0 2%;
   }
@@ -14,7 +19,9 @@ const IndexPage: React.FC<{}> = () => (
   <PageContainer>
     <Header />
     <Menu route="profile" />
-    <Profile />
+    <div className="contents">
+      <Profile />
+    </div>
   </PageContainer>
 );
 

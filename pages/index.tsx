@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Header, Menu, Profile } from './../components/index';
+import { Header, Menu, Profile, Footer } from './../components/index';
 
 export const PageContainer = styled.div`
   padding: 0 14%;
@@ -22,6 +22,7 @@ const IndexPage: React.FC<{}> = () => (
     <div className="contents">
       <Profile />
     </div>
+    <Footer />
   </PageContainer>
 );
 

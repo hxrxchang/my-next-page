@@ -5,6 +5,8 @@ module.exports = withPlugins([withTypescript], {
   exportPathMap: function() {
     return {
       '/': { page: '/' },
+      '/accounts': { page: '/accounts' },
+      '/works': { page: '/works' },
     };
   },
 });

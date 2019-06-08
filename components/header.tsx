@@ -9,6 +9,7 @@ const StyledHeader = styled.header`
   .profile-image-wrapper {
     flex-basis: 50%;
     text-align: center;
+    height: 224px;
   }
 
   .profile-image {

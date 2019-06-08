@@ -1,19 +1,11 @@
 import React from 'react';
 
-import { PageContainer } from './index';
-import { Header, Menu, SocialAccounts, Footer } from '../components';
+import { Layout, SocialAccounts } from '../components';
 
 const AccountsPage: React.FC<{}> = () => (
-  <>
-    <PageContainer>
-      <Header />
-      <Menu route="accounts" />
-      <div className="contents">
-        <SocialAccounts />
-      </div>
-      <Footer />
-    </PageContainer>
-  </>
+  <Layout route="accounts">
+    <SocialAccounts />
+  </Layout>
 );
 
 export default AccountsPage;

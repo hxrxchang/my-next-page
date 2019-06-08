@@ -1,17 +1,11 @@
 import React from 'react';
 
-import { PageContainer } from './index';
-import { Menu, Header, Works, Footer } from './../components/index';
+import { Layout, Works } from './../components/index';
 
 const WorksPage: React.FC<{}> = () => (
-  <>
-    <PageContainer>
-      <Header />
-      <Menu route="works" />
-      <Works />
-      <Footer />
-    </PageContainer>
-  </>
+  <Layout route="works">
+    <Works />
+  </Layout>
 );
 
 export default WorksPage;

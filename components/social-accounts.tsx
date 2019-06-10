@@ -4,8 +4,9 @@ import styled from 'styled-components';
 const StyledSocialAccount = styled.div`
   margin-top: 100px;
   .accounts {
+    padding: 0 100px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
   }
 
   .account-icon {

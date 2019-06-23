@@ -12,7 +12,10 @@ export const Footer: React.FC<{}> = ({}) => {
     <>
       <StyledFooter>
         <p>
-          Source code is <a href="https://github.com/hxrxchang/my-next-page">here.</a>
+          Source code is{' '}
+          <a href="https://github.com/hxrxchang/my-next-page" target="_blank">
+            here.
+          </a>
         </p>
       </StyledFooter>
     </>

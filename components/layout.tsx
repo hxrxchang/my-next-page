@@ -14,7 +14,7 @@ const PageContainer = styled.div`
   flex-direction: column;
 
   main {
-    flex-grow: 1;
+    flex: 1 0 auto;
   }
 
   @media (max-width: 700px) {

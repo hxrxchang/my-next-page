@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import ReactMarkdown from 'react-markdown';
 
 const StyledWorks = styled.div`
   margin-top: 50px;
@@ -8,11 +9,11 @@ const StyledWorks = styled.div`
   justify-content: space-around;
 `;
 
-export const Works: React.FC<{}> = ({}) => {
+export const Works: React.FC<{ content: string }> = ({ content }) => {
   return (
     <div>
       <StyledWorks>
-        <p>Comming soon ....</p>
+        <ReactMarkdown source={content} />
       </StyledWorks>
     </div>
   );

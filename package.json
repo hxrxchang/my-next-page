@@ -5,9 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "next",
-    "build": "next build && next export",
-    "start": "next start",
-    "deploy": "cd out && now --target production -A ../now.json"
+    "build": "next build && next export"
   },
   "keywords": [],
   "author": "",

@@ -1,5 +1,5 @@
 import React from 'react';
-import { NextFunctionComponent } from 'next';
+import { NextPage } from 'next';
 import Head from 'next/head';
 import styled from 'styled-components';
 import { Layout, Profile } from './../components/index';
@@ -12,7 +12,7 @@ export const PageContainer = styled.div`
   }
 `;
 
-const IndexPage: NextFunctionComponent<{ content: string }> = ({ content }) => {
+const IndexPage: NextPage<{ content: string }> = ({ content }) => {
   return (
     <>
       <Head>

@@ -1,10 +1,10 @@
 import React from 'react';
 import Head from 'next/head';
-import { NextFunctionComponent } from 'next';
+import { NextPage } from 'next';
 
 import { Layout, Works } from './../components/index';
 
-const WorksPage: NextFunctionComponent<{ content: string }> = ({ content }) => (
+const WorksPage: NextPage<{ content: string }> = ({ content }) => (
   <>
     <Head>
       <title key="title">Works</title>

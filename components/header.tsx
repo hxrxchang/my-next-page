@@ -40,7 +40,7 @@ export const Header: React.FC<{}> = () => {
           <img className="profile-image" src="/static/chowder.jpeg" alt="" />
         </div>
         <div className="profile-wrapper">
-          <h1 className="profile-name">hxrxchang</h1>
+          <h1 className="profile-name">Yuto Hara</h1>
           <p className="profile-description">Web Application Developer</p>
         </div>
       </StyledHeader>

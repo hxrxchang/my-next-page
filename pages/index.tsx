@@ -1,6 +1,6 @@
 import React from 'react';
 import { NextPage } from 'next';
-import Head from 'next/head';
+import Head from '../setting/head';
 import styled from 'styled-components';
 import { Layout, Profile } from './../components/index';
 
@@ -15,9 +15,7 @@ export const PageContainer = styled.div`
 const IndexPage: NextPage<{ content: string }> = ({ content }) => {
   return (
     <>
-      <Head>
-        <title key="title">Profile</title>
-      </Head>
+      <Head title="Profile" page="/" description="@hxrxchangのWebsite" type="website"></Head>
       <Layout route="profile">
         <Profile content={content} />
       </Layout>

@@ -1,3 +1,3 @@
 export const environment = {
-  url: 'https://hxrxchang.now.sh/',
+  url: 'https://hxrxchang.now.sh',
 };

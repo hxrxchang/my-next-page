@@ -1,14 +1,12 @@
 import React from 'react';
-import Head from 'next/head';
+import Head from '../setting/head';
 import { NextPage } from 'next';
 
 import { Layout, Works } from './../components/index';
 
 const WorksPage: NextPage<{ content: string }> = ({ content }) => (
   <>
-    <Head>
-      <title key="title">Works</title>
-    </Head>
+    <Head title="Works" page="/works" description="@hxrxchangのWebsite" type="website"></Head>
     <Layout route="works">
       <Works content={content} />
     </Layout>

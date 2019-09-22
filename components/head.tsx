@@ -4,18 +4,16 @@ import NextHead from 'next/head';
 interface Props {
   title: string;
   description?: string;
-  keyword?: string;
   image?: string;
   url?: string;
 }
 
-export default ({ title, description, keyword, image, url }: Props): JSX.Element => {
+export default ({ title, description, image, url }: Props): JSX.Element => {
   return (
     <NextHead>
       <title key="title">{title}</title>
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
-      <meta name="keywords" content={keyword} />
       <meta property="og:type" content="blog" />
       <meta property="og:url" content={url} />
       <meta property="og:image" content={image} />

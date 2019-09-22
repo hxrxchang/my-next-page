@@ -19,12 +19,6 @@ export default ({ title, description, image, path }: Props): JSX.Element => {
       <meta property="og:url" content={`${environment.url + path}`} />
       <meta property="og:image" content={image} />
       <meta property="og:site_name" content={title} />
-      <meta name="twitter:card" content="summary" />
-      <meta name="twitter:site" content="@tcr_jp" />
-      <meta name="twitter:url" content={image} />
-      <meta name="twitter:title" content={title} />
-      <meta name="twitter:description" content={description} />
-      <meta name="twitter:image" content={image} />
       <link rel="canonical" href={`${environment.url + path}`} />
       <link rel="shortcut icon" href={'https://t-cr.jp/favicon.ico'} />
       <link rel="apple-touch-icon" href={'https://t-cr.jp/logo.png'} />

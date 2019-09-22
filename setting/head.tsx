@@ -1,5 +1,5 @@
 import React from 'react';
-import Head from 'next/head';
+import NextHead from 'next/head';
 
 interface Props {
   title: string;
@@ -11,7 +11,7 @@ interface Props {
 
 export default ({ title, description, keyword, image, url }: Props): JSX.Element => {
   return (
-    <Head>
+    <NextHead>
       <title key="title">{title}</title>
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
@@ -29,6 +29,6 @@ export default ({ title, description, keyword, image, url }: Props): JSX.Element
       <link rel="canonical" href={url} />
       <link rel="shortcut icon" href={'https://t-cr.jp/favicon.ico'} />
       <link rel="apple-touch-icon" href={'https://t-cr.jp/logo.png'} />
-    </Head>
+    </NextHead>
   );
 };

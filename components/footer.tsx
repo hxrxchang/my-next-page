@@ -11,12 +11,15 @@ export const Footer: React.FC<{}> = ({}) => {
   return (
     <>
       <StyledFooter>
-        <p>
-          Source code is{' '}
-          <a href="https://github.com/hxrxchang/my-next-page" target="_blank">
-            here.
-          </a>
-        </p>
+        <div>
+          <p>
+            Source code is{' '}
+            <a href="https://github.com/hxrxchang/my-next-page" target="_blank">
+              here.
+            </a>
+          </p>
+          <p>&copy; 2019 hxrxchang</p>
+        </div>
       </StyledFooter>
     </>
   );

@@ -1,14 +1,18 @@
-import React from 'react';
-import { useRouter } from 'next/router';
+import { NextPage } from 'next';
+import { BlogContent } from '../../components';
 
-const BlogPage: React.FC<{}> = () => {
-  const router = useRouter();
+const BlogPage: NextPage<{ content: string }> = ({ content }) => {
   return (
     <>
-      <h1>{router.query.id}</h1>
-      <p>This is the blog post content.</p>
+      <BlogContent content={content}></BlogContent>
     </>
   );
+};
+
+BlogPage.getInitialProps = async (context) => {
+  console.log(context.query.id);
+  const content = await require(`../../docs/blogs/${context.query.id}.md`);
+  return { content: content.default };
 };
 
 export default BlogPage;

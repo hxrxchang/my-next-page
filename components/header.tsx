@@ -21,6 +21,15 @@ const StyledHeader = styled.header`
     padding-top: 50px;
   }
 
+  .profile-name {
+    font-size: 2em;
+    font-weight: bold;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+  }
+
   @media (max-width: 700px) {
     display: block;
     text-align: center;
@@ -32,7 +41,7 @@ const StyledHeader = styled.header`
   }
 `;
 
-export const Header: React.FC<{}> = () => {
+export const Header: React.FC<{ route: string }> = ({ route }) => {
   return (
     <>
       <StyledHeader>
@@ -40,7 +49,7 @@ export const Header: React.FC<{}> = () => {
           <img className="profile-image" src="/static/chowder.jpeg" alt="" />
         </div>
         <div className="profile-wrapper">
-          <h1 className="profile-name">Yuto Hara</h1>
+          {route === 'blog' || route === 'blogs' ? <p className="profile-name">Yuto Hara</p> : <h1 className="profile-name">Yuto Hara</h1>}
           <p className="profile-description">Web Application Developer</p>
         </div>
       </StyledHeader>

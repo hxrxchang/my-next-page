@@ -1,6 +1,7 @@
 import { NextPage } from 'next';
 import ErrorPage from 'next/error';
-import { BlogContent } from '../../components';
+import { BlogContent, Layout } from '../../components';
+import Head from '../../setting/head';
 
 const BlogPage: NextPage<{ content: string; statusCode: 200 | 404 }> = ({ content, statusCode }) => {
   if (statusCode === 404) {
@@ -8,7 +9,10 @@ const BlogPage: NextPage<{ content: string; statusCode: 200 | 404 }> = ({ conten
   }
   return (
     <>
-      <BlogContent content={content}></BlogContent>
+      <Head title="Profile" page="/" description="@hxrxchangのWebsite" type="website"></Head>
+      <Layout route="blog">
+        <BlogContent content={content}></BlogContent>
+      </Layout>
     </>
   );
 };

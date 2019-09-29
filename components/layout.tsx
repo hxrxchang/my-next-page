@@ -25,7 +25,7 @@ const PageContainer = styled.div`
 export const Layout: React.FC<Props> = ({ children, route }) => {
   return (
     <PageContainer>
-      <Header />
+      <Header route={route} />
       <Menu route={route} />
       <main>{children}</main>
       <Footer />

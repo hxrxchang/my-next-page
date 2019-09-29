@@ -24,7 +24,7 @@ const StyledWrapper = styled.div`
 export const BlogList: React.FC<{}> = () => {
   return (
     <StyledWrapper>
-      <h2>Blogs</h2>
+      <h1>Blogs</h1>
       <ul>
         <PostLink id="hello-world" title="ブログ作りました" />
       </ul>

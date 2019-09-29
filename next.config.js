@@ -6,6 +6,7 @@ module.exports = withPlugins([], {
       '/': { page: '/' },
       '/accounts': { page: '/accounts' },
       '/works': { page: '/works' },
+      '/blogs': { page: 'blogs' },
     };
   },
   webpack: (config) => {

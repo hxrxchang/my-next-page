@@ -11,9 +11,9 @@ module.exports = withPlugins([], {
       '/blogs': { page: '/blogs' },
     };
 
-    // blogIdList.map(blogId => {
-
-    // })
+    blogIdList.forEach((blogId) => {
+      pathMap[`/blog/${blogId}`] = { page: '/blog/[id]', query: { id: blogId } };
+    });
     return pathMap;
   },
   webpack: (config) => {

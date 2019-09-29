@@ -5,3 +5,4 @@ export { Profile } from './profile';
 export { Footer } from './footer';
 export { Works } from './works';
 export { SocialAccounts } from './social-accounts';
+export { BlogList } from './blog-list';

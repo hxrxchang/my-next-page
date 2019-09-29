@@ -50,9 +50,9 @@ export const Menu: React.FC<MenuProps> = ({ route }: MenuProps) => {
               <a>Accounts</a>
             </Link>
           </div>
-          <div className={route === 'works' ? 'menu-item selected' : 'menu-item not-selected'}>
-            <Link href="/works">
-              <a>Works</a>
+          <div className={route === 'blogs' ? 'menu-item selected' : 'menu-item not-selected'}>
+            <Link href="/blogs">
+              <a>Blogs</a>
             </Link>
           </div>
         </div>

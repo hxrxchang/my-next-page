@@ -2,13 +2,37 @@ import React from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
 
+const StyledLink = styled.li`
+  padding: 10px 0;
+  list-style: none;
+
+  .date {
+    display: block;
+  }
+
+  .link {
+    text-decoration: none;
+  }
+
+  .link:hover {
+    text-decoration: underline;
+  }
+
+  .title {
+    line-height: 0px;
+  }
+`;
+
 const PostLink: React.FC<{ id: string; title: string }> = (props) => {
   return (
-    <li>
+    <StyledLink>
       <Link href="blog/[id]" as={`/blog/${props.id}`}>
-        <a>{props.title}</a>
+        <a className="link">
+          <h2 className="title">{props.title}</h2>
+        </a>
       </Link>
-    </li>
+      <p>2019.10.01</p>
+    </StyledLink>
   );
 };
 

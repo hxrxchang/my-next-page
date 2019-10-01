@@ -5,7 +5,7 @@ const blogIdList = ['hello-world'];
 module.exports = withPlugins([], {
   exportPathMap: () => {
     const pathMap = {
-      '/': { page: '/' },
+      '/': { page: '/index' },
       '/accounts': { page: '/accounts' },
       '/works': { page: '/works' },
       '/blogs': { page: '/blogs' },

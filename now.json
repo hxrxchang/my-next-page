@@ -1,5 +1,6 @@
 {
   "version": 2,
   "name": "my-next-page",
-  "alias": "hxrxchang"
+  "alias": "hxrxchang",
+  "builds": [{ "src": "package.json", "use": "@now/static-build" }]
 }

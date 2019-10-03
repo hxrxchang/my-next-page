@@ -7,14 +7,19 @@ interface Props {
   page: string;
   type: string;
   description: string;
+  id?: string;
   image?: string;
 }
 
-export default ({ title, description, image, page, type }: Props): JSX.Element => {
+export default ({ title, description, image, page, id, type }: Props): JSX.Element => {
   return (
     <NextHead>
       <title key="title">{title}</title>
-      <link rel="icon" type="image/x-icon" href="../static/ogp-profile.jpg" />
+      {image ? (
+        <link rel="icon" type="image/x-icon" href={`../static/${id}/${image}`} />
+      ) : (
+        <link rel="icon" type="image/x-icon" href="../static/ogp-profile.jpg" />
+      )}
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content={type} />

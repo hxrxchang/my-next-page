@@ -7,3 +7,4 @@ export { Works } from './works';
 export { SocialAccounts } from './social-accounts';
 export { BlogList } from './blog-list';
 export { BlogContent } from './blog-content';
+export { CodeBlock } from './code-block';

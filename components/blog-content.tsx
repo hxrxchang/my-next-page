@@ -6,6 +6,10 @@ import { CodeBlock } from './code-block';
 const StyledWrapper = styled.div`
   padding: 0 10%;
 
+  img {
+    max-width: 100%;
+  }
+
   @media (max-width: 700px) {
     padding: 0;
 

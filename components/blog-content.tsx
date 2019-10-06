@@ -7,13 +7,17 @@ const StyledWrapper = styled.div`
   padding: 0 10%;
 
   img {
-    max-width: 100%;
+    max-width: 60%;
   }
 
   @media (max-width: 700px) {
     padding: 0;
 
     min-height: 300px;
+
+    img {
+      max-width: 100%;
+    }
   }
 `;
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Header, Menu, Footer } from './index';
+import { Menu, Footer } from './index';
 
 interface Props {
   children: React.ReactNode;
@@ -25,7 +25,6 @@ const PageContainer = styled.div`
 export const Layout: React.FC<Props> = ({ children, route }) => {
   return (
     <PageContainer>
-      <Header route={route} />
       <Menu route={route} />
       <main>{children}</main>
       <Footer />

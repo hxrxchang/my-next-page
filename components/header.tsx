@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useRouter } from 'next/router';
 
 const StyledHeader = styled.header`
   display: flex;
@@ -41,7 +42,8 @@ const StyledHeader = styled.header`
   }
 `;
 
-export const Header: React.FC<{ route: string }> = ({ route }) => {
+export const Header: React.FC<{}> = () => {
+  const route = useRouter().asPath;
   return (
     <>
       <StyledHeader>

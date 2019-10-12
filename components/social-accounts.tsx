@@ -35,13 +35,13 @@ export const SocialAccounts: React.FC<{}> = ({}) => {
     <StyledSocialAccount>
       <div className="accounts">
         <a href="https://twitter.com/hxrxchang">
-          <img src="/static/Twitter_Social_Icon_Square_Color.png" alt="" className="account-icon" />
+          <img src="/static/account-icons/Twitter_Social_Icon_Square_Color.svg" alt="" className="account-icon" />
         </a>
         <a href="https://github.com/hxrxchang">
-          <img src="/static/GitHub-Mark-64px.png" alt="" className="account-icon" />
+          <img src="/static/account-icons/github-icon.svg" alt="" className="account-icon" />
         </a>
         <a href="https://www.wantedly.com/users/5835988">
-          <img src="/static/wantedly_mark.png" alt="" className="account-icon" />
+          <img src="/static/account-icons/wantedly_mark.svg" alt="" className="account-icon" />
         </a>
       </div>
     </StyledSocialAccount>

@@ -14,7 +14,7 @@ export const Footer: React.FC<{}> = ({}) => {
         <div>
           <p>
             Source code is{' '}
-            <a href="https://github.com/hxrxchang/my-next-page" target="_blank">
+            <a href="https://github.com/hxrxchang/my-next-page" target="_blank" rel="noopener">
               here.
             </a>
           </p>

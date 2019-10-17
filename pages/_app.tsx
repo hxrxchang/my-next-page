@@ -2,6 +2,7 @@ import React from 'react';
 import App, { Container } from 'next/app';
 import { createGlobalStyle } from 'styled-components';
 import { Header, Footer } from '../components';
+import { useRouter } from 'next/router';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -26,21 +27,29 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+const RouterComponent: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+  const route = useRouter().asPath;
+  console.log(route);
+  return <>{children}</>;
+};
+
 export default class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
     return (
       <Container>
         <GlobalStyle />
-        <div className="app-wrapper">
-          <div className="contents-wrapper">
-            <Header />
-            <Component {...pageProps} />
+        <RouterComponent>
+          <div className="app-wrapper">
+            <div className="contents-wrapper">
+              <Header />
+              <Component {...pageProps} />
+            </div>
+            <div className="footer-wrapper">
+              <Footer />
+            </div>
           </div>
-          <div className="footer-wrapper">
-            <Footer />
-          </div>
-        </div>
+        </RouterComponent>
       </Container>
     );
   }

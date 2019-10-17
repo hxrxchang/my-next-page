@@ -1,6 +1,5 @@
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
-import ErrorPage from 'next/error';
 import { BlogContent, Layout } from '../../components';
 import Head from '../../setting/head';
 import { blogDataList, BlogData } from '../../docs/blogs/blog-data-list';
@@ -12,10 +11,12 @@ interface Props {
 }
 
 const BlogPage: NextPage<Props> = ({ content, statusCode, blogData }) => {
-  const router = useRouter();
   if (statusCode === 404) {
-    return <ErrorPage statusCode={statusCode}></ErrorPage>;
+    const e: any = new Error();
+    e.code = 'ENOENT';
+    throw e;
   }
+  const router = useRouter();
   return (
     <>
       <Head title={blogData!.title} page={router.asPath} description={blogData!.description} type="website"></Head>

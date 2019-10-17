@@ -27,10 +27,27 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
+// const RouterComponent: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+//   const route = useRouter().asPath;
+//   console.log(route);
+//   return <>{children}</>;
+// };
+
 const RouterComponent: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const route = useRouter().asPath;
-  console.log(route);
-  return <>{children}</>;
+  const route = useRouter().route;
+  return (
+    <div className="app-wrapper">
+      <div className="contents-wrapper">
+        {route !== '/_error' && <Header />}
+        <>{children}</>
+      </div>
+      {route !== '/_error' && (
+        <div className="footer-wrapper">
+          <Footer />
+        </div>
+      )}
+    </div>
+  );
 };
 
 export default class MyApp extends App {
@@ -40,15 +57,7 @@ export default class MyApp extends App {
       <Container>
         <GlobalStyle />
         <RouterComponent>
-          <div className="app-wrapper">
-            <div className="contents-wrapper">
-              <Header />
-              <Component {...pageProps} />
-            </div>
-            <div className="footer-wrapper">
-              <Footer />
-            </div>
-          </div>
+          <Component {...pageProps} />
         </RouterComponent>
       </Container>
     );

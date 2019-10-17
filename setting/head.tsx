@@ -20,6 +20,8 @@ export default ({ title, description, image, page, id, type }: Props): JSX.Eleme
       ) : (
         <link rel="icon" type="image/x-icon" href="../static/ogp-profile.jpg" />
       )}
+      <meta name="description" content={description}></meta>
+      <meta name="author" content="hxrxchang"></meta>
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:type" content={type} />

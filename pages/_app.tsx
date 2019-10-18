@@ -27,12 +27,6 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-// const RouterComponent: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-//   const route = useRouter().asPath;
-//   console.log(route);
-//   return <>{children}</>;
-// };
-
 const RouterComponent: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const route = useRouter().route;
   return (

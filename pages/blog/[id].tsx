@@ -20,7 +20,7 @@ const BlogPage: NextPage<Props> = ({ content, statusCode, blogData }) => {
   return (
     <>
       <Head title={blogData!.title} page={router.asPath} description={blogData!.description} type="website"></Head>
-      <Layout route="blog">
+      <Layout route={router.route}>
         <BlogContent content={content}></BlogContent>
       </Layout>
     </>

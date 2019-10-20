@@ -3,6 +3,7 @@ import App, { Container } from 'next/app';
 import { createGlobalStyle } from 'styled-components';
 import { Header, Footer } from '../components';
 import { useRouter } from 'next/router';
+import { isHeaderShown, isFooterShown } from '../domain/layout';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -32,10 +33,10 @@ const RouterComponent: React.FC<{ children: React.ReactNode }> = ({ children }) 
   return (
     <div className="app-wrapper">
       <div className="contents-wrapper">
-        {route !== '/_error' && <Header />}
+        {isHeaderShown(route) && <Header />}
         <>{children}</>
       </div>
-      {route !== '/_error' && (
+      {isFooterShown(route) && (
         <div className="footer-wrapper">
           <Footer />
         </div>

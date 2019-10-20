@@ -44,6 +44,7 @@ const StyledHeader = styled.header`
 
 export const Header: React.FC<{}> = () => {
   const route = useRouter().asPath;
+  console.log(route);
   return (
     <>
       <StyledHeader>
@@ -51,7 +52,7 @@ export const Header: React.FC<{}> = () => {
           <img className="profile-image" src="/static/chowder.jpeg" alt="" />
         </div>
         <div className="profile-wrapper">
-          {route === 'blog' || route === 'blogs' ? <p className="profile-name">Yuto Hara</p> : <h1 className="profile-name">Yuto Hara</h1>}
+          {route === '/blogs' ? <p className="profile-name">Yuto Hara</p> : <h1 className="profile-name">Yuto Hara</h1>}
           <p className="profile-description">Web Application Developer</p>
         </div>
       </StyledHeader>

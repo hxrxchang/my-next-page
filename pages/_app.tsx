@@ -3,7 +3,6 @@ import App, { Container } from 'next/app';
 import { createGlobalStyle } from 'styled-components';
 import { Header, Footer } from '../components';
 import { useRouter } from 'next/router';
-import { isHeaderShown, isFooterShown } from '../domain/layout';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -29,19 +28,27 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const RouterComponent: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const route = useRouter().route;
+  const { route } = useRouter();
   return (
-    <div className="app-wrapper">
-      <div className="contents-wrapper">
-        {isHeaderShown(route) && <Header />}
+    <>
+      {route === '/blog/[id]' ? (
+        // ブログ記事ページ用
         <>{children}</>
-      </div>
-      {isFooterShown(route) && (
-        <div className="footer-wrapper">
-          <Footer />
+      ) : (
+        // ブログ記事以外
+        <div className="app-wrapper">
+          <div className="contents-wrapper">
+            {route !== '/_error' && <Header />}
+            <>{children}</>
+          </div>
+          {route !== '/_error' && (
+            <div className="footer-wrapper">
+              <Footer />
+            </div>
+          )}
         </div>
       )}
-    </div>
+    </>
   );
 };
 

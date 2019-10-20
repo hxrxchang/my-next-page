@@ -1,6 +1,5 @@
 import React from 'react';
 import { Menu } from './index';
-import { isMenuShown } from '../domain/layout';
 
 interface Props {
   children: React.ReactNode;
@@ -10,7 +9,7 @@ interface Props {
 export const Layout: React.FC<Props> = ({ children, route }) => {
   return (
     <div className="wrapper">
-      {isMenuShown(route) && <Menu route={route} />}
+      {route !== '/blog/[id]' && <Menu route={route} />}
       <main>{children}</main>
     </div>
   );

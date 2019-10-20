@@ -1,5 +1,7 @@
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
+import Icon from '@material-ui/core/Icon';
+import styled from 'styled-components';
 import { BlogContent, Layout } from '../../components';
 import Head from '../../setting/head';
 import { blogDataList, BlogData } from '../../docs/blogs/blog-data-list';
@@ -9,6 +11,18 @@ interface Props {
   statusCode: 200 | 404;
   blogData: BlogData | null;
 }
+
+const StyledWrapper = styled.div`
+  .menu-icon {
+    display: none;
+  }
+
+  @media (max-width: 700px) {
+    .menu-icon {
+      display: block;
+    }
+  }
+`;
 
 const BlogPage: NextPage<Props> = ({ content, statusCode, blogData }) => {
   if (statusCode === 404) {
@@ -20,9 +34,14 @@ const BlogPage: NextPage<Props> = ({ content, statusCode, blogData }) => {
   return (
     <>
       <Head title={blogData!.title} page={router.asPath} description={blogData!.description} type="website"></Head>
-      <Layout route={router.route}>
-        <BlogContent content={content}></BlogContent>
-      </Layout>
+      <StyledWrapper>
+        <div className="menu-icon">
+          <Icon>menu</Icon>
+        </div>
+        <Layout route={router.route}>
+          <BlogContent content={content}></BlogContent>
+        </Layout>
+      </StyledWrapper>
     </>
   );
 };

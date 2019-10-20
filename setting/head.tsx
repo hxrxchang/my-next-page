@@ -29,6 +29,7 @@ export default ({ title, description, image, page, id, type }: Props): JSX.Eleme
       <meta property="og:image" content={image || '/static/ogp-profile.jpg'} />
       <meta property="og:site_name" content={title} />
       <link rel="canonical" href={`${environment.url + page}`} />
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
     </NextHead>
   );
 };

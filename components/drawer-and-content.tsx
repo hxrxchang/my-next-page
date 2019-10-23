@@ -3,13 +3,11 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
-import List from '@material-ui/core/List';
 import { makeStyles, useTheme, Theme, createStyles } from '@material-ui/core/styles';
 
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme: Theme) => {
-  console.log(theme);
   return createStyles({
     root: {
       display: 'flex',
@@ -65,9 +63,8 @@ export const DrawerAndContent = ({ container, children }: ResponsiveDrawerProps)
     <div>
       <div className={classes.toolbar} />
       <Divider />
-      <List></List>
+      <div>hoge</div>
       <Divider />
-      <List></List>
     </div>
   );
 

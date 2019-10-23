@@ -3,6 +3,8 @@ import App, { Container } from 'next/app';
 import { createGlobalStyle } from 'styled-components';
 import { Header, Footer } from '../components';
 import { useRouter } from 'next/router';
+import { ThemeProvider } from '@material-ui/styles';
+import theme from '../material/theme';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -53,14 +55,24 @@ const RouterComponent: React.FC<{ children: React.ReactNode }> = ({ children }) 
 };
 
 export default class MyApp extends App {
+  componentDidMount() {
+    const jssStyles = document.querySelector('#jss-server-side');
+    if (jssStyles) {
+      jssStyles!.parentNode!.removeChild(jssStyles);
+    }
+  }
   render() {
     const { Component, pageProps } = this.props;
     return (
       <Container>
-        <GlobalStyle />
-        <RouterComponent>
-          <Component {...pageProps} />
-        </RouterComponent>
+        <React.Fragment>
+          <GlobalStyle />
+          <ThemeProvider theme={theme}>
+            <RouterComponent>
+              <Component {...pageProps} />
+            </RouterComponent>
+          </ThemeProvider>
+        </React.Fragment>
       </Container>
     );
   }

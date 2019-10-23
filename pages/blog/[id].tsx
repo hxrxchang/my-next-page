@@ -1,18 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import Icon from '@material-ui/core/Icon';
-import Drawer from '@material-ui/core/Drawer';
-// import Button from '@material-ui/core/Button';
-// import List from '@material-ui/core/List';
-// import Divider from '@material-ui/core/Divider';
-// import List  Item from '@material-ui/core/ListItem';
-// import ListItemIcon from '@material-ui/core/ListItemIcon';
-// import ListItemText from '@material-ui/core/ListItemText';
-// import InboxIcon from '@material-ui/icons/MoveToInbox';
-// import MailIcon from '@material-ui/icons/Mail';
 import styled from 'styled-components';
-import { BlogContent, Layout } from '../../components';
+import { BlogContent, Layout, DrawerAndContent } from '../../components';
 
 import Head from '../../setting/head';
 import { blogDataList, BlogData } from '../../docs/blogs/blog-data-list';
@@ -23,10 +14,6 @@ interface Props {
   blogData: BlogData | null;
 }
 
-const StyledDrawer = styled.div``;
-
-const drawer = <StyledDrawer>hoge</StyledDrawer>;
-
 const StyledPage = styled.div`
   .drawer-and-content {
     display: flex;
@@ -36,16 +23,26 @@ const StyledPage = styled.div`
     display: none;
   }
 
+  .drawer-not-sp {
+    width: 240px;
+    flex-shrink: 0;
+  }
+
+  .content {
+    flex-grow: 1;
+  }
+
   @media (max-width: 700px) {
     .menu-icon {
       display: block;
+    }
+
+    .drawer-sp {
     }
   }
 `;
 
 const BlogPage: NextPage<Props> = ({ content, statusCode, blogData }) => {
-  const [isSidenavOpen] = useState(true);
-
   if (statusCode === 404) {
     const e: any = new Error();
     e.code = 'ENOENT';
@@ -55,19 +52,20 @@ const BlogPage: NextPage<Props> = ({ content, statusCode, blogData }) => {
   return (
     <>
       <Head title={blogData!.title} page={router.asPath} description={blogData!.description} type="website"></Head>
-      <StyledPage>
-        <div className="drawer-and-content">
-          <Drawer open={isSidenavOpen} variant="permanent">
-            {drawer}
-          </Drawer>
-          <Layout route={router.route}>
-            <div className="menu-icon">
-              <Icon>menu</Icon>
+      <DrawerAndContent>
+        <StyledPage>
+          <div className="drawer-and-content">
+            <div className="content">
+              <Layout route={router.route}>
+                <div className="menu-icon">
+                  <Icon>menu</Icon>
+                </div>
+                <BlogContent content={content}></BlogContent>
+              </Layout>
             </div>
-            <BlogContent content={content}></BlogContent>
-          </Layout>
-        </div>
-      </StyledPage>
+          </div>
+        </StyledPage>
+      </DrawerAndContent>
     </>
   );
 };

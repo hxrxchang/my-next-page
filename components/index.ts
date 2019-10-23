@@ -8,3 +8,4 @@ export { SocialAccounts } from './social-accounts';
 export { BlogList } from './blog-list';
 export { BlogContent } from './blog-content';
 export { CodeBlock } from './code-block';
+export { DrawerAndContent } from './drawer-and-content';

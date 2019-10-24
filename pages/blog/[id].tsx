@@ -30,6 +30,14 @@ const BlogPage: NextPage<Props> = ({ content, statusCode, blogData }) => {
   const router = useRouter();
 
   const StyledPage = styled.div`
+    .pc {
+      display: block;
+    }
+
+    .sp {
+      display: none;
+    }
+
     .drawer-and-content {
       display: flex;
     }
@@ -48,19 +56,38 @@ const BlogPage: NextPage<Props> = ({ content, statusCode, blogData }) => {
     }
 
     @media (max-width: 700px) {
-      .menu-icon {
+      .pc {
+        display: none;
+      }
+
+      .sp {
         display: block;
       }
 
-      .drawer-sp {
+      .menu-icon {
+        display: block;
       }
     }
   `;
   return (
     <>
       <Head title={blogData!.title} page={router.asPath} description={blogData!.description} type="website"></Head>
-      <ResponsiveDrawer>
-        <StyledPage>
+      <StyledPage>
+        <div className="pc">
+          <ResponsiveDrawer>
+            <div className="drawer-and-content">
+              <div className="content">
+                <Layout route={router.route}>
+                  <div className="menu-icon">
+                    <Icon>menu</Icon>
+                  </div>
+                  <BlogContent content={content}></BlogContent>
+                </Layout>
+              </div>
+            </div>
+          </ResponsiveDrawer>
+        </div>
+        <div className="sp">
           <div className="drawer-and-content">
             <div className="content">
               <Layout route={router.route}>
@@ -71,8 +98,8 @@ const BlogPage: NextPage<Props> = ({ content, statusCode, blogData }) => {
               </Layout>
             </div>
           </div>
-        </StyledPage>
-      </ResponsiveDrawer>
+        </div>
+      </StyledPage>
     </>
   );
 };

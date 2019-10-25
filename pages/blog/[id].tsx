@@ -2,15 +2,11 @@ import React from 'react';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 
-import Divider from '@material-ui/core/Divider';
-import Drawer from '@material-ui/core/Drawer';
-import Hidden from '@material-ui/core/Hidden';
-import { makeStyles, useTheme, Theme, createStyles } from '@material-ui/core/styles';
 import Icon from '@material-ui/core/Icon';
 
 import styled from 'styled-components';
 
-import { BlogContent, Layout } from '../../components';
+import { BlogContent, Layout, PcDrawer } from '../../components';
 
 import Head from '../../setting/head';
 import { blogDataList, BlogData } from '../../docs/blogs/blog-data-list';
@@ -74,7 +70,7 @@ const BlogPage: NextPage<Props> = ({ content, statusCode, blogData }) => {
       <Head title={blogData!.title} page={router.asPath} description={blogData!.description} type="website"></Head>
       <StyledPage>
         <div className="pc">
-          <ResponsiveDrawer>
+          <PcDrawer>
             <div className="drawer-and-content">
               <div className="content">
                 <Layout route={router.route}>
@@ -85,7 +81,7 @@ const BlogPage: NextPage<Props> = ({ content, statusCode, blogData }) => {
                 </Layout>
               </div>
             </div>
-          </ResponsiveDrawer>
+          </PcDrawer>
         </div>
         <div className="sp">
           <div className="drawer-and-content">
@@ -118,88 +114,3 @@ BlogPage.getInitialProps = async (context) => {
 };
 
 export default BlogPage;
-
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      display: 'flex',
-    },
-    drawer: {
-      [theme.breakpoints.up('sm')]: {
-        width: '20%',
-        flexShrink: 0,
-      },
-    },
-    drawerPaper: {
-      width: '20%',
-    },
-    content: {
-      flexGrow: 1,
-    },
-  }),
-);
-
-interface ResponsiveDrawerProps {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
-  container?: Element;
-  children: React.ReactNode;
-}
-
-function ResponsiveDrawer(props: ResponsiveDrawerProps) {
-  const { container, children } = props;
-  const classes = useStyles();
-  const theme = useTheme();
-  const [mobileOpen, setMobileOpen] = React.useState(false);
-
-  const handleDrawerToggle = () => {
-    setMobileOpen(!mobileOpen);
-  };
-
-  const drawer = (
-    <div>
-      <Divider />
-      <div>hoge</div>
-      <Divider />
-    </div>
-  );
-
-  return (
-    <div className={classes.root}>
-      <nav className={classes.drawer} aria-label="mailbox folders">
-        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-        <Hidden smUp>
-          <Drawer
-            container={container}
-            variant="temporary"
-            anchor={theme.direction === 'rtl' ? 'right' : 'left'}
-            open={mobileOpen}
-            onClose={handleDrawerToggle}
-            classes={{
-              paper: classes.drawerPaper,
-            }}
-            ModalProps={{
-              keepMounted: true, // Better open performance on mobile.
-            }}
-          >
-            {drawer}
-          </Drawer>
-        </Hidden>
-        <Hidden xsDown>
-          <Drawer
-            classes={{
-              paper: classes.drawerPaper,
-            }}
-            variant="permanent"
-            open
-          >
-            {drawer}
-          </Drawer>
-        </Hidden>
-      </nav>
-      <div className={classes.content}>{children}</div>
-    </div>
-  );
-}

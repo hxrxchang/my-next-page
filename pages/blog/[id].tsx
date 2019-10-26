@@ -6,7 +6,7 @@ import Icon from '@material-ui/core/Icon';
 
 import styled from 'styled-components';
 
-import { BlogContent, Layout, PcDrawer, SpDrawer } from '../../components';
+import { BlogContent, Layout, PcDrawer, SpDrawer, Footer } from '../../components';
 
 import Head from '../../setting/head';
 import { blogDataList, BlogData } from '../../docs/blogs/blog-data-list';
@@ -40,6 +40,8 @@ const BlogPage: NextPage<Props> = ({ content, statusCode, blogData }) => {
 
     .drawer-and-content {
       display: flex;
+      min-height: 100vh;
+      flex-direction: column;
     }
 
     .menu-icon {
@@ -81,6 +83,9 @@ const BlogPage: NextPage<Props> = ({ content, statusCode, blogData }) => {
                   <BlogContent content={content}></BlogContent>
                 </Layout>
               </div>
+              <div className="footer">
+                <Footer></Footer>
+              </div>
             </div>
           </PcDrawer>
         </div>
@@ -94,6 +99,9 @@ const BlogPage: NextPage<Props> = ({ content, statusCode, blogData }) => {
                   </div>
                   <BlogContent content={content}></BlogContent>
                 </Layout>
+              </div>
+              <div className="footer">
+                <Footer></Footer>
               </div>
             </div>
           </SpDrawer>

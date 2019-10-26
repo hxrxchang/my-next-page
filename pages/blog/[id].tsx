@@ -3,6 +3,7 @@ import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 
 import Icon from '@material-ui/core/Icon';
+import { Divider } from '@material-ui/core';
 
 import styled from 'styled-components';
 
@@ -44,7 +45,7 @@ const BlogPage: NextPage<Props> = ({ content, statusCode, blogData }) => {
       flex-direction: column;
     }
 
-    .menu-icon {
+    .header {
       display: none;
     }
 
@@ -66,8 +67,15 @@ const BlogPage: NextPage<Props> = ({ content, statusCode, blogData }) => {
         display: block;
       }
 
-      .menu-icon {
+      .header {
         display: block;
+        position: fixed;
+        width: 100%;
+        background: white;
+      }
+
+      .content {
+        margin-top: 24px;
       }
     }
   `;
@@ -92,11 +100,12 @@ const BlogPage: NextPage<Props> = ({ content, statusCode, blogData }) => {
         <div className="sp">
           <SpDrawer isOpen={isSpDrawerOpen} changeSidenav={changeIsDrawerOpen}>
             <div className="drawer-and-content">
+              <div className="header">
+                <Icon onClick={changeIsDrawerOpen}>menu</Icon>
+                <Divider></Divider>
+              </div>
               <div className="content">
                 <Layout route={router.route}>
-                  <div className="menu-icon">
-                    <Icon onClick={changeIsDrawerOpen}>menu</Icon>
-                  </div>
                   <BlogContent content={content}></BlogContent>
                 </Layout>
               </div>

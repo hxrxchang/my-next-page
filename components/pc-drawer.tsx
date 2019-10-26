@@ -1,7 +1,8 @@
-import Divider from '@material-ui/core/Divider';
+import React from 'react';
 import Drawer from '@material-ui/core/Drawer';
 import Hidden from '@material-ui/core/Hidden';
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
+import { DrawerContent } from './drawer-content';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -32,17 +33,9 @@ interface ResponsiveDrawerProps {
   children: React.ReactNode;
 }
 
-export const PcDrawer = (props: ResponsiveDrawerProps) => {
+export const PcDrawer: React.FC<ResponsiveDrawerProps> = (props: ResponsiveDrawerProps) => {
   const { children } = props;
   const classes = useStyles();
-
-  const drawer = (
-    <div>
-      <Divider />
-      <div>hoge</div>
-      <Divider />
-    </div>
-  );
 
   return (
     <div className={classes.root}>
@@ -56,7 +49,7 @@ export const PcDrawer = (props: ResponsiveDrawerProps) => {
             variant="permanent"
             open
           >
-            {drawer}
+            <DrawerContent></DrawerContent>
           </Drawer>
         </Hidden>
       </nav>

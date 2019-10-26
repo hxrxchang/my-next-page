@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 
@@ -6,7 +6,7 @@ import Icon from '@material-ui/core/Icon';
 
 import styled from 'styled-components';
 
-import { BlogContent, Layout, PcDrawer } from '../../components';
+import { BlogContent, Layout, PcDrawer, SpDrawer } from '../../components';
 
 import Head from '../../setting/head';
 import { blogDataList, BlogData } from '../../docs/blogs/blog-data-list';
@@ -24,6 +24,10 @@ const BlogPage: NextPage<Props> = ({ content, statusCode, blogData }) => {
     throw e;
   }
   const router = useRouter();
+  const [isSpDrawerOpen, setIsSpDrawerOpen] = useState(false);
+  const changeIsDrawerOpen = useCallback(() => {
+    setIsSpDrawerOpen((prev) => !prev);
+  }, []);
 
   const StyledPage = styled.div`
     .pc {
@@ -74,9 +78,6 @@ const BlogPage: NextPage<Props> = ({ content, statusCode, blogData }) => {
             <div className="drawer-and-content">
               <div className="content">
                 <Layout route={router.route}>
-                  <div className="menu-icon">
-                    <Icon>menu</Icon>
-                  </div>
                   <BlogContent content={content}></BlogContent>
                 </Layout>
               </div>
@@ -84,16 +85,18 @@ const BlogPage: NextPage<Props> = ({ content, statusCode, blogData }) => {
           </PcDrawer>
         </div>
         <div className="sp">
-          <div className="drawer-and-content">
-            <div className="content">
-              <Layout route={router.route}>
-                <div className="menu-icon">
-                  <Icon>menu</Icon>
-                </div>
-                <BlogContent content={content}></BlogContent>
-              </Layout>
+          <SpDrawer isOpen={isSpDrawerOpen} changeSidenav={changeIsDrawerOpen}>
+            <div className="drawer-and-content">
+              <div className="content">
+                <Layout route={router.route}>
+                  <div className="menu-icon">
+                    <Icon onClick={changeIsDrawerOpen}>menu</Icon>
+                  </div>
+                  <BlogContent content={content}></BlogContent>
+                </Layout>
+              </div>
             </div>
-          </div>
+          </SpDrawer>
         </div>
       </StyledPage>
     </>

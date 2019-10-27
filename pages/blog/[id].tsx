@@ -41,8 +41,8 @@ const BlogPage: NextPage<Props> = ({ content, statusCode, blogData }) => {
 
     .drawer-and-content {
       display: flex;
-      min-height: 100vh;
       flex-direction: column;
+      min-height: 100vh;
     }
 
     .header {
@@ -59,6 +59,7 @@ const BlogPage: NextPage<Props> = ({ content, statusCode, blogData }) => {
     }
 
     @media (max-width: 700px) {
+      padding: 0 2%;
       .pc {
         display: none;
       }
@@ -102,7 +103,7 @@ const BlogPage: NextPage<Props> = ({ content, statusCode, blogData }) => {
             <div className="drawer-and-content">
               <div className="header">
                 <Icon onClick={changeIsDrawerOpen}>menu</Icon>
-                <Divider></Divider>
+                <Divider></Divider>{' '}
               </div>
               <div className="content">
                 <Layout route={router.route}>

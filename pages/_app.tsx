@@ -9,6 +9,8 @@ import theme from '../material/theme';
 const GlobalStyle = createGlobalStyle`
   body {
     font-family: sans-serif;
+    padding: 0px;
+    margin:  0px;
   }
 
   .app-wrapper {

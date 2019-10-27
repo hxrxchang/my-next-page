@@ -11,12 +11,12 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     drawer: {
       [theme.breakpoints.up('sm')]: {
-        width: '20%',
+        width: '16%',
         flexShrink: 0,
       },
     },
     drawerPaper: {
-      width: '20%',
+      width: '16%',
     },
     content: {
       flexGrow: 1,

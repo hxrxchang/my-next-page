@@ -102,7 +102,9 @@ const BlogPage: NextPage<Props> = ({ content, statusCode, blogData }) => {
           <SpDrawer isOpen={isSpDrawerOpen} changeSidenav={changeIsDrawerOpen}>
             <div className="drawer-and-content">
               <div className="header">
-                <Icon onClick={changeIsDrawerOpen}>menu</Icon>
+                <Icon onClick={changeIsDrawerOpen} fontSize="large">
+                  menu
+                </Icon>
                 <Divider></Divider>{' '}
               </div>
               <div className="content">

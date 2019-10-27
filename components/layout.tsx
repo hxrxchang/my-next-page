@@ -9,7 +9,7 @@ interface Props {
 export const Layout: React.FC<Props> = ({ children, route }) => {
   return (
     <div className="wrapper">
-      <Menu route={route} />
+      {route !== '/blog/[id]' && <Menu route={route} />}
       <main>{children}</main>
     </div>
   );

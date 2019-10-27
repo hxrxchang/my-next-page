@@ -44,7 +44,6 @@ const StyledHeader = styled.header`
 
 export const Header: React.FC<{}> = () => {
   const route = useRouter().asPath;
-  console.log(route);
   return (
     <>
       <StyledHeader>

@@ -41,14 +41,14 @@ export const DrawerContent: React.FC<{}> = () => {
       <div className="profile">
         <img className="profile-image" src="/static/chowder.jpeg" alt="" />
         <p className="name">Yuto Hara</p>
+        <Link href="/blogs">
+          <a className="link profile-link">Blogs</a>
+        </Link>
         <Link href="/">
           <a className="link profile-link">Profile</a>
         </Link>
         <Link href="/accounts">
           <a className="link profile-link">Accounts</a>
-        </Link>
-        <Link href="/blogs">
-          <a className="link profile-link">Blogs</a>
         </Link>
       </div>
     </StyledWrapper>

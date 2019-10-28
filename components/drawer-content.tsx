@@ -21,6 +21,7 @@ export const DrawerContent: React.FC<{}> = () => {
       display: block;
       border-radius: 50%;
       width: 120px;
+      height: 120px;
       margin-left: auto;
       margin-right: auto;
     }

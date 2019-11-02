@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
+import { Divider } from '@material-ui/core';
 
 export const DrawerContent: React.FC<{}> = () => {
   const StyledWrapper = styled.div`
@@ -15,6 +16,7 @@ export const DrawerContent: React.FC<{}> = () => {
       text-decoration: none;
       display: block;
       text-align: center;
+      margin-bottom: 20px;
     }
 
     .profile-image {
@@ -24,6 +26,7 @@ export const DrawerContent: React.FC<{}> = () => {
       height: 120px;
       margin-left: auto;
       margin-right: auto;
+      margin-top: 20px;
     }
 
     .name {
@@ -32,24 +35,25 @@ export const DrawerContent: React.FC<{}> = () => {
       margin-bottom: 20px;
     }
 
-    .profile-link {
-      margin-bottom: 20px;
+    .blog-link {
+      font-weight: bold;
     }
   `;
 
   return (
     <StyledWrapper>
       <div className="profile">
+        <Link href="/blogs">
+          <a className="link blog-link">ブログ一覧に戻る</a>
+        </Link>
+        <Divider></Divider>
         <img className="profile-image" src="/static/chowder.jpeg" alt="" />
         <p className="name">Yuto Hara</p>
-        <Link href="/blogs">
-          <a className="link profile-link">Blogs</a>
-        </Link>
         <Link href="/">
-          <a className="link profile-link">Profile</a>
+          <a className="link">Profile</a>
         </Link>
         <Link href="/accounts">
-          <a className="link profile-link">Accounts</a>
+          <a className="link">Accounts</a>
         </Link>
       </div>
     </StyledWrapper>

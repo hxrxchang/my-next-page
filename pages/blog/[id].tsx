@@ -45,10 +45,6 @@ const BlogPage: NextPage<Props> = ({ content, statusCode, blogData }) => {
       min-height: 100vh;
     }
 
-    .header {
-      display: none;
-    }
-
     .drawer-not-sp {
       width: 240px;
       flex-shrink: 0;
@@ -69,7 +65,6 @@ const BlogPage: NextPage<Props> = ({ content, statusCode, blogData }) => {
       }
 
       .header {
-        display: block;
         position: fixed;
         width: 100%;
         background: white;
@@ -105,7 +100,7 @@ const BlogPage: NextPage<Props> = ({ content, statusCode, blogData }) => {
                 <Icon onClick={changeIsDrawerOpen} fontSize="large">
                   menu
                 </Icon>
-                <Divider></Divider>{' '}
+                <Divider></Divider>
               </div>
               <div className="content">
                 <Layout route={router.route}>

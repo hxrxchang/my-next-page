@@ -7,37 +7,37 @@ interface Props {
   blogDataList: BlogData[];
 }
 
-const StyledLink = styled.li`
-  padding: 10px 0;
-  list-style: none;
-
-  .date {
-    display: block;
-  }
-
-  .link {
-    text-decoration: none;
-  }
-
-  .link:hover {
-    text-decoration: underline;
-  }
-
-  .title {
-    line-height: 0px;
-  }
-`;
-
 const PostLink: React.FC<{ id: string; title: string; createdAt: string }> = ({ id, title, createdAt }) => {
+  const StyledList = styled.li`
+    padding: 10px 0;
+    list-style: none;
+
+    .date {
+      display: block;
+    }
+
+    .link {
+      text-decoration: none;
+    }
+
+    .link:hover {
+      text-decoration: underline;
+    }
+
+    .title {
+      line-height: 0px;
+    }
+  `;
+
   return (
-    <StyledLink key={id}>
+    <StyledList>
       <Link href="blog/[id]" as={`/blog/${id}`}>
         <a className="link">
           <h2 className="title">{title}</h2>
         </a>
       </Link>
       <p>{createdAt}</p>
-    </StyledLink>
+    </StyledList>
   );
 };
 

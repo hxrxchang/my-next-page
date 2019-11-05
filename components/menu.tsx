@@ -5,40 +5,41 @@ import styled from 'styled-components';
 interface MenuProps {
   route: string;
 }
-const StyledMenu = styled.div`
-  border-bottom: 1px solid #efefef;
-
-  .menu-list {
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-  }
-
-  .menu-item {
-    font-weight: bold;
-    cursor: pointer;
-  }
-
-  .selected {
-    border-bottom: 4px solid red;
-  }
-
-  .not-selected:hover {
-    border-bottom: 4px solid silver;
-  }
-
-  a {
-    text-decoration: none;
-    color: black;
-    display: block;
-    padding-bottom: 10px;
-  }
-`;
 
 export const Menu: React.FC<MenuProps> = ({ route }: MenuProps) => {
+  const StyledDiv = styled.div`
+    border-bottom: 1px solid #efefef;
+
+    .menu-list {
+      list-style: none;
+      display: flex;
+      justify-content: space-around;
+    }
+
+    .menu-item {
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .selected {
+      border-bottom: 4px solid red;
+    }
+
+    .not-selected:hover {
+      border-bottom: 4px solid silver;
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+      display: block;
+      padding-bottom: 10px;
+    }
+  `;
+
   return (
     <>
-      <StyledMenu>
+      <StyledDiv>
         <div className="menu-list">
           <div className={route === 'profile' ? 'menu-item selected' : 'menu-item not-selected'}>
             <Link href="/">
@@ -56,7 +57,7 @@ export const Menu: React.FC<MenuProps> = ({ route }: MenuProps) => {
             </Link>
           </div>
         </div>
-      </StyledMenu>
+      </StyledDiv>
     </>
   );
 };

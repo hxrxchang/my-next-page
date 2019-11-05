@@ -1,16 +1,7 @@
 import React from 'react';
 import { NextPage } from 'next';
 import Head from '../setting/head';
-import styled from 'styled-components';
 import { Layout, Profile } from './../components/index';
-
-export const PageContainer = styled.div`
-  padding: 0 14%;
-
-  @media (max-width: 700px) {
-    padding: 0 2%;
-  }
-`;
 
 const IndexPage: NextPage<{ content: string }> = ({ content }) => {
   return (

@@ -13,11 +13,11 @@ EdTech 企業でフロントエンドエンジニアとして働いています�
 - TypeScript
 - NgRx
 - Node.js
+- Ruby
+- Ruby on Rails
 
 ## Studying
 
-- Ruby
-- Ruby on Rails
 - AWS
 - React
 - Next.js

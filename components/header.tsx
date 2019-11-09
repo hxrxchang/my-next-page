@@ -15,6 +15,8 @@ export const Header: React.FC<{}> = () => {
     }
 
     .profile-image {
+      height: 224px;
+      width: 224px;
       border-radius: 50%;
     }
 
@@ -37,8 +39,28 @@ export const Header: React.FC<{}> = () => {
       text-align: center;
       padding-bottom: 6px;
 
+      .profile-image-wrapper {
+        text-align: center;
+        height: 144px;
+      }
+
+      .profile-image {
+        height: 144px;
+        width: 144px;
+        border-radius: 50%;
+      }
+
       .profile-wrapper {
         padding-top: 0px;
+      }
+
+      .profile-name {
+        font-size: 1.4em;
+        font-weight: bold;
+        margin-block-start: 0.67em;
+        margin-block-end: 0.67em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
       }
     }
   `;

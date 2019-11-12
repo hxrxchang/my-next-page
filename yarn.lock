@@ -1005,10 +1005,10 @@
     "@types/prop-types" "*"
     "@types/react" "*"
 
-"@types/react-syntax-highlighter@11.0.0":
-  version "11.0.0"
-  resolved "https://registry.yarnpkg.com/@types/react-syntax-highlighter/-/react-syntax-highlighter-11.0.0.tgz#ae67cce95cca4da66911ef7c3fc97e3ae042076b"
-  integrity sha512-iZ3uJ4Cv+ya47zirtfOua/h3EzTOlgvOr7MP1QaPPf35e14Vjz5bOdM3kIOTURo32y7FUOouke1ZpHgRqXfqbQ==
+"@types/react-syntax-highlighter@11.0.2":
+  version "11.0.2"
+  resolved "https://registry.yarnpkg.com/@types/react-syntax-highlighter/-/react-syntax-highlighter-11.0.2.tgz#a2e3ff657d7c47813f80ca930f3d959c31ec51e3"
+  integrity sha512-iMNcixH8330f2dq0RY+VOXCP8JFehgmOhLOtnO85Ty+qu0fHXJNEqWx5VuFv8v0aEq0U/N9d/k1yvA+c6PEmPw==
   dependencies:
     "@types/react" "*"
 

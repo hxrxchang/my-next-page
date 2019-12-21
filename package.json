@@ -29,6 +29,6 @@
     "@types/react-syntax-highlighter": "11.0.3",
     "@types/styled-components": "4.4.1",
     "babel-plugin-styled-components": "1.10.6",
-    "typescript": "3.7.3"
+    "typescript": "3.7.4"
   }
 }

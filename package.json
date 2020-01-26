@@ -13,7 +13,7 @@
   "dependencies": {
     "@material-ui/core": "4.9.0",
     "@material-ui/icons": "4.5.1",
-    "next": "9.0.2",
+    "next": "9.2.1",
     "next-compose-plugins": "2.2.0",
     "raw-loader": "4.0.0",
     "react": "16.8.6",

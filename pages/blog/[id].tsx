@@ -12,9 +12,11 @@ import { BlogContent, Layout, PcDrawer, SpDrawer, Footer } from '../../component
 import Head from '../../setting/head';
 import { blogDataList, BlogData } from '../../docs/blogs/blog-data-list';
 
+type StatusCode = 200 | 404;
+
 interface Props {
   content: string;
-  statusCode: 200 | 404;
+  statusCode: StatusCode;
   blogData: BlogData | null;
 }
 
@@ -125,9 +127,9 @@ BlogPage.getInitialProps = async (context) => {
     if (!blogData) {
       throw new Error('blogData is not found');
     }
-    return { content: content.default, statusCode: 200, blogData };
+    return { content: content.default, statusCode: 200 as StatusCode, blogData };
   } catch (e) {
-    return { content: '', statusCode: 404, blogData: null };
+    return { content: '', statusCode: 404 as StatusCode, blogData: null };
   }
 };
 

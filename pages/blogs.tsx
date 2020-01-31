@@ -15,7 +15,7 @@ const BlogsPage: NextPage<{ blogDataList: BlogData[] }> = ({ blogDataList }) => 
 };
 
 BlogsPage.getInitialProps = async () => {
-  return { blogDataList }
-}
+  return { blogDataList };
+};
 
 export default BlogsPage;

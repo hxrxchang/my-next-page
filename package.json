@@ -31,7 +31,7 @@
     "@types/react-syntax-highlighter": "11.0.4",
     "@types/styled-components": "4.4.2",
     "babel-plugin-styled-components": "1.10.7",
-    "prettier": "^1.19.1",
+    "prettier": "1.19.1",
     "typescript": "3.7.5"
   }
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import App, { Container } from 'next/app';
+import App from 'next/app';
 import { createGlobalStyle } from 'styled-components';
 import { Header, Footer } from '../components';
 import { useRouter } from 'next/router';
@@ -66,16 +66,14 @@ export default class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
     return (
-      <Container>
-        <React.Fragment>
-          <GlobalStyle />
-          <ThemeProvider theme={theme}>
-            <RouterComponent>
-              <Component {...pageProps} />
-            </RouterComponent>
-          </ThemeProvider>
-        </React.Fragment>
-      </Container>
+      <React.Fragment>
+        <GlobalStyle />
+        <ThemeProvider theme={theme}>
+          <RouterComponent>
+            <Component {...pageProps} />
+          </RouterComponent>
+        </ThemeProvider>
+      </React.Fragment>
     );
   }
 }

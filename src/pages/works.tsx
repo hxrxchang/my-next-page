@@ -2,7 +2,7 @@ import React from 'react';
 import Head from '../setting/head';
 import { NextPage } from 'next';
 
-import { Layout, Works } from './../components/index';
+import { Layout, Works } from '../components/index';
 
 const WorksPage: NextPage<{ content: string }> = ({ content }) => (
   <>
@@ -14,7 +14,7 @@ const WorksPage: NextPage<{ content: string }> = ({ content }) => (
 );
 
 WorksPage.getInitialProps = async () => {
-  const content = await require('../docs/works.md');
+  const content = await require('../../docs/works.md');
   return { content: content.default };
 };
 

@@ -47,7 +47,7 @@ export const DrawerContent: React.FC<{}> = () => {
           <a className="link blog-link">ブログ一覧に戻る</a>
         </Link>
         <Divider></Divider>
-        <img className="profile-image" src="/static/chowder.jpeg" alt="" />
+        <img className="profile-image" src="/chowder.jpeg" alt="" />
         <p className="name">Yuto Hara</p>
         <Link href="/">
           <a className="link">Profile</a>

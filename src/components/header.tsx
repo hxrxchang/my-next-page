@@ -70,7 +70,7 @@ export const Header: React.FC<{}> = () => {
     <>
       <StyledHeader>
         <div className="profile-image-wrapper">
-          <img className="profile-image" src="/static/chowder.jpeg" alt="" />
+          <img className="profile-image" src="chowder.jpeg" alt="" />
         </div>
         <div className="profile-wrapper">
           {route === '/blogs' ? <p className="profile-name">Yuto Hara</p> : <h1 className="profile-name">Yuto Hara</h1>}

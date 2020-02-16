@@ -15,7 +15,7 @@ const IndexPage: NextPage<{ content: string }> = ({ content }) => {
 };
 
 IndexPage.getInitialProps = async () => {
-  const content = await require('../docs/profile.md');
+  const content = await require('../../docs/profile.md');
   return { content: content.default };
 };
 

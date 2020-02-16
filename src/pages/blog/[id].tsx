@@ -10,7 +10,7 @@ import styled from 'styled-components';
 import { BlogContent, Layout, PcDrawer, SpDrawer, Footer } from '../../components';
 
 import Head from '../../setting/head';
-import { blogDataList, BlogData } from '../../docs/blogs/blog-data-list';
+import { blogDataList, BlogData } from '../../../docs/blogs/blog-data-list';
 
 type StatusCode = 200 | 404;
 
@@ -122,7 +122,7 @@ const BlogPage: NextPage<Props> = ({ content, statusCode, blogData }) => {
 
 BlogPage.getInitialProps = async (context) => {
   try {
-    const content = await require(`../../docs/blogs/${context.query.id}.md`);
+    const content = await require(`../../../docs/blogs/${context.query.id}.md`);
     const blogData = blogDataList.find((blogData) => blogData.id === context.query.id);
     if (!blogData) {
       throw new Error('blogData is not found');

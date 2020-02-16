@@ -18,7 +18,7 @@ export default ({ title, description, image, page, id, type }: Props): JSX.Eleme
       {image ? (
         <link rel="icon" type="image/x-icon" href={`${id}/${image}`} />
       ) : (
-        <link rel="icon" type="image/x-icon" href="ogp-profile.jpg" />
+        <link rel="icon" type="image/x-icon" href="/ogp-profile.jpg" />
       )}
       <meta name="description" content={description}></meta>
       <meta name="author" content="hxrxchang"></meta>
@@ -26,7 +26,7 @@ export default ({ title, description, image, page, id, type }: Props): JSX.Eleme
       <meta property="og:description" content={description} />
       <meta property="og:type" content={type} />
       <meta property="og:url" content={`${environment.url + page}`} />
-      <meta property="og:image" content={image || 'ogp-profile.jpg'} />
+      <meta property="og:image" content={image || '/ogp-profile.jpg'} />
       <meta property="og:site_name" content={title} />
       <link rel="canonical" href={`${environment.url + page}`} />
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />

@@ -1,12 +1,12 @@
 import React from 'react';
 import { NextPage } from 'next';
-import Head from '../setting/head';
+import { CustomHead } from '../components/custom-head';
 import { Layout, Profile } from './../components/index';
 
 const IndexPage: NextPage<{ content: string }> = ({ content }) => {
   return (
     <>
-      <Head title="Profile" page="/" description="@hxrxchangのWebsite" type="website"></Head>
+      <CustomHead title="Profile" page="/" description="@hxrxchangのWebsite" type="website"></CustomHead>
       <Layout route="profile">
         <Profile content={content} />
       </Layout>

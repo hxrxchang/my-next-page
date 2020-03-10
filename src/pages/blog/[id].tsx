@@ -9,7 +9,7 @@ import styled from 'styled-components';
 
 import { BlogContent, Layout, PcDrawer, SpDrawer, Footer } from '../../components';
 
-import Head from '../../setting/head';
+import { CustomHead } from '../../components/custom-head';
 import { blogDataList, BlogData } from '../../../docs/blogs/blog-data-list';
 
 type StatusCode = 200 | 404;
@@ -80,7 +80,7 @@ const BlogPage: NextPage<Props> = ({ content, statusCode, blogData }) => {
 
   return (
     <>
-      <Head title={blogData!.title} page={router.asPath} description={blogData!.description} type="website"></Head>
+      <CustomHead title={blogData!.title} page={router.asPath} description={blogData!.description} type="website"></CustomHead>
       <StyledPage>
         <div className="pc">
           <PcDrawer>

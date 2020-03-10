@@ -1,22 +1,16 @@
 import React, { useState, useCallback } from 'react';
-import { NextPage } from 'next';
+import { NextPage, GetStaticProps, GetStaticPaths } from 'next';
 import { useRouter } from 'next/router';
-
 import Icon from '@material-ui/core/Icon';
 import { Divider } from '@material-ui/core';
-
 import styled from 'styled-components';
 
 import { BlogContent, Layout, PcDrawer, SpDrawer, Footer } from '../../components';
-
 import { CustomHead } from '../../components/custom-head';
 import { blogDataList, BlogData } from '../../../docs/blogs/blog-data-list';
 
-type StatusCode = 200 | 404;
-
 interface Props {
   content: string;
-  statusCode: StatusCode;
   blogData: BlogData | null;
 }
 
@@ -66,12 +60,7 @@ const StyledPage = styled.div`
   }
 `;
 
-const BlogPage: NextPage<Props> = ({ content, statusCode, blogData }) => {
-  if (statusCode === 404) {
-    const e: any = new Error();
-    e.code = 'ENOENT';
-    throw e;
-  }
+const Blog: NextPage<Props> = ({ content, blogData }) => {
   const router = useRouter();
   const [isSpDrawerOpen, setIsSpDrawerOpen] = useState(false);
   const changeIsDrawerOpen = useCallback(() => {
@@ -121,17 +110,24 @@ const BlogPage: NextPage<Props> = ({ content, statusCode, blogData }) => {
   );
 };
 
-BlogPage.getInitialProps = async (context) => {
-  try {
-    const content = await require(`../../../docs/blogs/${context.query.id}.md`);
-    const blogData = blogDataList.find((blogData) => blogData.id === context.query.id);
-    if (!blogData) {
-      throw new Error('blogData is not found');
-    }
-    return { content: content.default, statusCode: 200 as StatusCode, blogData };
-  } catch (e) {
-    return { content: '', statusCode: 404 as StatusCode, blogData: null };
-  }
+export const getStaticPaths: GetStaticPaths = async () => {
+  const paths = blogDataList.map((blog) => {
+    return {
+      params: {
+        id: blog.id,
+      },
+    };
+  });
+
+  return { paths, fallback: false };
 };
 
-export default BlogPage;
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const content = await require(`../../../docs/blogs/${params!.id}.md`);
+  const blogData = blogDataList.find((blogData) => blogData.id === params!.id);
+  return {
+    props: { content: content.default, blogData },
+  };
+};
+
+export default Blog;

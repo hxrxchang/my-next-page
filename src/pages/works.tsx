@@ -1,6 +1,6 @@
 import React from 'react';
 import { CustomHead } from '../components/custom-head';
-import { NextPage } from 'next';
+import { NextPage, GetStaticProps } from 'next';
 
 import { Layout, Works } from '../components/index';
 
@@ -13,9 +13,11 @@ const WorksPage: NextPage<{ content: string }> = ({ content }) => (
   </>
 );
 
-WorksPage.getInitialProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const content = await require('../../docs/works.md');
-  return { content: content.default };
+  return {
+    props: { content: content.default },
+  };
 };
 
 export default WorksPage;

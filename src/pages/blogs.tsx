@@ -1,4 +1,4 @@
-import { NextPage } from 'next';
+import { NextPage, GetStaticProps } from 'next';
 import { Layout, BlogList } from '../components';
 import { CustomHead } from '../components/custom-head';
 import { blogDataList, BlogData } from '../../docs/blogs/blog-data-list';
@@ -14,8 +14,10 @@ const BlogsPage: NextPage<{ blogDataList: BlogData[] }> = ({ blogDataList }) => 
   );
 };
 
-BlogsPage.getInitialProps = async () => {
-  return { blogDataList };
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: { blogDataList },
+  };
 };
 
 export default BlogsPage;

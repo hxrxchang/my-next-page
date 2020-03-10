@@ -1,5 +1,5 @@
 import React from 'react';
-import { NextPage } from 'next';
+import { NextPage, GetStaticProps } from 'next';
 import { CustomHead } from '../components/custom-head';
 import { Layout, Profile } from './../components/index';
 
@@ -14,9 +14,11 @@ const IndexPage: NextPage<{ content: string }> = ({ content }) => {
   );
 };
 
-IndexPage.getInitialProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const content = await require('../../docs/profile.md');
-  return { content: content.default };
+  return {
+    props: { content: content.default },
+  };
 };
 
 export default IndexPage;

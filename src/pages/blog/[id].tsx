@@ -20,6 +20,52 @@ interface Props {
   blogData: BlogData | null;
 }
 
+const StyledPage = styled.div`
+  .pc {
+    display: block;
+  }
+
+  .sp {
+    display: none;
+  }
+
+  .drawer-and-content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+
+  .drawer-not-sp {
+    width: 240px;
+    flex-shrink: 0;
+  }
+
+  .content {
+    flex-grow: 1;
+  }
+
+  @media (max-width: 700px) {
+    padding: 0 2%;
+    .pc {
+      display: none;
+    }
+
+    .sp {
+      display: block;
+    }
+
+    .header {
+      position: fixed;
+      width: 100%;
+      background: white;
+    }
+
+    .content {
+      margin-top: 24px;
+    }
+  }
+`;
+
 const BlogPage: NextPage<Props> = ({ content, statusCode, blogData }) => {
   if (statusCode === 404) {
     const e: any = new Error();
@@ -32,51 +78,6 @@ const BlogPage: NextPage<Props> = ({ content, statusCode, blogData }) => {
     setIsSpDrawerOpen((prev) => !prev);
   }, []);
 
-  const StyledPage = styled.div`
-    .pc {
-      display: block;
-    }
-
-    .sp {
-      display: none;
-    }
-
-    .drawer-and-content {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    .drawer-not-sp {
-      width: 240px;
-      flex-shrink: 0;
-    }
-
-    .content {
-      flex-grow: 1;
-    }
-
-    @media (max-width: 700px) {
-      padding: 0 2%;
-      .pc {
-        display: none;
-      }
-
-      .sp {
-        display: block;
-      }
-
-      .header {
-        position: fixed;
-        width: 100%;
-        background: white;
-      }
-
-      .content {
-        margin-top: 24px;
-      }
-    }
-  `;
   return (
     <>
       <Head title={blogData!.title} page={router.asPath} description={blogData!.description} type="website"></Head>

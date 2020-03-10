@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
-export const Footer: React.FC<{}> = ({}) => {
-  const StyledFooter = styled.footer`
-    border-top: 1px solid #efefef;
-    display: flex;
-    justify-content: center;
-  `;
+const StyledFooter = styled.footer`
+  border-top: 1px solid #efefef;
+  display: flex;
+  justify-content: center;
+`;
 
+export const Footer: React.FC<{}> = ({}) => {
   return (
     <>
       <StyledFooter>

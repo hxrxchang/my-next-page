@@ -14,7 +14,7 @@ const WorksPage: NextPage<{ content: string }> = ({ content }) => (
 );
 
 export const getStaticProps: GetStaticProps = async () => {
-  const content = await require('../../docs/works.md');
+  const content = await require('../../data-sources/works.md');
   return {
     props: { content: content.default },
   };

@@ -7,7 +7,7 @@ import styled from 'styled-components';
 
 import { BlogContent, Layout, PcDrawer, SpDrawer, Footer } from '../../components';
 import { CustomHead } from '../../components/custom-head';
-import { blogDataList, BlogData } from '../../../docs/blogs/blog-data-list';
+import { blogDataList, BlogData } from '../../../data-sources/blogs/blog-data-list';
 
 interface Props {
   content: string;
@@ -123,7 +123,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const content = await require(`../../../docs/blogs/${params!.id}.md`);
+  const content = await require(`../../../data-sources/blogs/${params!.id}.md`);
   const blogData = blogDataList.find((blogData) => blogData.id === params!.id);
   return {
     props: { content: content.default, blogData },

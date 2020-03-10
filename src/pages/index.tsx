@@ -15,7 +15,7 @@ const IndexPage: NextPage<{ content: string }> = ({ content }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const content = await require('../../docs/profile.md');
+  const content = await require('../../data-sources/profile.md');
   return {
     props: { content: content.default },
   };

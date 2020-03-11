@@ -1,11 +1,11 @@
 import React from 'react';
-import Head from '../setting/head';
+import { CustomHead } from '../components/custom-head';
 
 import { Layout, SocialAccounts } from '../components';
 
 const AccountsPage: React.FC<{}> = () => (
   <>
-    <Head title="Accounts" page="/accounts" description="@hxrxchangのWebsite" type="website"></Head>
+    <CustomHead title="Accounts" page="/accounts" description="@hxrxchangのWebsite" type="website"></CustomHead>
     <Layout route="accounts">
       <SocialAccounts />
     </Layout>

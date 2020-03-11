@@ -11,7 +11,7 @@ interface Props {
   image?: string;
 }
 
-export default ({ title, description, image, page, id, type }: Props): JSX.Element => {
+export const CustomHead = ({ title, description, image, page, id, type }: Props): JSX.Element => {
   return (
     <NextHead>
       <title key="title">{title}</title>

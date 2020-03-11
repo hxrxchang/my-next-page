@@ -6,37 +6,37 @@ interface MenuProps {
   route: string;
 }
 
+const StyledDiv = styled.div`
+  border-bottom: 1px solid #efefef;
+
+  .menu-list {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .menu-item {
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .selected {
+    border-bottom: 4px solid red;
+  }
+
+  .not-selected:hover {
+    border-bottom: 4px solid silver;
+  }
+
+  a {
+    text-decoration: none;
+    color: black;
+    display: block;
+    padding-bottom: 10px;
+  }
+`;
+
 export const Menu: React.FC<MenuProps> = ({ route }: MenuProps) => {
-  const StyledDiv = styled.div`
-    border-bottom: 1px solid #efefef;
-
-    .menu-list {
-      list-style: none;
-      display: flex;
-      justify-content: space-around;
-    }
-
-    .menu-item {
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .selected {
-      border-bottom: 4px solid red;
-    }
-
-    .not-selected:hover {
-      border-bottom: 4px solid silver;
-    }
-
-    a {
-      text-decoration: none;
-      color: black;
-      display: block;
-      padding-bottom: 10px;
-    }
-  `;
-
   return (
     <>
       <StyledDiv>

@@ -5,6 +5,7 @@ import { Header, Footer } from '../components';
 import { useRouter } from 'next/router';
 import { ThemeProvider } from '@material-ui/styles';
 import theme from '../material/theme';
+import { useGaTrackPage } from '../hooks/ga-hook';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -32,7 +33,11 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const RouterComponent: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const { route } = useRouter();
+  const { route, asPath } = useRouter();
+  if (typeof window !== 'undefined') {
+    useGaTrackPage(asPath);
+  }
+
   return (
     <>
       {route === '/blog/[id]' ? (

@@ -9,4 +9,7 @@ module.exports = withPlugins([], {
 
     return config;
   },
+  env: {
+    gaTrackingId: process.env.gaTrackingId,
+  },
 });

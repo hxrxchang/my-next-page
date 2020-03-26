@@ -17,11 +17,11 @@ export default class MyDocument extends Document {
     return {
       ...initialProps,
       styles: (
-        <React.Fragment>
+        <>
           {initialProps.styles}
           {sheet.getStyleElement()}
           {materialSheets.getStyleElement()}
-        </React.Fragment>
+        </>
       ),
     };
   }

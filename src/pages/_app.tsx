@@ -71,14 +71,14 @@ export default class MyApp extends App {
   render() {
     const { Component, pageProps } = this.props;
     return (
-      <React.Fragment>
+      <>
         <GlobalStyle />
         <ThemeProvider theme={theme}>
           <RouterComponent>
             <Component {...pageProps} />
           </RouterComponent>
         </ThemeProvider>
-      </React.Fragment>
+      </>
     );
   }
 }

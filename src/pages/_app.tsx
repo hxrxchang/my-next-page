@@ -1,10 +1,8 @@
-import React from 'react';
 import App from 'next/app';
-import { createGlobalStyle } from 'styled-components';
-import { Header, Footer } from '../components';
 import { useRouter } from 'next/router';
-import { ThemeProvider } from '@material-ui/styles';
-import theme from '../material/theme';
+import React from 'react';
+import { createGlobalStyle } from 'styled-components';
+import { Footer, Header } from '../components';
 import { useGaTrackPage } from '../hooks/ga-hook';
 
 const GlobalStyle = createGlobalStyle`
@@ -62,23 +60,14 @@ const RouterComponent: React.FC<{ children: React.ReactNode }> = ({ children }) 
 };
 
 export default class MyApp extends App {
-  componentDidMount() {
-    const jssStyles = document.querySelector('#jss-server-side');
-    if (jssStyles) {
-      jssStyles!.parentNode!.removeChild(jssStyles);
-    }
-  }
   render() {
     const { Component, pageProps } = this.props;
-    console.log(this.props);
     return (
       <>
         <GlobalStyle />
-        <ThemeProvider theme={theme}>
-          <RouterComponent>
-            <Component {...pageProps} />
-          </RouterComponent>
-        </ThemeProvider>
+        <RouterComponent>
+          <Component {...pageProps} />
+        </RouterComponent>
       </>
     );
   }

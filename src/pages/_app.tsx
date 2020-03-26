@@ -1,4 +1,4 @@
-import App from 'next/app';
+import { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { createGlobalStyle } from 'styled-components';
@@ -59,16 +59,15 @@ const RouterComponent: React.FC<{ children: React.ReactNode }> = ({ children }) 
   );
 };
 
-export default class MyApp extends App {
-  render() {
-    const { Component, pageProps } = this.props;
-    return (
-      <>
-        <GlobalStyle />
-        <RouterComponent>
-          <Component {...pageProps} />
-        </RouterComponent>
-      </>
-    );
-  }
-}
+const MyApp = ({ Component, pageProps }: AppProps) => {
+  return (
+    <>
+      <GlobalStyle />
+      <RouterComponent>
+        <Component {...pageProps} />
+      </RouterComponent>
+    </>
+  );
+};
+
+export default MyApp;

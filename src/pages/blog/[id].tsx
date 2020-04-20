@@ -11,7 +11,7 @@ import { blogDataList, BlogData } from '../../../data-sources/blogs/blog-data-li
 
 interface Props {
   content: string;
-  blogData: BlogData | null;
+  blogData: BlogData;
 }
 
 const StyledPage = styled.div`
@@ -69,14 +69,19 @@ const Blog: NextPage<Props> = ({ content, blogData }) => {
 
   return (
     <>
-      <CustomHead title={blogData!.title} page={router.asPath} description={blogData!.description} type="website"></CustomHead>
+      <CustomHead title={blogData.title} page={router.asPath} description={blogData.description} type="website"></CustomHead>
       <StyledPage>
         <div className="pc">
           <PcDrawer>
             <div className="drawer-and-content">
               <div className="content">
                 <Layout route={router.route}>
-                  <BlogContent content={content}></BlogContent>
+                  <BlogContent
+                    title={blogData.title}
+                    createdAt={blogData.createdAt}
+                    updatedAt={blogData.updatedAt}
+                    content={content}
+                  ></BlogContent>
                 </Layout>
               </div>
               <div className="footer">
@@ -96,7 +101,12 @@ const Blog: NextPage<Props> = ({ content, blogData }) => {
               </div>
               <div className="content">
                 <Layout route={router.route}>
-                  <BlogContent content={content}></BlogContent>
+                  <BlogContent
+                    title={blogData.title}
+                    createdAt={blogData.createdAt}
+                    updatedAt={blogData.updatedAt}
+                    content={content}
+                  ></BlogContent>
                 </Layout>
               </div>
               <div className="footer">
@@ -123,8 +133,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const content = await require(`../../../data-sources/blogs/${params!.id}.md`);
-  const blogData = blogDataList.find((blogData) => blogData.id === params!.id);
+  const blogId = params!.id;
+  const content = await require(`../../../data-sources/blogs/${blogId}.md`);
+  const blogData = blogDataList.find((blogData) => blogData.id === blogId)!;
   return {
     props: { content: content.default, blogData },
   };

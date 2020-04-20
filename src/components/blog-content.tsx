@@ -5,6 +5,10 @@ import { CodeBlock } from './code-block';
 
 const StyledDiv = styled.div`
   padding: 0 10%;
+  position: relative;
+  .date-area {
+    text-align: right;
+  }
 
   img {
     max-width: 60%;
@@ -21,9 +25,20 @@ const StyledDiv = styled.div`
   }
 `;
 
-export const BlogContent: React.FC<{ content: string }> = ({ content }) => {
+export const BlogContent: React.FC<{ title: string; createdAt: string; updatedAt: string; content: string }> = ({
+  title,
+  createdAt,
+  updatedAt,
+  content,
+}) => {
   return (
     <StyledDiv>
+      <h1>{title}</h1>
+      <div className="date-area">
+        <span>created_at: {createdAt}</span>
+        <br></br>
+        <span>updated_at: {updatedAt}</span>
+      </div>
       <ReactMarkdown source={content} renderers={{ code: CodeBlock }} />
     </StyledDiv>
   );

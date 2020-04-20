@@ -76,7 +76,12 @@ const Blog: NextPage<Props> = ({ content, blogData }) => {
             <div className="drawer-and-content">
               <div className="content">
                 <Layout route={router.route}>
-                  <BlogContent content={content}></BlogContent>
+                  <BlogContent
+                    title={blogData!.title}
+                    createdAt={blogData!.createdAt}
+                    updatedAt={blogData!.updatedAt}
+                    content={content}
+                  ></BlogContent>
                 </Layout>
               </div>
               <div className="footer">
@@ -96,7 +101,12 @@ const Blog: NextPage<Props> = ({ content, blogData }) => {
               </div>
               <div className="content">
                 <Layout route={router.route}>
-                  <BlogContent content={content}></BlogContent>
+                  <BlogContent
+                    title={blogData!.title}
+                    createdAt={blogData!.createdAt}
+                    updatedAt={blogData!.updatedAt}
+                    content={content}
+                  ></BlogContent>
                 </Layout>
               </div>
               <div className="footer">

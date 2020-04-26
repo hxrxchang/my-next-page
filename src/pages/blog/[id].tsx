@@ -1,13 +1,13 @@
-import React, { useState, useCallback } from 'react';
-import { NextPage, GetStaticProps, GetStaticPaths } from 'next';
-import { useRouter } from 'next/router';
-import Icon from '@material-ui/core/Icon';
 import { Divider } from '@material-ui/core';
+import Icon from '@material-ui/core/Icon';
+import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
+import { useRouter } from 'next/router';
+import React, { useCallback, useState } from 'react';
 import styled from 'styled-components';
-
-import { BlogContent, Layout, PcDrawer, SpDrawer, Footer } from '../../components';
+import { getAllBlogIds, getBlogData } from '../../../lib/blogs';
+import { BlogContent, Footer, Layout, PcDrawer, SpDrawer } from '../../components';
 import { CustomHead } from '../../components/custom-head';
-import { blogDataList, BlogData } from '../../../data-sources/blogs/blog-data-list';
+import { BlogData } from '../../models';
 
 interface Props {
   content: string;
@@ -121,23 +121,15 @@ const Blog: NextPage<Props> = ({ content, blogData }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = blogDataList.map((blog) => {
-    return {
-      params: {
-        id: blog.id,
-      },
-    };
-  });
-
+  const paths = getAllBlogIds();
   return { paths, fallback: false };
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const blogId = params!.id;
-  const content = await require(`../../../data-sources/blogs/${blogId}.md`);
-  const blogData = blogDataList.find((blogData) => blogData.id === blogId)!;
+  const blogId = params!.id as string;
+  const { content, blogData } = getBlogData(blogId);
   return {
-    props: { content: content.default, blogData },
+    props: { content, blogData },
   };
 };
 

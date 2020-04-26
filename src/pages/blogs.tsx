@@ -1,7 +1,8 @@
 import { NextPage, GetStaticProps } from 'next';
 import { Layout, BlogList } from '../components';
 import { CustomHead } from '../components/custom-head';
-import { blogDataList, BlogData } from '../../data-sources/blogs/blog-data-list';
+import { getSortedBlogsData } from '../../lib/blogs';
+import { BlogData } from '../models';
 
 const BlogsPage: NextPage<{ blogDataList: BlogData[] }> = ({ blogDataList }) => {
   return (
@@ -15,6 +16,7 @@ const BlogsPage: NextPage<{ blogDataList: BlogData[] }> = ({ blogDataList }) => 
 };
 
 export const getStaticProps: GetStaticProps = async () => {
+  const blogDataList = getSortedBlogsData();
   return {
     props: { blogDataList },
   };

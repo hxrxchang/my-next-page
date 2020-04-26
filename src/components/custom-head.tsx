@@ -16,7 +16,7 @@ export const CustomHead = ({ title, description, image, page, id, type }: Props)
     <NextHead>
       <title key="title">{title}</title>
       {image ? (
-        <link rel="icon" type="image/x-icon" href={`${id}/${image}`} />
+        <link rel="icon" type="image/x-icon" href={`/blogs/${id}/${image}`} />
       ) : (
         <link rel="icon" type="image/x-icon" href="/ogp-profile.jpg" />
       )}

@@ -7,7 +7,8 @@ import styled from 'styled-components';
 
 import { BlogContent, Layout, PcDrawer, SpDrawer, Footer } from '../../components';
 import { CustomHead } from '../../components/custom-head';
-import { blogDataList, BlogData } from '../../../data-sources/blogs/blog-data-list';
+import { blogDataList } from '../../../lib/blog-data-list';
+import { BlogData } from '../../models';
 
 interface Props {
   content: string;

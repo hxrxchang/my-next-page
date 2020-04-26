@@ -1,7 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
-import { BlogData } from '../../data-sources/blogs/blog-data-list';
+import { BlogData } from '../models';
 
 interface Props {
   blogDataList: BlogData[];

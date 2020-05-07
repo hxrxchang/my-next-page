@@ -3,6 +3,7 @@ import { CustomHead } from '../components/custom-head';
 import { NextPage, GetStaticProps } from 'next';
 
 import { Layout, Works } from '../components/index';
+import { getWorks } from '../../lib/works';
 
 const WorksPage: NextPage<{ content: string }> = ({ content }) => (
   <>
@@ -14,9 +15,9 @@ const WorksPage: NextPage<{ content: string }> = ({ content }) => (
 );
 
 export const getStaticProps: GetStaticProps = async () => {
-  const content = await require('../../data-sources/works.md');
+  const content = getWorks();
   return {
-    props: { content: content.default },
+    props: { content },
   };
 };
 

@@ -9,17 +9,16 @@ EdTech 企業でフロントエンドエンジニアとして働いています�
 
 ## Skills
 
-- Angular
 - TypeScript
-- NgRx
-- Node.js
+- Angular
 - Ruby
 - Ruby on Rails
+- React
+- Next.js
+- Node.js
 
 ## Studying
 
 - AWS
-- React
-- Next.js
 - Go
 

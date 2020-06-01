@@ -6,8 +6,7 @@
   "scripts": {
     "dev": "next",
     "build": "next build && next export",
-    "format": "prettier --write './**/*.{tsx, ts, js}'",
-    "format:check": "prettier --check --write './**/*.{tsx, ts, js}'"
+    "prettier:check": "prettier --check ."
   },
   "keywords": [],
   "author": "",

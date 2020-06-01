@@ -28,7 +28,7 @@ jobs:
       - name: Install dependencies
         run: yarn --frozen-lockfile
       - name: Prettier check
-        run: yarn prettier --check
+        run: yarn prettier:check
       - name: build check
         run: yarn build
       # Runs a set of commands using the runners shell

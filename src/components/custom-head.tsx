@@ -11,15 +11,11 @@ interface Props {
   image?: string;
 }
 
-export const CustomHead = ({ title, description, image, page, id, type }: Props): JSX.Element => {
+export const CustomHead = ({ title, description, image, page, type }: Props): JSX.Element => {
   return (
     <NextHead>
       <title key="title">{title}</title>
-      {image ? (
-        <link rel="icon" type="image/x-icon" href={`/blogs/${id}/${image}`} />
-      ) : (
-        <link rel="icon" type="image/x-icon" href="/ogp-profile.jpg" />
-      )}
+      <link rel="icon" type="image/x-icon" href="/favicon.png" />
       <meta name="description" content={description}></meta>
       <meta name="author" content="hxrxchang"></meta>
       <meta property="og:title" content={title} />

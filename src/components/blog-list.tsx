@@ -24,7 +24,11 @@ const StyledList = styled.li`
   }
 
   .title {
-    line-height: 0px;
+    margin: 0;
+  }
+
+  .created-at {
+    margin: 4px 0;
   }
 `;
 
@@ -36,7 +40,7 @@ const PostLink: React.FC<{ id: string; title: string; createdAt: string }> = ({ 
           <h2 className="title">{title}</h2>
         </a>
       </Link>
-      <p>{createdAt}</p>
+      <p className="created-at">{createdAt}</p>
     </StyledList>
   );
 };

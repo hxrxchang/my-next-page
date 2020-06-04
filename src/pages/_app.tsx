@@ -12,6 +12,7 @@ const GlobalStyle = createGlobalStyle`
     font-family: sans-serif;
     padding: 0px;
     margin:  0px;
+    word-break: break-word;
   }
 
   .app-wrapper {

@@ -39,7 +39,7 @@ export const BlogContent: React.FC<{ title: string; createdAt: string; updatedAt
         <br></br>
         <span>updated_at: {updatedAt}</span>
       </div>
-      <ReactMarkdown source={content} renderers={{ code: CodeBlock }} />
+      <ReactMarkdown source={content} renderers={{ code: CodeBlock }} escapeHtml={false} />
     </StyledDiv>
   );
 };

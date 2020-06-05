@@ -2,7 +2,7 @@ import React from 'react';
 import { NextPage, GetStaticProps } from 'next';
 import { CustomHead } from '../components/custom-head';
 import { Layout, Profile } from './../components/index';
-import { getProfile } from '../../lib/profile';
+import { getProfile } from '../repositories/profile';
 
 const IndexPage: NextPage<{ content: string }> = ({ content }) => {
   return (

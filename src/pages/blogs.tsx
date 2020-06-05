@@ -1,7 +1,7 @@
 import { NextPage, GetStaticProps } from 'next';
 import { Layout, BlogList } from '../components';
 import { CustomHead } from '../components/custom-head';
-import { getSortedBlogsData } from '../../lib/blogs';
+import { getSortedBlogsData } from '../repositories/blogs';
 import { BlogData } from '../models';
 
 const BlogsPage: NextPage<{ blogDataList: BlogData[] }> = ({ blogDataList }) => {

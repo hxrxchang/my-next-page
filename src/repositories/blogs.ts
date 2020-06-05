@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { BlogData } from '../src/models';
+import { BlogData } from '../models';
 
 const blogsDirectory = path.join(process.cwd(), '/data-sources/blogs');
 

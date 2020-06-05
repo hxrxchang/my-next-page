@@ -2,7 +2,7 @@ import { ThemeProvider } from '@material-ui/styles';
 import { NextComponentType } from 'next';
 import { useRouter } from 'next/router';
 import React, { useEffect } from 'react';
-import { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from 'styled-components';
 import { Footer, Header } from '../components';
 import { useGaTrackPage } from '../hooks/ga-hook';
 import theme from '../material/theme';
@@ -14,7 +14,9 @@ const GlobalStyle = createGlobalStyle`
     margin:  0px;
     word-break: break-word;
   }
+`;
 
+const StyledAppContainer = styled.div`
   .app-wrapper {
     display: flex;
     flex-direction: column;
@@ -33,35 +35,6 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const RouterComponent: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const { route, asPath } = useRouter();
-  if (typeof window !== 'undefined') {
-    useGaTrackPage(asPath);
-  }
-
-  return (
-    <>
-      {route === '/blog/[id]' ? (
-        // ブログ記事ページ用
-        <>{children}</>
-      ) : (
-        // ブログ記事以外
-        <div className="app-wrapper">
-          <div className="contents-wrapper">
-            {route !== '/_error' && <Header />}
-            <>{children}</>
-          </div>
-          {route !== '/_error' && (
-            <div className="footer-wrapper">
-              <Footer />
-            </div>
-          )}
-        </div>
-      )}
-    </>
-  );
-};
-
 interface Props {
   Component: NextComponentType;
   pageProps: any;
@@ -74,13 +47,35 @@ export default function MyApp({ Component, pageProps }: Props) {
       jssStyles!.parentNode!.removeChild(jssStyles);
     }
   }, []);
+
+  const { route, asPath } = useRouter();
+  if (typeof window !== 'undefined') {
+    useGaTrackPage(asPath);
+  }
+
   return (
     <>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
-        <RouterComponent>
-          <Component {...pageProps} />
-        </RouterComponent>
+        <StyledAppContainer>
+          {route === '/blog/[id]' ? (
+            // ブログ記事ページ用
+            <Component {...pageProps} />
+          ) : (
+            // ブログ記事以外
+            <div className="app-wrapper">
+              <div className="contents-wrapper">
+                {route !== '/_error' && <Header />}
+                <Component {...pageProps} />
+              </div>
+              {route !== '/_error' && (
+                <div className="footer-wrapper">
+                  <Footer />
+                </div>
+              )}
+            </div>
+          )}
+        </StyledAppContainer>
       </ThemeProvider>
     </>
   );

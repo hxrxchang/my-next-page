@@ -4,7 +4,7 @@ import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { useRouter } from 'next/router';
 import React, { useCallback, useState } from 'react';
 import styled from 'styled-components';
-import { getAllBlogIds, getBlogData } from '../../../lib/blogs';
+import { getAllBlogIds, getBlogData } from '../../repositories/blogs';
 import { BlogContent, Footer, Layout, PcDrawer, SpDrawer } from '../../components';
 import { CustomHead } from '../../components/custom-head';
 import { BlogData } from '../../models';

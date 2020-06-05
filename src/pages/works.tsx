@@ -3,7 +3,7 @@ import { CustomHead } from '../components/custom-head';
 import { NextPage, GetStaticProps } from 'next';
 
 import { Layout, Works } from '../components/index';
-import { getWorks } from '../../lib/works';
+import { getWorks } from '../repositories/works';
 
 const WorksPage: NextPage<{ content: string }> = ({ content }) => (
   <>

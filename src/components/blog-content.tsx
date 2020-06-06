@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
 import { CodeBlock } from './code-block';
@@ -14,6 +14,10 @@ const StyledDiv = styled.div`
     max-width: 60%;
   }
 
+  .iframe-wrapper {
+    width: 80%;
+  }
+
   @media (max-width: 700px) {
     padding: 0;
 
@@ -21,6 +25,10 @@ const StyledDiv = styled.div`
 
     img {
       max-width: 100%;
+    }
+
+    .iframe-wrapper {
+      width: 100%;
     }
   }
 `;
@@ -31,6 +39,10 @@ export const BlogContent: React.FC<{ title: string; createdAt: string; updatedAt
   updatedAt,
   content,
 }) => {
+  useEffect(() => {
+    const twttr = (window as any).twttr;
+    twttr.widgets.load();
+  }, []);
   return (
     <StyledDiv>
       <h1>{title}</h1>

@@ -1,7 +1,8 @@
 ---
 id: 'async-indian-curry'
 title: 'インドカレー屋で学ぶ非同期処理'
-description: 'インドカレー屋で学ぶ非同期処理' 
+description: 'インドカレー屋で学ぶ非同期処理'
+embedTypes: ['twitter'] 
 createdAt: '2020-06-06'
 updatedAt: '2020-06-06'
 ---

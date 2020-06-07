@@ -15,7 +15,7 @@ const StyledDiv = styled.div`
   }
 
   .iframe-wrapper {
-    width: 80%;
+    width: 60%;
   }
 
   @media (max-width: 700px) {

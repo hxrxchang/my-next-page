@@ -1,6 +1,7 @@
 import React from 'react';
 import NextHead from 'next/head';
 import { environment } from '../environments/environment';
+import { embedType } from '../models';
 
 interface Props {
   title: string;
@@ -9,9 +10,14 @@ interface Props {
   description: string;
   id?: string;
   image?: string;
+  embedTypes?: embedType[];
 }
 
-export const CustomHead = ({ title, description, image, page, type }: Props): JSX.Element => {
+function isTwitterEmbed(embedTypes: embedType[]): boolean {
+  return embedTypes.includes('twitter');
+}
+
+export const CustomHead = ({ title, description, image, page, type, embedTypes }: Props): JSX.Element => {
   return (
     <NextHead>
       <title key="title">{title}</title>
@@ -26,7 +32,7 @@ export const CustomHead = ({ title, description, image, page, type }: Props): JS
       <meta property="og:site_name" content={title} />
       <link rel="canonical" href={`${environment.url + page}`} />
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-      <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
+      {embedTypes && isTwitterEmbed(embedTypes) && <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>}
     </NextHead>
   );
 };

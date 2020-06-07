@@ -82,6 +82,7 @@ const Blog: NextPage<Props> = ({ content, blogData }) => {
                     createdAt={blogData.createdAt}
                     updatedAt={blogData.updatedAt}
                     content={content}
+                    embedTypes={blogData.embedTypes}
                   ></BlogContent>
                 </Layout>
               </div>
@@ -107,6 +108,7 @@ const Blog: NextPage<Props> = ({ content, blogData }) => {
                     createdAt={blogData.createdAt}
                     updatedAt={blogData.updatedAt}
                     content={content}
+                    embedTypes={blogData.embedTypes}
                   ></BlogContent>
                 </Layout>
               </div>

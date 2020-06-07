@@ -2,7 +2,7 @@
 id: 'hello-world'
 title: 'ブログ作りました'
 description: 'ブログ作りました' 
-embedTypes: ['twitter']
+embedTypes: []
 createdAt: '2019-10-04'
 updatedAt: '2020-04-21'
 ---

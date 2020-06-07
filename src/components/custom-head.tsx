@@ -11,10 +11,6 @@ interface Props {
   image?: string;
 }
 
-// function isTwitterEmbed(embedTypes: embedType[]): boolean {
-//   return embedTypes.includes('twitter');
-// }
-
 export const CustomHead = ({ title, description, image, page, type }: Props): JSX.Element => {
   return (
     <NextHead>

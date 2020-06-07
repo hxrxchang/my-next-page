@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
 import { CodeBlock } from './code-block';
+import { EmbedType } from '../models';
+import { isTwitterEmbed } from '../domains/blog';
 
 const StyledDiv = styled.div`
   padding: 0 10%;
@@ -33,15 +35,18 @@ const StyledDiv = styled.div`
   }
 `;
 
-export const BlogContent: React.FC<{ title: string; createdAt: string; updatedAt: string; content: string }> = ({
+export const BlogContent: React.FC<{ title: string; createdAt: string; updatedAt: string; content: string; embedTypes: EmbedType[] }> = ({
   title,
   createdAt,
   updatedAt,
   content,
+  embedTypes,
 }) => {
   useEffect(() => {
-    const twttr = (window as any).twttr;
-    twttr.widgets.load();
+    if (embedTypes.length && isTwitterEmbed(embedTypes)) {
+      const twttr = (window as any).twttr;
+      twttr.widgets.load();
+    }
   }, []);
   return (
     <StyledDiv>

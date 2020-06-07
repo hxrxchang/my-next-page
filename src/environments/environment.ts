@@ -1,3 +1,3 @@
 export const environment = {
-  url: 'https://hxrxchang.netlify.com',
+  url: 'https://hxrxchang.netlify.app',
 };

@@ -1,3 +1,5 @@
+export type EmbedType = 'twitter';
+
 export interface BlogData {
   id: string;
   title: string;
@@ -5,4 +7,5 @@ export interface BlogData {
   createdAt: string;
   updatedAt: string;
   image?: string;
+  embedTypes: EmbedType[];
 }

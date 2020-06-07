@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
 import { CodeBlock } from './code-block';
+import { EmbedType } from '../models';
+import { isTwitterEmbed } from '../domains/blog';
 
 const StyledDiv = styled.div`
   padding: 0 10%;
@@ -14,6 +16,10 @@ const StyledDiv = styled.div`
     max-width: 60%;
   }
 
+  .iframe-wrapper {
+    width: 60%;
+  }
+
   @media (max-width: 700px) {
     padding: 0;
 
@@ -22,15 +28,26 @@ const StyledDiv = styled.div`
     img {
       max-width: 100%;
     }
+
+    .iframe-wrapper {
+      width: 100%;
+    }
   }
 `;
 
-export const BlogContent: React.FC<{ title: string; createdAt: string; updatedAt: string; content: string }> = ({
+export const BlogContent: React.FC<{ title: string; createdAt: string; updatedAt: string; content: string; embedTypes: EmbedType[] }> = ({
   title,
   createdAt,
   updatedAt,
   content,
+  embedTypes,
 }) => {
+  useEffect(() => {
+    if (embedTypes.length && isTwitterEmbed(embedTypes)) {
+      const twttr = (window as any).twttr;
+      twttr.widgets.load();
+    }
+  }, []);
   return (
     <StyledDiv>
       <h1>{title}</h1>

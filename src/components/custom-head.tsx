@@ -22,7 +22,7 @@ export const CustomHead = ({ title, description, image, page, type }: Props): JS
       <meta property="og:description" content={description} />
       <meta property="og:type" content={type} />
       <meta property="og:url" content={`${environment.url + page}`} />
-      <meta property="og:image" content={image || '/ogp-profile.jpg'} />
+      <meta property="og:image" content={image ? `${environment.url}/${image}` : `${environment.url}/ogp-profile.jpg`} />
       <meta property="og:site_name" content={title} />
       <link rel="canonical" href={`${environment.url + page}`} />
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />

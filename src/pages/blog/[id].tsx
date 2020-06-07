@@ -70,13 +70,7 @@ const Blog: NextPage<Props> = ({ content, blogData }) => {
 
   return (
     <>
-      <CustomHead
-        title={blogData.title}
-        page={router.asPath}
-        description={blogData.description}
-        embedTypes={blogData.embedTypes}
-        type="website"
-      ></CustomHead>
+      <CustomHead title={blogData.title} page={router.asPath} description={blogData.description} type="website"></CustomHead>
       <StyledPage>
         <div className="pc">
           <PcDrawer>

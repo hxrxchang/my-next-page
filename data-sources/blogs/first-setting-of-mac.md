@@ -1,7 +1,8 @@
 ---
 id: 'first-setting-of-mac'
 title: 'mac 初期設定でやったこと'
-description: 'mac 初期設定でやったこと' 
+description: 'mac 初期設定でやったこと'
+embedTypes: []
 createdAt: '2020-06-04'
 updatedAt: '2020-06-04'
 ---

@@ -48,6 +48,10 @@ const PostLink: React.FC<{ id: string; title: string; createdAt: string }> = ({ 
 const StyledWrapper = styled.div`
   padding: 0 20%;
 
+  .blog-list {
+    padding-top: 20px;
+  }
+
   @media (max-width: 700px) {
     padding: 0;
     min-height: 300px;
@@ -58,8 +62,7 @@ export const BlogList: React.FC<Props> = ({ blogDataList }) => {
   return (
     <>
       <StyledWrapper>
-        <h1>Blogs</h1>
-        <ul>
+        <ul className="blog-list">
           {blogDataList.map((blogData) => (
             <PostLink key={blogData.id} id={blogData.id} title={blogData.title} createdAt={blogData.createdAt} />
           ))}

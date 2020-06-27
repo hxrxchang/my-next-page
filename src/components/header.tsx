@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useRouter } from 'next/router';
 
 const StyledHeader = styled.header`
   display: flex;
@@ -65,7 +64,6 @@ const StyledHeader = styled.header`
 `;
 
 export const Header: React.FC<{}> = () => {
-  const route = useRouter().asPath;
   return (
     <>
       <StyledHeader>
@@ -73,7 +71,7 @@ export const Header: React.FC<{}> = () => {
           <img className="profile-image" src="chowder.jpeg" alt="" />
         </div>
         <div className="profile-wrapper">
-          {route === '/blogs' ? <p className="profile-name">Yuto Hara</p> : <h1 className="profile-name">Yuto Hara</h1>}
+          <h1 className="profile-name">Yuto Hara</h1>
           <p className="profile-description">Web Application Developer</p>
         </div>
       </StyledHeader>

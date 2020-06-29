@@ -1,15 +1,15 @@
 ---
 id: 'first-setting-of-mac'
-title: 'mac 初期設定でやったこと'
-description: 'mac 初期設定でやったこと'
+title: 'Mac 初期設定でやったこと'
+description: 'Mac 初期設定でやったこと'
 embedTypes: []
 createdAt: '2020-06-04'
-updatedAt: '2020-06-04'
+updatedAt: '2020-06-30'
 ---
 
-修理していた私用のmacが返って来たので、設定し直した。
+修理していた私用のMacが返って来たので、設定し直した。
 
-## macの設定
+## Macの設定
 - トラックパッドとキーボードの設定
   - マウスとキーボードが一番高速で反応するように
 
@@ -62,8 +62,8 @@ $ git config --global user.name "<email>"`
 <br>
 <br>
 <br>
-![macの修理代金](/blogs/first-setting-of-mac/mac_repair.png)
+![Macの修理代金](/blogs/first-setting-of-mac/mac_repair.png)
 
 土曜日に修理以来をし、日曜日に集荷され、その週の火曜日にはもう修理から戻ってきてとても体験がよかった。
 <br>
-しかしながら、修理代金が6万円近くかかってしまい、macの修理代金とジムの解約違約金で予想外の出費がかさんで辛い。  
+しかしながら、修理代金が6万円近くかかってしまい、Macの修理代金とジムの解約違約金で予想外の出費がかさんで辛い。  

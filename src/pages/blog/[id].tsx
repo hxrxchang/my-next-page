@@ -78,6 +78,7 @@ const Blog: NextPage<Props> = ({ content, blogData }) => {
               <div className="content">
                 <Layout route={router.route}>
                   <BlogContent
+                    id={blogData.id}
                     title={blogData.title}
                     createdAt={blogData.createdAt}
                     updatedAt={blogData.updatedAt}
@@ -104,6 +105,7 @@ const Blog: NextPage<Props> = ({ content, blogData }) => {
               <div className="content">
                 <Layout route={router.route}>
                   <BlogContent
+                    id={blogData.id}
                     title={blogData.title}
                     createdAt={blogData.createdAt}
                     updatedAt={blogData.updatedAt}

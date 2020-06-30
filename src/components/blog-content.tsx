@@ -12,6 +12,10 @@ const StyledDiv = styled.div`
     text-align: right;
   }
 
+  .content-history {
+    text-decoration: none;
+  }
+
   img {
     max-width: 60%;
   }
@@ -35,13 +39,14 @@ const StyledDiv = styled.div`
   }
 `;
 
-export const BlogContent: React.FC<{ title: string; createdAt: string; updatedAt: string; content: string; embedTypes: EmbedType[] }> = ({
-  title,
-  createdAt,
-  updatedAt,
-  content,
-  embedTypes,
-}) => {
+export const BlogContent: React.FC<{
+  id: string;
+  title: string;
+  createdAt: string;
+  updatedAt: string;
+  content: string;
+  embedTypes: EmbedType[];
+}> = ({ id, title, createdAt, updatedAt, content, embedTypes }) => {
   useEffect(() => {
     if (embedTypes.length && isTwitterEmbed(embedTypes)) {
       const twttr = (window as any).twttr;
@@ -55,6 +60,10 @@ export const BlogContent: React.FC<{ title: string; createdAt: string; updatedAt
         <span>created_at: {createdAt}</span>
         <br></br>
         <span>updated_at: {updatedAt}</span>
+        <br></br>
+        <a className="content-history" href={`https://github.com/hxrxchang/my-next-page/commits/master/data-sources/blogs/${id}.md`}>
+          編集履歴
+        </a>
       </div>
       <ReactMarkdown source={content} renderers={{ code: CodeBlock }} escapeHtml={false} />
     </StyledDiv>

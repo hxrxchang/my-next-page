@@ -4,7 +4,7 @@ title: 'Mac 初期設定でやったこと'
 description: 'Mac 初期設定でやったこと'
 embedTypes: []
 createdAt: '2020-06-04'
-updatedAt: '2020-06-30'
+updatedAt: '2020-07-01'
 ---
 
 修理していた私用のMacが返って来たので、設定し直した。
@@ -15,6 +15,8 @@ updatedAt: '2020-06-30'
 
 ## 開発環境
 - iterm2のインストール
+  - タブを分割した時(command + D)は、同じpathを開くようにする。
+    - https://medium.com/ayuth/new-tab-iterm2-with-in-current-directory-627b0c31734a
 -  VSCodeのインストール
 
 - ログインシェルをbashに

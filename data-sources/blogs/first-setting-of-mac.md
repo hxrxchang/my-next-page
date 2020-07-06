@@ -4,7 +4,7 @@ title: 'Mac 初期設定でやったこと'
 description: 'Mac 初期設定でやったこと'
 embedTypes: []
 createdAt: '2020-06-04'
-updatedAt: '2020-07-02'
+updatedAt: '2020-07-06'
 ---
 
 修理していた私用のMacが返って来たので、設定し直した。
@@ -30,7 +30,7 @@ updatedAt: '2020-07-02'
 ```
 $ brew install git
 $ git config --global user.name "<GitHub ID>"
-$ git config --global user.email "<email>"`
+$ git config --global user.email "<email>"
 
 # 設定を確認
 $ git config --list 

@@ -4,6 +4,7 @@ import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { useRouter } from 'next/router';
 import React, { useCallback, useState } from 'react';
 import styled from 'styled-components';
+import { useMediaQuery } from 'react-responsive';
 import { getAllBlogIds, getBlogData } from '../../repositories/blogs';
 import { BlogContent, Footer, Layout, PcDrawer, SpDrawer } from '../../components';
 import { CustomHead } from '../../components/custom-head';
@@ -68,58 +69,64 @@ const Blog: NextPage<Props> = ({ content, blogData }) => {
     setIsSpDrawerOpen((prev) => !prev);
   }, []);
 
+  const isMobileDevice = useMediaQuery({ query: '(max-width: 700px)' });
+
   return (
     <>
       <CustomHead title={blogData.title} page={router.asPath} description={blogData.description} type="website"></CustomHead>
       <StyledPage>
-        <div className="pc">
-          <PcDrawer>
-            <div className="drawer-and-content">
-              <div className="content">
-                <Layout route={router.route}>
-                  <BlogContent
-                    id={blogData.id}
-                    title={blogData.title}
-                    createdAt={blogData.createdAt}
-                    updatedAt={blogData.updatedAt}
-                    content={content}
-                    embedTypes={blogData.embedTypes}
-                  ></BlogContent>
-                </Layout>
+        {!isMobileDevice && (
+          <div className="pc">
+            <PcDrawer>
+              <div className="drawer-and-content">
+                <div className="content">
+                  <Layout route={router.route}>
+                    <BlogContent
+                      id={blogData.id}
+                      title={blogData.title}
+                      createdAt={blogData.createdAt}
+                      updatedAt={blogData.updatedAt}
+                      content={content}
+                      embedTypes={blogData.embedTypes}
+                    ></BlogContent>
+                  </Layout>
+                </div>
+                <div className="footer">
+                  <Footer></Footer>
+                </div>
               </div>
-              <div className="footer">
-                <Footer></Footer>
+            </PcDrawer>
+          </div>
+        )}
+        {isMobileDevice && (
+          <div className="sp">
+            <SpDrawer isOpen={isSpDrawerOpen} changeSidenav={changeIsDrawerOpen}>
+              <div className="drawer-and-content">
+                <div className="header">
+                  <Icon onClick={changeIsDrawerOpen} fontSize="large">
+                    menu
+                  </Icon>
+                  <Divider></Divider>
+                </div>
+                <div className="content">
+                  <Layout route={router.route}>
+                    <BlogContent
+                      id={blogData.id}
+                      title={blogData.title}
+                      createdAt={blogData.createdAt}
+                      updatedAt={blogData.updatedAt}
+                      content={content}
+                      embedTypes={blogData.embedTypes}
+                    ></BlogContent>
+                  </Layout>
+                </div>
+                <div className="footer">
+                  <Footer></Footer>
+                </div>
               </div>
-            </div>
-          </PcDrawer>
-        </div>
-        <div className="sp">
-          <SpDrawer isOpen={isSpDrawerOpen} changeSidenav={changeIsDrawerOpen}>
-            <div className="drawer-and-content">
-              <div className="header">
-                <Icon onClick={changeIsDrawerOpen} fontSize="large">
-                  menu
-                </Icon>
-                <Divider></Divider>
-              </div>
-              <div className="content">
-                <Layout route={router.route}>
-                  <BlogContent
-                    id={blogData.id}
-                    title={blogData.title}
-                    createdAt={blogData.createdAt}
-                    updatedAt={blogData.updatedAt}
-                    content={content}
-                    embedTypes={blogData.embedTypes}
-                  ></BlogContent>
-                </Layout>
-              </div>
-              <div className="footer">
-                <Footer></Footer>
-              </div>
-            </div>
-          </SpDrawer>
-        </div>
+            </SpDrawer>
+          </div>
+        )}
       </StyledPage>
     </>
   );

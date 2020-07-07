@@ -53,6 +53,7 @@ export const BlogContent: React.FC<{
       twttr.widgets.load();
     }
   }, []);
+
   return (
     <StyledDiv>
       <h1>{title}</h1>

@@ -50,9 +50,18 @@ export const BlogContent: React.FC<{
   useEffect(() => {
     if (embedTypes.length && isTwitterEmbed(embedTypes)) {
       const twttr = (window as any).twttr;
-      twttr.widgets.load();
+      if (typeof twttr === 'undefined') {
+        const script = document.createElement('script');
+        script.src = 'https://platform.twitter.com/widgets.js';
+        script.charset = 'utf-8';
+        script.async = true;
+        document.body.appendChild(script);
+      } else {
+        twttr.widgets.load();
+      }
     }
   }, []);
+
   return (
     <StyledDiv>
       <h1>{title}</h1>

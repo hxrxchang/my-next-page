@@ -28,7 +28,6 @@ export const CustomHead = ({ title, description, image, page, type }: Props): JS
       <meta property="og:site_name" content={title} />
       <link rel="canonical" href={`${process.env.NEXT_PUBLIC_URL + page}`} />
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-      <script async src="https://platform.twitter.com/widgets.js" charSet="utf-8"></script>
     </NextHead>
   );
 };

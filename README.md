@@ -3,6 +3,6 @@
 
 # my-next-page
 A web site about me.  
-https://hxrxchang.netlify.app/
+https://hxrxchang.dev
 
 This site is powered by [Next.js](https://nextjs.org/).

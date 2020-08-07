@@ -2,8 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 const StyledDiv = styled.div`
-  margin-top: 100px;
+  position: absolute;
+  top: 50vh;
   padding: 0 6%;
+  width: 60%;
   display: flex;
   justify-content: space-around;
 
@@ -14,6 +16,9 @@ const StyledDiv = styled.div`
   }
 
   @media (max-width: 700px) {
+    position: static;
+    margin-top: 90px;
+    width: 100%;
     padding: 0;
   }
 `;

@@ -32,6 +32,6 @@
     "@types/styled-components": "5.1.2",
     "babel-plugin-styled-components": "1.11.1",
     "prettier": "2.0.5",
-    "typescript": "3.9.7"
+    "typescript": "4.0.2"
   }
 }

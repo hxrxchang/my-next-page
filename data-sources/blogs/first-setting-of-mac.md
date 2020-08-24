@@ -20,6 +20,9 @@ updatedAt: '2020-08-25'
     - https://medium.com/ayuth/new-tab-iterm2-with-in-current-directory-627b0c31734a
 -  VSCodeのインストール
 
+- homebrewのインストール
+  - https://brew.sh/index_ja
+
 - ログインシェルをbashに
   - catalina ではデフォルトのシェルがzsh になっているが使い慣れたbashを使いたい
   - Macのデフォルトのbashのバージョンが古いので、homebrewでbashをinstall(参考: https://journal.lampetty.net/entry/from-zsh-to-bash)
@@ -42,17 +45,9 @@ updatedAt: '2020-08-25'
 
   - bashを使ってると警告が出るので、.bash_profileに `export BASH_SILENCE_DEPRECATION_WARNING=1` を追加した。(参考: https://qiita.com/waka424/items/bc77b6e8bd4f25760e58)
 
-- homebrewのインストール
-  - https://brew.sh/index_ja
-
--  gitのインストール、設定
+-  gitをhomebrewでインストール
 ```
 $ brew install git
-$ git config --global user.name "<GitHub ID>"
-$ git config --global user.email "<email>"
-
-# 設定を確認
-$ git config --list 
 ```
 
 - GitHubのssh設定

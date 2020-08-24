@@ -4,10 +4,11 @@ title: 'Mac 初期設定でやったこと'
 description: 'Mac 初期設定でやったこと'
 embedTypes: []
 createdAt: '2020-06-04'
-updatedAt: '2020-07-06'
+updatedAt: '2020-08-25'
 ---
 
 修理していた私用のMacが返って来たので、設定し直した。
+備忘録として初期設定方法を残しておく。
 
 ## Macの設定
 - トラックパッドとキーボードの設定
@@ -19,21 +20,34 @@ updatedAt: '2020-07-06'
     - https://medium.com/ayuth/new-tab-iterm2-with-in-current-directory-627b0c31734a
 -  VSCodeのインストール
 
-- ログインシェルをbashに
-  - catalina ではデフォルトのシェルがzsh になっているが使い慣れたbashを使いたい
-  - https://qiita.com/waka424/items/bc77b6e8bd4f25760e58
-
 - homebrewのインストール
   - https://brew.sh/index_ja
 
--  gitのインストール、設定
+- ログインシェルをbashに
+  - catalina ではデフォルトのシェルがzsh になっているが使い慣れたbashを使いたい
+  - Macのデフォルトのbashのバージョンが古いので、homebrewでbashをinstall(参考: https://journal.lampetty.net/entry/from-zsh-to-bash)
+  ```
+  # Macデフォルトのbashのバージョン
+  $ bash --version
+  GNU bash, version 3.2.57(1)-release (x86_64-apple-darwin19)
+  Copyright (C) 2007 Free Software Foundation, Inc.
+
+  $ brew install bash
+
+  # brewでinstallしたbashに変更
+  $ chsh -s /usr/local/bin/bash
+
+  # bashのバージョン確認
+  $ bash --version
+  GNU bash, バージョン 5.0.18(1)-release (x86_64-apple-darwin19.5.0)
+  Copyright (C) 2019 Free Software Foundation, Inc.
+  ```
+
+  - bashを使ってると警告が出るので、.bash_profileに `export BASH_SILENCE_DEPRECATION_WARNING=1` を追加した。(参考: https://qiita.com/waka424/items/bc77b6e8bd4f25760e58)
+
+-  gitをhomebrewでインストール
 ```
 $ brew install git
-$ git config --global user.name "<GitHub ID>"
-$ git config --global user.email "<email>"
-
-# 設定を確認
-$ git config --list 
 ```
 
 - GitHubのssh設定

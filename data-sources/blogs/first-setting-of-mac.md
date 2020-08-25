@@ -26,7 +26,7 @@ updatedAt: '2020-08-25'
 - ログインシェルをbashに
   - catalina ではデフォルトのシェルがzsh になっているが使い慣れたbashを使いたい
   - Macのデフォルトのbashのバージョンが古いので、homebrewでbashをinstall(参考: https://journal.lampetty.net/entry/from-zsh-to-bash)
-  ```
+  ```bash
   # Macデフォルトのbashのバージョン
   $ bash --version
   GNU bash, version 3.2.57(1)-release (x86_64-apple-darwin19)
@@ -46,9 +46,9 @@ updatedAt: '2020-08-25'
   - bashを使ってると警告が出るので、.bash_profileに `export BASH_SILENCE_DEPRECATION_WARNING=1` を追加した。(参考: https://qiita.com/waka424/items/bc77b6e8bd4f25760e58)
 
 -  gitをhomebrewでインストール
-```
-$ brew install git
-```
+  ```bash
+  $ brew install git
+  ```
 
 - GitHubのssh設定
   - https://qiita.com/shizuma/items/2b2f873a0034839e47ce

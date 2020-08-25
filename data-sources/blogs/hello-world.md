@@ -4,13 +4,15 @@ title: 'ブログ作りました'
 description: 'ブログ作りました' 
 embedTypes: ['twitter']
 createdAt: '2019-10-04'
-updatedAt: '2020-06-07'
+updatedAt: '2020-08-25'
 ---
 
 ## hello world
 
-```javascript
-console.log('hello world');
+```jsx
+function Hello() {
+    return <h1>Hello World</h1>;
+}
 ```
 
 ![半月のカレー](/blogs/hello-world/hangetsu_curry.jpg "サンプル")

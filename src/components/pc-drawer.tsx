@@ -24,14 +24,14 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 );
 
-interface ResponsiveDrawerProps {
+type ResponsiveDrawerProps = {
   /**
    * Injected by the documentation to work in an iframe.
    * You won't need it on your project.
    */
   container?: Element;
   children: React.ReactNode;
-}
+};
 
 export const PcDrawer: React.FC<ResponsiveDrawerProps> = (props: ResponsiveDrawerProps) => {
   const { children } = props;

@@ -3,9 +3,9 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import { BlogData } from '../models';
 
-interface Props {
+type Props = {
   blogDataList: BlogData[];
-}
+};
 
 const StyledList = styled.li`
   padding: 10px 0;

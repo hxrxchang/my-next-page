@@ -35,10 +35,10 @@ const StyledAppContainer = styled.div`
   }
 `;
 
-interface Props {
+type Props = {
   Component: NextComponentType;
   pageProps: any;
-}
+};
 
 export default function MyApp({ Component, pageProps }: Props) {
   useEffect(() => {

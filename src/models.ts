@@ -8,4 +8,4 @@ export type BlogData = {
   updatedAt: string;
   image?: string;
   embedTypes: EmbedType[];
-}
+};

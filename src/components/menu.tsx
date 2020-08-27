@@ -2,9 +2,9 @@ import React from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
 
-interface MenuProps {
+type MenuProps = {
   route: string;
-}
+};
 
 const StyledDiv = styled.div`
   border-bottom: 1px solid #efefef;

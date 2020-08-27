@@ -13,11 +13,11 @@ const useStyles = makeStyles({
   },
 });
 
-interface Props {
+type Props = {
   isOpen: boolean;
   children: React.ReactNode;
   changeSidenav: () => void;
-}
+};
 
 export const SpDrawer: React.FC<Props> = ({ children, isOpen, changeSidenav }) => {
   const classes = useStyles();

@@ -1,10 +1,10 @@
 import React from 'react';
 import { Menu } from './index';
 
-interface Props {
+type Props = {
   children: React.ReactNode;
   route: string;
-}
+};
 
 export const Layout: React.FC<Props> = ({ children, route }) => {
   return (

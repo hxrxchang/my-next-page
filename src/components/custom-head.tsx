@@ -1,14 +1,14 @@
 import React from 'react';
 import NextHead from 'next/head';
 
-interface Props {
+type Props = {
   title: string;
   page: string;
   type: string;
   description: string;
   id?: string;
   image?: string;
-}
+};
 
 export const CustomHead = ({ title, description, image, page, type }: Props): JSX.Element => {
   return (

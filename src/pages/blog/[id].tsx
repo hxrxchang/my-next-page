@@ -9,10 +9,10 @@ import { BlogContent, Footer, Layout, PcDrawer, SpDrawer } from '../../component
 import { CustomHead } from '../../components/custom-head';
 import { BlogData } from '../../models';
 
-interface Props {
+type Props = {
   content: string;
   blogData: BlogData;
-}
+};
 
 const StyledPage = styled.div`
   .pc {

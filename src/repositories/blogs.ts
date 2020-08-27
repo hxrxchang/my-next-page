@@ -10,11 +10,8 @@ export function getSortedBlogsData(): BlogData[] {
 
   const allBlogsData = fileNames.map((fileName) => {
     const fullPath = path.join(blogsDirectory, fileName);
-
     const fullContents = fs.readFileSync(fullPath, 'utf8');
-
     const matterResult = matter(fullContents);
-
     return { ...matterResult.data };
   }) as BlogData[];
 

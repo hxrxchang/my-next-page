@@ -1,6 +1,6 @@
 export type EmbedType = 'twitter';
 
-export interface BlogData {
+export type BlogData = {
   id: string;
   title: string;
   description: string;

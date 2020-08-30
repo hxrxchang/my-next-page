@@ -44,7 +44,9 @@ peco_search_history() {
 alias his="peco_search_history"
 ```
 
-<img src="/blogs/peco-history/peco-history.gif" alt="pecoで履歴検索">
+<img src="/blogs/peco-history/peco-history.gif" alt="pecoで履歴検索">  
+
+とても捗るようになった。
 
 
 

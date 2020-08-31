@@ -4,7 +4,6 @@ import ReactMarkdown from 'react-markdown';
 import { CodeBlock } from './code-block';
 import { EmbedType } from '../models';
 import { isTwitterEmbed } from '../domains/blog';
-import { ShortCodeBlock } from './short-code-block';
 
 const StyledDiv = styled.div`
   padding: 0 10%;
@@ -75,7 +74,7 @@ export const BlogContent: React.FC<{
           編集履歴
         </a>
       </div>
-      <ReactMarkdown source={content} renderers={{ inlineCode: ShortCodeBlock, code: CodeBlock }} escapeHtml={false} />
+      <ReactMarkdown renderers={{ code: CodeBlock }} escapeHtml={false} source={content} />
     </StyledDiv>
   );
 };

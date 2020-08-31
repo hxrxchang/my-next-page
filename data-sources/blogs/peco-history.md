@@ -4,7 +4,7 @@ title: 'pecoでbashの履歴検索を最高にした'
 description: 'pecoでbashの履歴検索を最高にした' 
 embedTypes: []
 createdAt: '2020-08-30'
-updatedAt: '2020-08-30'
+updatedAt: '2020-09-01'
 ---
 
 最近仕事でファイルを指定してRspecを実行する、みたいなことが多い。
@@ -14,9 +14,13 @@ spec/~ の中にあるファイルpathをその都度コピーしたり、十字
 ## peco
 [peco](https://github.com/peco/peco) は、渡された入力をincremental searchして、出力できる。  
   
-`ls | peco` をすると、こんな感じで選択された行を出力できる。
+```bash
+ls | peco
+``` 
 
-!['peco'](/blogs/peco-history/peco.gif)
+をすると、こんな感じで選択された行を出力できる。
+
+![peco](/blogs/peco-history/peco.gif)
 
 ## pecoでbashの履歴検索
 やりたいことは、
@@ -44,7 +48,7 @@ peco_search_history() {
 alias his="peco_search_history"
 ```
 
-<img src="/blogs/peco-history/peco-history.gif" alt="pecoで履歴検索">  
+![pecoで履歴検索](/blogs/peco-history/peco-history.gif)  
 
 とても捗るようになった。
 

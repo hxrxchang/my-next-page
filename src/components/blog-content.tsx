@@ -5,6 +5,7 @@ import { CodeBlock } from './code-block';
 import { EmbedType } from '../models';
 import { isTwitterEmbed } from '../domains/blog';
 import { ShortCodeBlock } from './short-code-block';
+import { breakPointMedium } from '../styles';
 
 const StyledDiv = styled.div`
   padding: 0 10%;
@@ -25,7 +26,7 @@ const StyledDiv = styled.div`
     width: 60%;
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: ${breakPointMedium}) {
     padding: 0;
 
     min-height: 300px;

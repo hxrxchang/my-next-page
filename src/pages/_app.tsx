@@ -6,6 +6,7 @@ import styled, { createGlobalStyle } from 'styled-components';
 import { Footer, Header } from '../components';
 import { useGaTrackPage } from '../hooks/ga-hook';
 import theme from '../material/theme';
+import { breakPointSmall } from '../styles';
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -28,7 +29,7 @@ const StyledAppContainer = styled.div`
     flex-grow: 1;
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: ${breakPointSmall}) {
     .app-wrapper {
       padding: 0 2%;
     }

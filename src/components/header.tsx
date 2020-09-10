@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { breakPointSmall } from '../styles';
 
 const StyledHeader = styled.header`
   display: flex;
@@ -32,7 +33,7 @@ const StyledHeader = styled.header`
     margin-inline-end: 0px;
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: ${breakPointSmall}) {
     display: block;
     text-align: center;
     padding-bottom: 6px;

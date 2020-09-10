@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { breakPointMedium } from '../styles';
+import { breakPointSmall } from '../styles';
 
 const StyledDiv = styled.div`
   position: absolute;
@@ -16,7 +16,7 @@ const StyledDiv = styled.div`
     width: 50px;
   }
 
-  @media (max-width: ${breakPointMedium}) {
+  @media (max-width: ${breakPointSmall}) {
     position: static;
     margin-top: 90px;
     width: 100%;

@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
 import { BlogData } from '../models';
-import { breakPointMedium } from '../styles';
+import { breakPointSmall } from '../styles';
 
 type Props = {
   blogDataList: BlogData[];
@@ -53,7 +53,7 @@ const StyledWrapper = styled.div`
     padding-top: 20px;
   }
 
-  @media (max-width: ${breakPointMedium}) {
+  @media (max-width: ${breakPointSmall}) {
     padding: 0;
     min-height: 300px;
   }

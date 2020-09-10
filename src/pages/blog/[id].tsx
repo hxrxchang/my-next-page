@@ -8,6 +8,7 @@ import { getAllBlogIds, getBlogData } from '../../repositories/blogs';
 import { BlogContent, Footer, Layout, PcDrawer, SpDrawer } from '../../components';
 import { CustomHead } from '../../components/custom-head';
 import { BlogData } from '../../models';
+import { breakPointMedium } from '../../styles';
 
 type Props = {
   content: string;
@@ -38,7 +39,7 @@ const StyledPage = styled.div`
     flex-grow: 1;
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: ${breakPointMedium}) {
     padding: 0 2%;
     .pc {
       display: none;

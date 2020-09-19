@@ -33,10 +33,10 @@ const StyledList = styled.li`
   }
 `;
 
-const PostLink: React.FC<{ id: string; title: string; createdAt: string }> = ({ id, title, createdAt }) => {
+const BlogLink: React.FC<{ id: string; title: string; createdAt: string }> = ({ id, title, createdAt }) => {
   return (
     <StyledList>
-      <Link href="blog/[id]" as={`/blog/${id}`}>
+      <Link href={`blog/${id}`}>
         <a className="link">
           <h2 className="title">{title}</h2>
         </a>
@@ -65,7 +65,7 @@ export const BlogList: React.FC<Props> = ({ blogDataList }) => {
       <StyledWrapper>
         <ul className="blog-list">
           {blogDataList.map((blogData) => (
-            <PostLink key={blogData.id} id={blogData.id} title={blogData.title} createdAt={blogData.createdAt} />
+            <BlogLink key={blogData.id} id={blogData.id} title={blogData.title} createdAt={blogData.createdAt} />
           ))}
         </ul>
       </StyledWrapper>

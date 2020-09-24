@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { breakPointSmall } from '../styles';
+import { breakPointMedium, breakPointSmall } from '../styles';
 
 const StyledHeader = styled.header`
   display: flex;
@@ -31,6 +31,18 @@ const StyledHeader = styled.header`
     margin-block-end: 0.67em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
+  }
+
+  @media (max-width: ${breakPointMedium}) {
+    .profile-image-wrapper {
+      padding-top: 20px;
+      height: 180px;
+    }
+
+    .profile-image {
+      height: 180px;
+      width: 180px;
+    }
   }
 
   @media (max-width: ${breakPointSmall}) {

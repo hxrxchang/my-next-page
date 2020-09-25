@@ -10,12 +10,13 @@ const StyledHeader = styled.header`
   .profile-image-wrapper {
     flex-basis: 50%;
     text-align: center;
-    height: 224px;
+    height: 200px;
+    padding-top: 20px;
   }
 
   .profile-image {
-    height: 224px;
-    width: 224px;
+    height: 200px;
+    width: 200px;
     border-radius: 50%;
   }
 

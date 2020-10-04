@@ -72,7 +72,7 @@ export const BlogContent: React.FC<{
         <br></br>
         <span>updated_at: {updatedAt}</span>
         <br></br>
-        <a className="content-history" href={`https://github.com/hxrxchang/my-next-page/commits/master/data-sources/blogs/${id}.md`}>
+        <a className="content-history" href={`https://github.com/hxrxchang/my-next-page/commits/main/data-sources/blogs/${id}.md`}>
           編集履歴
         </a>
       </div>

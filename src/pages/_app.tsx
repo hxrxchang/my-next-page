@@ -14,6 +14,11 @@ const GlobalStyle = createGlobalStyle`
     padding: 0px;
     margin:  0px;
     word-break: break-word;
+    line-height: 1.8;
+  }
+
+  h1, h2, h3 {
+    line-height: 1.4;
   }
 `;
 

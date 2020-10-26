@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
+import gfm from 'remark-gfm';
 import { CodeBlock } from './code-block';
 import { EmbedType } from '../models';
 import { isTwitterEmbed } from '../domains/blog';
@@ -76,7 +77,7 @@ export const BlogContent: React.FC<{
           編集履歴
         </a>
       </div>
-      <ReactMarkdown source={content} renderers={{ inlineCode: ShortCodeBlock, code: CodeBlock }} escapeHtml={false} />
+      <ReactMarkdown source={content} plugins={[gfm]} renderers={{ inlineCode: ShortCodeBlock, code: CodeBlock }} escapeHtml={false} />
     </StyledDiv>
   );
 };

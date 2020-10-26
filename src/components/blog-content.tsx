@@ -1,10 +1,7 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import ReactMarkdown from 'react-markdown';
-import { CodeBlock } from './code-block';
 import { EmbedType } from '../models';
 import { isTwitterEmbed } from '../domains/blog';
-import { ShortCodeBlock } from './short-code-block';
 import { breakPointMedium } from '../styles';
 
 const StyledDiv = styled.div`
@@ -76,7 +73,7 @@ export const BlogContent: React.FC<{
           編集履歴
         </a>
       </div>
-      <ReactMarkdown source={content} renderers={{ inlineCode: ShortCodeBlock, code: CodeBlock }} escapeHtml={false} />
+      <div dangerouslySetInnerHTML={{ __html: content }} />
     </StyledDiv>
   );
 };

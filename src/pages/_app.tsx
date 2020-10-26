@@ -20,6 +20,20 @@ const GlobalStyle = createGlobalStyle`
   h1, h2, h3 {
     line-height: 1.4;
   }
+
+  table {
+    border-collapse: collapse;
+    border: 1px solid #CCC;
+  }
+
+  th, td {
+    padding: 5px 10px;
+    border: 1px solid #CCC;
+  }
+
+  th {
+    background: #EEE;
+  }
 `;
 
 const StyledAppContainer = styled.div`

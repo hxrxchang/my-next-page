@@ -17,15 +17,15 @@ updatedAt: '2020-08-25'
 ## 開発環境
 - iterm2のインストール
   - タブを分割した時(command + D)は、同じpathを開くようにする。
-    - https://medium.com/ayuth/new-tab-iterm2-with-in-current-directory-627b0c31734a
+    - [https://medium.com/ayuth/new-tab-iterm2-with-in-current-directory-627b0c31734a](https://medium.com/ayuth/new-tab-iterm2-with-in-current-directory-627b0c31734a)
 -  VSCodeのインストール
 
 - homebrewのインストール
-  - https://brew.sh/index_ja
+  - [https://brew.sh/index_ja](https://brew.sh/index_ja)
 
 - ログインシェルをbashに
   - catalina ではデフォルトのシェルがzsh になっているが使い慣れたbashを使いたい
-  - Macのデフォルトのbashのバージョンが古いので、homebrewでbashをinstall(参考: https://journal.lampetty.net/entry/from-zsh-to-bash)
+  - Macのデフォルトのbashのバージョンが古いので、homebrewでbashをinstall(参考: [https://journal.lampetty.net/entry/from-zsh-to-bash](https://journal.lampetty.net/entry/from-zsh-to-bash))
   ```bash
   # Macデフォルトのbashのバージョン
   $ bash --version
@@ -43,7 +43,7 @@ updatedAt: '2020-08-25'
   Copyright (C) 2019 Free Software Foundation, Inc.
   ```
 
-  - bashを使ってると警告が出るので、.bash_profileに `export BASH_SILENCE_DEPRECATION_WARNING=1` を追加した。(参考: https://qiita.com/waka424/items/bc77b6e8bd4f25760e58)
+  - bashを使ってると警告が出るので、.bash_profileに `export BASH_SILENCE_DEPRECATION_WARNING=1` を追加した。(参考: [https://qiita.com/waka424/items/bc77b6e8bd4f25760e58](https://qiita.com/waka424/items/bc77b6e8bd4f25760e58))
 
 -  gitをhomebrewでインストール
   ```bash
@@ -51,7 +51,7 @@ updatedAt: '2020-08-25'
   ```
 
 - GitHubのssh設定
-  - https://qiita.com/shizuma/items/2b2f873a0034839e47ce
+  - [https://qiita.com/shizuma/items/2b2f873a0034839e47ce](https://qiita.com/shizuma/items/2b2f873a0034839e47ce)
 
 - dotfilesのclone
   - cloneしたらシンボリックリンクを貼るshellを実行
@@ -61,21 +61,21 @@ updatedAt: '2020-08-25'
   - dotfilesのシンボリックリンクを貼れていれば shellのログイン時にエラーが出るのでそれをインストール
 
 - Docker for Mac のインストール
-  - https://docs.docker.com/docker-for-mac/
+  - [https://docs.docker.com/docker-for-mac/](https://docs.docker.com/docker-for-mac/)
 
 ## 便利アプリ
 - spectacle
   - 開いてるGUIアプリのリサイズや移動ができるやつ
-  - https://www.spectacleapp.com/
+  - [https://www.spectacleapp.com/](https://www.spectacleapp.com/)
 
 - karabiner
   - 左右のcommandキーで全角半角切替
   - 設定はこれで
-    - https://dyny001.net/install-karabiner/
+    - [https://dyny001.net/install-karabiner/](https://dyny001.net/install-karabiner/)
 
 - clipy
   - clipboadの履歴を保持できたりできる (2個前にコピーしたやつとかをpasteできる)
-  - https://clipy-app.com/
+  - [https://clipy-app.com/](https://clipy-app.com/)
 
 これらの便利アプリとDocker for Mac はPC起動時に立ち上がるように設定しておく。
 <br>

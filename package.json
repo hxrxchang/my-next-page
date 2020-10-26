@@ -23,6 +23,8 @@
     "react-ga": "3.2.0",
     "react-markdown": "5.0.2",
     "react-syntax-highlighter": "15.2.1",
+    "remark": "^13.0.0",
+    "remark-html": "^13.0.1",
     "styled-components": "5.2.0"
   },
   "devDependencies": {

@@ -1,13 +1,13 @@
 import { Divider } from '@material-ui/core';
-import Icon from '@material-ui/core/Icon';
+import MenuIcon from '@material-ui/icons/Menu';
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { useRouter } from 'next/router';
 import React, { useCallback, useState } from 'react';
 import styled from 'styled-components';
-import { getAllBlogIds, getBlogData } from '../../repositories/blogs';
 import { BlogContent, Footer, Layout, PcDrawer, SpDrawer } from '../../components';
 import { CustomHead } from '../../components/custom-head';
 import { BlogData } from '../../models';
+import { getAllBlogIds, getBlogData } from '../../repositories/blogs';
 import { breakPointMedium } from '../../styles';
 
 type Props = {
@@ -98,9 +98,7 @@ const Blog: NextPage<Props> = ({ content, blogData }) => {
           <SpDrawer isOpen={isSpDrawerOpen} changeSidenav={changeIsDrawerOpen}>
             <div className="drawer-and-content">
               <div className="header">
-                <Icon onClick={changeIsDrawerOpen} fontSize="large">
-                  menu
-                </Icon>
+                <MenuIcon onClick={changeIsDrawerOpen} fontSize="large"></MenuIcon>
                 <Divider></Divider>
               </div>
               <div className="content">

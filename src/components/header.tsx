@@ -83,7 +83,7 @@ export const Header: React.FC<{}> = () => {
     <>
       <StyledHeader>
         <div className="profile-image-wrapper">
-          <Image className="profile-image" src="/chowder.jpeg" unsized={true} />
+          <Image className="profile-image" src="/chowder.jpeg" unsized={true} unoptimized={true} />
         </div>
         <div className="profile-wrapper">
           <h1 className="profile-name">Yuto Hara</h1>

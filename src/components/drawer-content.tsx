@@ -19,14 +19,20 @@ const StyledDiv = styled.div`
     margin-bottom: 20px;
   }
 
-  .profile-image {
-    display: block;
-    border-radius: 50%;
+  .profile-image-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .profile-image-wrapper {
     width: 120px;
     height: 120px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
+  }
+
+  .profile-image {
+    border-radius: 50%;
+    width: 100%;
   }
 
   .name {
@@ -48,7 +54,11 @@ export const DrawerContent: React.FC<{}> = () => {
           <a className="link blog-link">ブログ一覧に戻る</a>
         </Link>
         <Divider></Divider>
-        <Image src="/chowder.jpeg" className="profile-image" unsized={true} unoptimized={true} />
+        <div className="profile-image-container">
+          <div className="profile-image-wrapper">
+            <Image src="/chowder.jpeg" className="profile-image" width={120} height={120} />
+          </div>
+        </div>
         <p className="name">Yuto Hara</p>
         <Link href="/">
           <a className="link">Profile</a>

@@ -8,16 +8,21 @@ const StyledHeader = styled.header`
   justify-content: space-around;
   padding-bottom: 20px;
 
-  .profile-image-wrapper {
+  .profile-image-container {
     flex-basis: 50%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .profile-image-wrapper {
     text-align: center;
     height: 200px;
+    max-width: 200x;
     padding-top: 20px;
   }
 
   .profile-image {
-    height: 200px;
-    width: 200px;
+    width: 100%;
     border-radius: 50%;
   }
 
@@ -39,10 +44,6 @@ const StyledHeader = styled.header`
     .profile-image-wrapper {
       padding-top: 20px;
       height: 180px;
-    }
-
-    .profile-image {
-      height: 180px;
       width: 180px;
     }
   }
@@ -55,12 +56,7 @@ const StyledHeader = styled.header`
     .profile-image-wrapper {
       text-align: center;
       height: 144px;
-    }
-
-    .profile-image {
-      height: 144px;
       width: 144px;
-      border-radius: 50%;
     }
 
     .profile-wrapper {
@@ -82,8 +78,10 @@ export const Header: React.FC<{}> = () => {
   return (
     <>
       <StyledHeader>
-        <div className="profile-image-wrapper">
-          <Image className="profile-image" src="/chowder.jpeg" unsized={true} unoptimized={true} />
+        <div className="profile-image-container">
+          <div className="profile-image-wrapper">
+            <Image className="profile-image" src="/chowder.jpeg" width={200} height={200} />
+          </div>
         </div>
         <div className="profile-wrapper">
           <h1 className="profile-name">Yuto Hara</h1>

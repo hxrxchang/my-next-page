@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Image from 'next/image';
 import { breakPointMedium, breakPointSmall } from '../styles';
 
 const StyledDiv = styled.div`
@@ -10,10 +11,14 @@ const StyledDiv = styled.div`
   display: flex;
   justify-content: space-around;
 
-  .account-icon {
-    display: block;
+  .account-icon-wrapper {
     height: 50px;
     width: 50px;
+  }
+
+  .account-icon {
+    display: block;
+    width: 100%;
   }
 
   @media (max-width: ${breakPointMedium}) {
@@ -34,15 +39,27 @@ const StyledDiv = styled.div`
 export const SocialAccounts: React.FC<{}> = ({}) => {
   return (
     <StyledDiv>
-      <a href="https://twitter.com/hxrxchang" rel="noopener">
-        <img src="account-icons/Twitter_Social_Icon_Square_Color.svg" alt="" className="account-icon" />
-      </a>
-      <a href="https://github.com/hxrxchang" rel="noopener">
-        <img src="account-icons/github-icon.svg" alt="" className="account-icon" />
-      </a>
-      <a href="https://www.wantedly.com/users/5835988" rel="noopener">
-        <img src="account-icons/wantedly_mark.svg" alt="" className="account-icon" />
-      </a>
+      <div className="account-icon-wrapper">
+        <a href="https://twitter.com/hxrxchang" rel="noopener">
+          <Image
+            src="/account-icons/Twitter_Social_Icon_Square_Color.svg"
+            alt="twitter icon"
+            className="account-icon"
+            width={50}
+            height={50}
+          />
+        </a>
+      </div>
+      <div className="account-icon-wrapper">
+        <a href="https://github.com/hxrxchang" rel="noopener">
+          <Image src="/account-icons/github-icon.svg" alt="github icon" className="account-icon" width={50} height={50} />
+        </a>
+      </div>
+      <div className="account-icon-wrapper">
+        <a href="https://www.wantedly.com/users/5835988" rel="noopener">
+          <Image src="/account-icons/wantedly_mark.svg" alt="wantedly icon" className="account-icon" width={50} height={50} />
+        </a>
+      </div>
     </StyledDiv>
   );
 };

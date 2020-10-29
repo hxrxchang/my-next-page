@@ -56,7 +56,7 @@ export const DrawerContent: React.FC<{}> = () => {
         <Divider></Divider>
         <div className="profile-image-container">
           <div className="profile-image-wrapper">
-            <Image src="/chowder.jpeg" className="profile-image" alt="profile image" width={120} height={120} />
+            <Image src="/chowder.jpeg" className="profile-image" alt="profile image" width={120} height={120} unoptimized={true} />
           </div>
         </div>
         <p className="name">Yuto Hara</p>

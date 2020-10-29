@@ -80,7 +80,7 @@ export const Header: React.FC<{}> = () => {
       <StyledHeader>
         <div className="profile-image-container">
           <div className="profile-image-wrapper">
-            <Image className="profile-image" src="/chowder.jpeg" alt="profile image" width={200} height={200} />
+            <Image className="profile-image" src="/chowder.jpeg" alt="profile image" width={200} height={200} unoptimized={true} />
           </div>
         </div>
         <div className="profile-wrapper">

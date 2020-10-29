@@ -47,17 +47,32 @@ export const SocialAccounts: React.FC<{}> = ({}) => {
             className="account-icon"
             width={50}
             height={50}
+            unoptimized={true}
           />
         </a>
       </div>
       <div className="account-icon-wrapper">
         <a href="https://github.com/hxrxchang" rel="noopener">
-          <Image src="/account-icons/github-icon.svg" alt="github icon" className="account-icon" width={50} height={50} />
+          <Image
+            src="/account-icons/github-icon.svg"
+            alt="github icon"
+            className="account-icon"
+            width={50}
+            height={50}
+            unoptimized={true}
+          />
         </a>
       </div>
       <div className="account-icon-wrapper">
         <a href="https://www.wantedly.com/users/5835988" rel="noopener">
-          <Image src="/account-icons/wantedly_mark.svg" alt="wantedly icon" className="account-icon" width={50} height={50} />
+          <Image
+            src="/account-icons/wantedly_mark.svg"
+            alt="wantedly icon"
+            className="account-icon"
+            width={50}
+            height={50}
+            unoptimized={true}
+          />
         </a>
       </div>
     </StyledDiv>

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Image from 'next/image';
 import { breakPointMedium, breakPointSmall } from '../styles';
 
 const StyledHeader = styled.header`
@@ -82,7 +83,7 @@ export const Header: React.FC<{}> = () => {
     <>
       <StyledHeader>
         <div className="profile-image-wrapper">
-          <img className="profile-image" src="chowder.jpeg" alt="" />
+          <Image className="profile-image" src="/chowder.jpeg" unsized={true} />
         </div>
         <div className="profile-wrapper">
           <h1 className="profile-name">Yuto Hara</h1>

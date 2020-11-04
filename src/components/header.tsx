@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Image from 'next/image';
+// import Image from 'next/image';
 import { breakPointMedium, breakPointSmall } from '../styles';
 
 const StyledHeader = styled.header`
@@ -16,9 +16,9 @@ const StyledHeader = styled.header`
 
   .profile-image-wrapper {
     text-align: center;
-    height: 200px;
-    max-width: 200x;
     padding-top: 20px;
+    height: 200px;
+    width: 200px;
   }
 
   .profile-image {
@@ -80,7 +80,8 @@ export const Header: React.FC<{}> = () => {
       <StyledHeader>
         <div className="profile-image-container">
           <div className="profile-image-wrapper">
-            <Image className="profile-image" src="/chowder.jpeg" alt="profile image" width={200} height={200} unoptimized={true} />
+            {/* <Image className="profile-image" src="/chowder.jpeg" alt="profile image" width={200} height={200} unoptimized={true} /> */}
+            <img className="profile-image" src="/chowder.jpeg" alt="profile image" />
           </div>
         </div>
         <div className="profile-wrapper">

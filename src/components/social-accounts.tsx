@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Image from 'next/image';
+// import Image from 'next/image';
 import { breakPointMedium, breakPointSmall } from '../styles';
 
 const StyledDiv = styled.div`
@@ -41,38 +41,41 @@ export const SocialAccounts: React.FC<{}> = ({}) => {
     <StyledDiv>
       <div className="account-icon-wrapper">
         <a href="https://twitter.com/hxrxchang" rel="noopener">
-          <Image
+          {/* <Image
             src="/account-icons/Twitter_Social_Icon_Square_Color.svg"
             alt="twitter icon"
             className="account-icon"
             width={50}
             height={50}
             unoptimized={true}
-          />
+          /> */}
+          <img src="/account-icons/Twitter_Social_Icon_Square_Color.svg" alt="twitter icon" className="account-icon" />
         </a>
       </div>
       <div className="account-icon-wrapper">
         <a href="https://github.com/hxrxchang" rel="noopener">
-          <Image
+          {/* <Image
             src="/account-icons/github-icon.svg"
             alt="github icon"
             className="account-icon"
             width={50}
             height={50}
             unoptimized={true}
-          />
+          /> */}
+          <img src="/account-icons/github-icon.svg" alt="github icon" className="account-icon" />
         </a>
       </div>
       <div className="account-icon-wrapper">
         <a href="https://www.wantedly.com/users/5835988" rel="noopener">
-          <Image
+          {/* <Image
             src="/account-icons/wantedly_mark.svg"
             alt="wantedly icon"
             className="account-icon"
             width={50}
             height={50}
             unoptimized={true}
-          />
+          /> */}
+          <img src="/account-icons/wantedly_mark.svg" alt="wantedly icon" className="account-icon" />
         </a>
       </div>
     </StyledDiv>

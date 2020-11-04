@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+// import Image from 'next/image';
 import styled from 'styled-components';
 import { Divider } from '@material-ui/core';
 
@@ -56,7 +56,8 @@ export const DrawerContent: React.FC<{}> = () => {
         <Divider></Divider>
         <div className="profile-image-container">
           <div className="profile-image-wrapper">
-            <Image src="/chowder.jpeg" className="profile-image" alt="profile image" width={120} height={120} unoptimized={true} />
+            {/* <Image src="/chowder.jpeg" className="profile-image" alt="profile image" width={120} height={120} unoptimized={true} /> */}
+            <img src="/chowder.jpeg" className="profile-image" alt="profile image" />
           </div>
         </div>
         <p className="name">Yuto Hara</p>

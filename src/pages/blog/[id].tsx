@@ -53,7 +53,7 @@ const StyledPage = styled.div`
       position: fixed;
       width: 100%;
       background: white;
-      z-index: 999;
+      z-index: 1;
     }
 
     .content {

@@ -436,13 +436,6 @@
   dependencies:
     "@types/react" "*"
 
-"@types/react-native@*":
-  version "0.61.8"
-  resolved "https://registry.yarnpkg.com/@types/react-native/-/react-native-0.61.8.tgz#22b7b2744de913a02965cdd4954aa92a216249ad"
-  integrity sha512-+DhnibUO3W/fV3j+YFZkwGUblrc0cc3UmG4boMZIi6Ox8hRI67vs0aFQQUJG9c6yzH8vksyd+MigLwca18axzw==
-  dependencies:
-    "@types/react" "*"
-
 "@types/react-syntax-highlighter@13.5.0":
   version "13.5.0"
   resolved "https://registry.yarnpkg.com/@types/react-syntax-highlighter/-/react-syntax-highlighter-13.5.0.tgz#b93c05f28844e7c35a5f1d38d3819099ffa82fbd"
@@ -473,14 +466,13 @@
     "@types/prop-types" "*"
     csstype "^3.0.2"
 
-"@types/styled-components@5.1.6":
-  version "5.1.6"
-  resolved "https://registry.yarnpkg.com/@types/styled-components/-/styled-components-5.1.6.tgz#b47460f1684072576999955b5b5153e6f238622c"
-  integrity sha512-YN1j99dOL92T+76qhQcrPUb2nKZLzawko9j3IIwTHdKloMx20WwcGkBwdpbi8SpAkTc362rgfIllqPdSUplmRw==
+"@types/styled-components@5.1.7":
+  version "5.1.7"
+  resolved "https://registry.yarnpkg.com/@types/styled-components/-/styled-components-5.1.7.tgz#3cd10b088c1cb1acde2e4b166b3e8275a3083710"
+  integrity sha512-BJzPhFygYspyefAGFZTZ/8lCEY4Tk+Iqktvnko3xmJf9LrLqs3+grxPeU3O0zLl6yjbYBopD0/VikbHgXDbJtA==
   dependencies:
     "@types/hoist-non-react-statics" "*"
     "@types/react" "*"
-    "@types/react-native" "*"
     csstype "^3.0.2"
 
 "@types/unist@*", "@types/unist@^2.0.0", "@types/unist@^2.0.2", "@types/unist@^2.0.3":

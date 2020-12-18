@@ -2,6 +2,7 @@
 ![CI](https://github.com/hxrxchang/my-next-page/workflows/CI/badge.svg)
 
 # my-next-page
+
 A web site about me.  
 https://hxrxchang.dev
 

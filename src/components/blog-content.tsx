@@ -5,7 +5,6 @@ import gfm from 'remark-gfm';
 import { CodeBlock } from './code-block';
 import { EmbedType } from '../models';
 import { isTwitterEmbed } from '../domains/blog';
-import { ShortCodeBlock } from './short-code-block';
 import { breakPointMedium } from '../styles';
 
 const StyledDiv = styled.div`
@@ -27,6 +26,12 @@ const StyledDiv = styled.div`
     border-left: 3px solid gray;
     color: gray;
     padding: 8px;
+  }
+
+  code {
+    background: rgba(33, 90, 160, 0.07);
+    padding: 4px;
+    border-radius: 4px;
   }
 
   .iframe-wrapper {
@@ -83,7 +88,7 @@ export const BlogContent: React.FC<{
           編集履歴
         </a>
       </div>
-      <ReactMarkdown source={content} plugins={[gfm]} renderers={{ inlineCode: ShortCodeBlock, code: CodeBlock }} escapeHtml={false} />
+      <ReactMarkdown source={content} plugins={[gfm]} renderers={{ code: CodeBlock }} escapeHtml={false} />
     </StyledDiv>
   );
 };

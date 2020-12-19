@@ -23,6 +23,12 @@ const StyledDiv = styled.div`
     max-width: 60%;
   }
 
+  blockquote {
+    border-left: 3px solid gray;
+    color: gray;
+    padding: 8px;
+  }
+
   .iframe-wrapper {
     width: 60%;
   }

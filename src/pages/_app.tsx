@@ -34,6 +34,10 @@ const GlobalStyle = createGlobalStyle`
   th {
     background: #EEE;
   }
+
+  a {
+    text-decoration: none;
+  }
 `;
 
 const StyledAppContainer = styled.div`

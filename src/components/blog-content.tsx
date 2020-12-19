@@ -34,10 +34,6 @@ const StyledDiv = styled.div`
     border-radius: 4px;
   }
 
-  a {
-    text-decoration: none;
-  }
-
   .iframe-wrapper {
     width: 60%;
   }

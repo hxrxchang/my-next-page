@@ -9,5 +9,4 @@ export { BlogList } from './blog-list';
 export { BlogContent } from './blog-content';
 export { CodeBlock } from './code-block';
 export { SpDrawer } from './sp-drawer';
-export { ShortCodeBlock } from './short-code-block';
 export { DrawerContent } from './drawer-content';

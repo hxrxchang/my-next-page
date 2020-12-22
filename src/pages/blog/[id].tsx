@@ -4,7 +4,7 @@ import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { useRouter } from 'next/router';
 import React, { useCallback, useState } from 'react';
 import styled from 'styled-components';
-import { BlogContent, Footer, Layout, PcDrawer, SpDrawer } from '../../components';
+import { BlogContent, Footer, Layout, SpDrawer, DrawerContent } from '../../components';
 import { CustomHead } from '../../components/custom-head';
 import { BlogData } from '../../models';
 import { getAllBlogIds, getBlogData } from '../../repositories/blogs';
@@ -16,18 +16,14 @@ type Props = {
 };
 
 const StyledPage = styled.div`
-  .pc {
-    display: block;
-  }
-
-  .sp {
-    display: none;
-  }
-
-  .drawer-and-content {
+  .wrapper {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+  }
+
+  .sp-header {
+    display: none;
   }
 
   .drawer-not-sp {
@@ -35,29 +31,43 @@ const StyledPage = styled.div`
     flex-shrink: 0;
   }
 
+  .content-wrapper {
+    display: flex;
+    height: 100vh;
+  }
+
+  .pc-drawer {
+    border-right: 1px solid #efefef;
+    flex-basis: 16%;
+    position: sticky;
+  }
+
   .content {
-    flex-grow: 1;
+    flex-basis: 84%;
+    overflow: scroll;
   }
 
   @media (max-width: ${breakPointMedium}) {
     padding: 0 2%;
-    .pc {
-      display: none;
-    }
 
-    .sp {
-      display: block;
-    }
-
-    .header {
+    .sp-header {
+      display: flex;
       position: fixed;
       width: 100%;
       background: white;
       z-index: 1;
     }
 
-    .content {
+    .content-wrapper {
       margin-top: 24px;
+    }
+
+    .pc-drawer {
+      display: none;
+    }
+
+    .content {
+      flex-basis: 100%;
     }
   }
 `;
@@ -73,33 +83,15 @@ const Blog: NextPage<Props> = ({ content, blogData }) => {
     <>
       <CustomHead title={blogData.title} page={router.asPath} description={blogData.description} type="website"></CustomHead>
       <StyledPage>
-        <div className="pc">
-          <PcDrawer>
-            <div className="drawer-and-content">
-              <div className="content">
-                <Layout route={router.route}>
-                  <BlogContent
-                    id={blogData.id}
-                    title={blogData.title}
-                    createdAt={blogData.createdAt}
-                    updatedAt={blogData.updatedAt}
-                    content={content}
-                    embedTypes={blogData.embedTypes}
-                  ></BlogContent>
-                </Layout>
-              </div>
-              <div className="footer">
-                <Footer></Footer>
-              </div>
+        <SpDrawer isOpen={isSpDrawerOpen} changeSidenav={changeIsDrawerOpen}>
+          <div className="wrapper">
+            <div className="sp-header">
+              <MenuIcon onClick={changeIsDrawerOpen} fontSize="large"></MenuIcon>
+              <Divider></Divider>
             </div>
-          </PcDrawer>
-        </div>
-        <div className="sp">
-          <SpDrawer isOpen={isSpDrawerOpen} changeSidenav={changeIsDrawerOpen}>
-            <div className="drawer-and-content">
-              <div className="header">
-                <MenuIcon onClick={changeIsDrawerOpen} fontSize="large"></MenuIcon>
-                <Divider></Divider>
+            <div className="content-wrapper">
+              <div className="pc-drawer">
+                <DrawerContent></DrawerContent>
               </div>
               <div className="content">
                 <Layout route={router.route}>
@@ -112,13 +104,13 @@ const Blog: NextPage<Props> = ({ content, blogData }) => {
                     embedTypes={blogData.embedTypes}
                   ></BlogContent>
                 </Layout>
-              </div>
-              <div className="footer">
-                <Footer></Footer>
+                <div className="footer">
+                  <Footer></Footer>
+                </div>
               </div>
             </div>
-          </SpDrawer>
-        </div>
+          </div>
+        </SpDrawer>
       </StyledPage>
     </>
   );

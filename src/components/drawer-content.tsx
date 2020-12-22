@@ -5,8 +5,6 @@ import styled from 'styled-components';
 import { Divider } from '@material-ui/core';
 
 const StyledDiv = styled.div`
-  height: 100vh;
-
   .profile {
     padding-top: 20vh;
   }

@@ -8,6 +8,6 @@ export { SocialAccounts } from './social-accounts';
 export { BlogList } from './blog-list';
 export { BlogContent } from './blog-content';
 export { CodeBlock } from './code-block';
-export { PcDrawer } from './pc-drawer';
 export { SpDrawer } from './sp-drawer';
 export { ShortCodeBlock } from './short-code-block';
+export { DrawerContent } from './drawer-content';

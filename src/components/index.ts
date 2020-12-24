@@ -8,5 +8,5 @@ export { SocialAccounts } from './social-accounts';
 export { BlogList } from './blog-list';
 export { BlogContent } from './blog-content';
 export { CodeBlock } from './code-block';
-export { SpDrawer } from './sp-drawer';
+export { DrawerContainer } from './drawer-container';
 export { DrawerContent } from './drawer-content';

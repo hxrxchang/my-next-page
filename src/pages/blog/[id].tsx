@@ -4,7 +4,7 @@ import { GetStaticPaths, GetStaticProps, NextPage } from 'next';
 import { useRouter } from 'next/router';
 import React, { useCallback, useState } from 'react';
 import styled from 'styled-components';
-import { BlogContent, Footer, Layout, SpDrawer, DrawerContent } from '../../components';
+import { BlogContent, Footer, Layout, DrawerContainer, DrawerContent } from '../../components';
 import { CustomHead } from '../../components/custom-head';
 import { BlogData } from '../../models';
 import { getAllBlogIds, getBlogData } from '../../repositories/blogs';
@@ -83,7 +83,7 @@ const Blog: NextPage<Props> = ({ content, blogData }) => {
     <>
       <CustomHead title={blogData.title} page={router.asPath} description={blogData.description} type="website"></CustomHead>
       <StyledPage>
-        <SpDrawer isOpen={isSpDrawerOpen} changeSidenav={changeIsDrawerOpen}>
+        <DrawerContainer isOpen={isSpDrawerOpen} changeSidenav={changeIsDrawerOpen}>
           <div className="wrapper">
             <div className="sp-header">
               <MenuIcon onClick={changeIsDrawerOpen} fontSize="large"></MenuIcon>
@@ -110,7 +110,7 @@ const Blog: NextPage<Props> = ({ content, blogData }) => {
               </div>
             </div>
           </div>
-        </SpDrawer>
+        </DrawerContainer>
       </StyledPage>
     </>
   );

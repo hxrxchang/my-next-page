@@ -19,7 +19,7 @@ type Props = {
   changeSidenav: () => void;
 };
 
-export const SpDrawer: React.FC<Props> = ({ children, isOpen, changeSidenav }) => {
+export const DrawerContainer: React.FC<Props> = ({ children, isOpen, changeSidenav }) => {
   const classes = useStyles();
 
   return (

@@ -1,5 +1,5 @@
 import { ThemeProvider } from '@material-ui/styles';
-import { NextComponentType } from 'next';
+import { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
 import React, { useEffect } from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
@@ -65,12 +65,7 @@ const StyledAppContainer = styled.div`
   }
 `;
 
-type Props = {
-  Component: NextComponentType;
-  pageProps: any;
-};
-
-export default function MyApp({ Component, pageProps }: Props) {
+export default function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     const jssStyles = document.querySelector('#jss-server-side');
     if (jssStyles) {

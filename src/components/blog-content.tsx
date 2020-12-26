@@ -38,6 +38,10 @@ const StyledDiv = styled.div`
     width: 60%;
   }
 
+  a:hover {
+    text-decoration: underline;
+  }
+
   @media (max-width: ${breakPointMedium}) {
     padding: 0;
 

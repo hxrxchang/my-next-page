@@ -68,6 +68,9 @@ const StyledPage = styled.div`
 
     .content {
       flex-basis: 100%;
+      overflow: visible;
+      max-width: 100%;
+      word-break: break-word;
     }
   }
 `;

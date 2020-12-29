@@ -2,11 +2,14 @@ import { ThemeProvider } from '@material-ui/styles';
 import { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
 import React, { useEffect } from 'react';
+import ReactGA from 'react-ga';
 import styled, { createGlobalStyle } from 'styled-components';
 import { Footer, Header } from '../components';
-import { useGaTrackPage } from '../hooks/ga-hook';
 import theme from '../material/theme';
 import { breakPointMedium, breakPointSmall } from '../styles';
+
+const gaTrackingId = process.env.NEXT_PUBLIC_GA_TRACKING_ID as string;
+ReactGA.initialize(gaTrackingId);
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -66,6 +69,8 @@ const StyledAppContainer = styled.div`
 `;
 
 export default function MyApp({ Component, pageProps }: AppProps) {
+  const { route, asPath } = useRouter();
+
   useEffect(() => {
     const jssStyles = document.querySelector('#jss-server-side');
     if (jssStyles) {
@@ -73,10 +78,9 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     }
   }, []);
 
-  const { route, asPath } = useRouter();
-  if (typeof window !== 'undefined') {
-    useGaTrackPage(asPath);
-  }
+  useEffect(() => {
+    ReactGA.pageview(asPath);
+  }, [asPath]);
 
   return (
     <>

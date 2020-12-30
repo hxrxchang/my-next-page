@@ -4,7 +4,8 @@ import { useRouter } from 'next/router';
 import React, { useEffect } from 'react';
 import ReactGA from 'react-ga';
 import styled, { createGlobalStyle } from 'styled-components';
-import { Footer, Header } from '../components';
+import { Footer } from '../components/footer';
+import { Header } from '../components/header';
 import theme from '../material/theme';
 import { breakPointMedium, breakPointSmall } from '../styles';
 

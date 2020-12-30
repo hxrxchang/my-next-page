@@ -2,8 +2,9 @@ import React from 'react';
 import { CustomHead } from '../components/custom-head';
 import { NextPage, GetStaticProps } from 'next';
 
-import { Layout, Works } from '../components/index';
 import { getWorks } from '../repositories/works';
+import { Layout } from '../components/layout';
+import { Works } from '../components/works';
 
 const WorksPage: NextPage<{ content: string }> = ({ content }) => (
   <>

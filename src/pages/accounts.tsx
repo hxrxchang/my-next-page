@@ -1,7 +1,7 @@
 import React from 'react';
 import { CustomHead } from '../components/custom-head';
-
-import { Layout, SocialAccounts } from '../components';
+import { Layout } from '../components/layout';
+import { SocialAccounts } from '../components/social-accounts';
 
 const AccountsPage: React.FC<{}> = () => (
   <>

@@ -1,6 +1,8 @@
+import React from 'react';
 import { NextPage, GetStaticProps } from 'next';
-import { Layout, BlogList } from '../components';
 import { CustomHead } from '../components/custom-head';
+import { Layout } from '../components/layout';
+import { BlogList } from '../components/blog-list';
 import { getSortedBlogsData } from '../repositories/blogs';
 import { BlogData } from '../models';
 

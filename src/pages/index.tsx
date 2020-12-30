@@ -1,8 +1,9 @@
 import React from 'react';
 import { NextPage, GetStaticProps } from 'next';
 import { CustomHead } from '../components/custom-head';
-import { Layout, Profile } from './../components/index';
 import { getProfile } from '../repositories/profile';
+import { Layout } from '../components/layout';
+import { Profile } from '../components/profile';
 
 const IndexPage: NextPage<{ content: string }> = ({ content }) => {
   return (

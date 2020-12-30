@@ -19,7 +19,7 @@ type Props = {
   blogData: BlogData;
 };
 
-const StyledPage = styled.div`
+const Styled = styled.div`
   .wrapper {
     display: flex;
     flex-direction: column;
@@ -89,7 +89,7 @@ const Blog: NextPage<Props> = ({ content, blogData }) => {
   return (
     <>
       <CustomHead title={blogData.title} page={router.asPath} description={blogData.description} type="website"></CustomHead>
-      <StyledPage>
+      <Styled>
         <DrawerContainer isOpen={isSpDrawerOpen} changeSidenav={changeIsDrawerOpen}>
           <div className="wrapper">
             <div className="sp-header">
@@ -118,7 +118,7 @@ const Blog: NextPage<Props> = ({ content, blogData }) => {
             </div>
           </div>
         </DrawerContainer>
-      </StyledPage>
+      </Styled>
     </>
   );
 };

@@ -2,17 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
 
-const StyledDiv = styled.div`
+const Styled = styled.div`
   display: flex;
   justify-content: space-around;
 `;
 
 export const Profile: React.FC<{ content: string }> = ({ content }) => {
   return (
-    <StyledDiv>
+    <Styled>
       <div>
         <ReactMarkdown source={content} />
       </div>
-    </StyledDiv>
+    </Styled>
   );
 };

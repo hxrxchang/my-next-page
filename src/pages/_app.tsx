@@ -44,7 +44,7 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const StyledAppContainer = styled.div`
+const Styled = styled.div`
   .app-wrapper {
     display: flex;
     flex-direction: column;
@@ -87,7 +87,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     <>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
-        <StyledAppContainer>
+        <Styled>
           {route === '/blog/[id]' ? (
             // ブログ記事ページ用
             <Component {...pageProps} />
@@ -105,7 +105,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
               )}
             </div>
           )}
-        </StyledAppContainer>
+        </Styled>
       </ThemeProvider>
     </>
   );

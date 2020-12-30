@@ -2,7 +2,7 @@ import Link from 'next/link';
 import React from 'react';
 import styled from 'styled-components';
 
-const StyledLink = styled.li`
+const Styled = styled.li`
   padding: 10px 0;
   list-style: none;
 
@@ -35,13 +35,13 @@ interface Props {
 
 export const BlogLink: React.FC<Props> = ({ id, title, createdAt }) => {
   return (
-    <StyledLink>
+    <Styled>
       <Link href={`blog/${id}`}>
         <a className="link">
           <h2 className="title">{title}</h2>
         </a>
       </Link>
       <p className="created-at">{createdAt}</p>
-    </StyledLink>
+    </Styled>
   );
 };

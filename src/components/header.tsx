@@ -3,7 +3,7 @@ import styled from 'styled-components';
 // import Image from 'next/image';
 import { breakPointMedium, breakPointSmall } from '../styles';
 
-const StyledHeader = styled.header`
+const Styled = styled.header`
   display: flex;
   justify-content: space-around;
   padding-bottom: 20px;
@@ -77,7 +77,7 @@ const StyledHeader = styled.header`
 export const Header: React.FC<{}> = () => {
   return (
     <>
-      <StyledHeader>
+      <Styled>
         <div className="profile-image-container">
           <div className="profile-image-wrapper">
             {/* <Image className="profile-image" src="/chowder.jpeg" alt="profile image" width={200} height={200} unoptimized={true} /> */}
@@ -88,7 +88,7 @@ export const Header: React.FC<{}> = () => {
           <h1 className="profile-name">Yuto Hara</h1>
           <p className="profile-description">Web Application Developer</p>
         </div>
-      </StyledHeader>
+      </Styled>
     </>
   );
 };

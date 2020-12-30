@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
 
-const StyledDiv = styled.div`
+const Styled = styled.div`
   margin-top: 50px;
 
   display: flex;
@@ -12,9 +12,9 @@ const StyledDiv = styled.div`
 export const Works: React.FC<{ content: string }> = ({ content }) => {
   return (
     <div>
-      <StyledDiv>
+      <Styled>
         <ReactMarkdown source={content} />
-      </StyledDiv>
+      </Styled>
     </div>
   );
 };

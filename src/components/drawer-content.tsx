@@ -4,7 +4,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import { Divider } from '@material-ui/core';
 
-const StyledDiv = styled.div`
+const Styled = styled.div`
   .profile {
     padding-top: 20vh;
   }
@@ -46,7 +46,7 @@ const StyledDiv = styled.div`
 
 export const DrawerContent: React.FC<{}> = () => {
   return (
-    <StyledDiv>
+    <Styled>
       <div className="profile">
         <Link href="/blogs">
           <a className="link blog-link">ブログ一覧に戻る</a>
@@ -66,6 +66,6 @@ export const DrawerContent: React.FC<{}> = () => {
           <a className="link">Accounts</a>
         </Link>
       </div>
-    </StyledDiv>
+    </Styled>
   );
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StyledFooter = styled.footer`
+const Styled = styled.footer`
   border-top: 1px solid #efefef;
   display: flex;
   justify-content: center;
@@ -10,7 +10,7 @@ const StyledFooter = styled.footer`
 export const Footer: React.FC<{}> = ({}) => {
   return (
     <>
-      <StyledFooter>
+      <Styled>
         <div>
           <p>
             Source code is{' '}
@@ -20,7 +20,7 @@ export const Footer: React.FC<{}> = ({}) => {
           </p>
           <p>&copy; 2019 hxrxchang</p>
         </div>
-      </StyledFooter>
+      </Styled>
     </>
   );
 };

@@ -7,7 +7,7 @@ import { EmbedType } from '../models';
 import { isTwitterEmbed } from '../domains/blog';
 import { breakPointMedium } from '../styles';
 
-const StyledDiv = styled.div`
+const Styled = styled.div`
   padding: 0 10%;
   position: relative;
   .date-area {
@@ -81,7 +81,7 @@ export const BlogContent: React.FC<{
   }, []);
 
   return (
-    <StyledDiv>
+    <Styled>
       <h1>{title}</h1>
       <div className="date-area">
         <span>created_at: {createdAt}</span>
@@ -93,6 +93,6 @@ export const BlogContent: React.FC<{
         </a>
       </div>
       <ReactMarkdown source={content} plugins={[gfm]} renderers={{ code: CodeBlock }} escapeHtml={false} />
-    </StyledDiv>
+    </Styled>
   );
 };

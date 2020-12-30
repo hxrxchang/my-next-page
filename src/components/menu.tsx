@@ -6,7 +6,7 @@ type MenuProps = {
   route: string;
 };
 
-const StyledDiv = styled.div`
+const Styled = styled.div`
   border-bottom: 1px solid #efefef;
 
   .menu-list {
@@ -39,7 +39,7 @@ const StyledDiv = styled.div`
 export const Menu: React.FC<MenuProps> = ({ route }: MenuProps) => {
   return (
     <>
-      <StyledDiv>
+      <Styled>
         <div className="menu-list">
           <div className={route === 'profile' ? 'menu-item selected' : 'menu-item not-selected'}>
             <Link href="/">
@@ -57,7 +57,7 @@ export const Menu: React.FC<MenuProps> = ({ route }: MenuProps) => {
             </Link>
           </div>
         </div>
-      </StyledDiv>
+      </Styled>
     </>
   );
 };

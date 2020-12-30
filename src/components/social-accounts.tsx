@@ -3,7 +3,7 @@ import styled from 'styled-components';
 // import Image from 'next/image';
 import { breakPointMedium, breakPointSmall } from '../styles';
 
-const StyledDiv = styled.div`
+const Styled = styled.div`
   position: absolute;
   top: 50vh;
   padding: 0 6%;
@@ -38,7 +38,7 @@ const StyledDiv = styled.div`
 
 export const SocialAccounts: React.FC<{}> = ({}) => {
   return (
-    <StyledDiv>
+    <Styled>
       <div className="account-icon-wrapper">
         <a href="https://twitter.com/hxrxchang" rel="noopener">
           {/* <Image
@@ -78,6 +78,6 @@ export const SocialAccounts: React.FC<{}> = ({}) => {
           <img src="/account-icons/wantedly_mark.svg" alt="wantedly icon" className="account-icon" />
         </a>
       </div>
-    </StyledDiv>
+    </Styled>
   );
 };

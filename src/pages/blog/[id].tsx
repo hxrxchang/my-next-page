@@ -37,18 +37,21 @@ const Styled = styled.div`
 
   .content-wrapper {
     display: flex;
-    height: 100vh;
+    min-height: 100vh;
+  }
+
+  .pc-drawer-container {
+    border-right: 1px solid #efefef;
+    flex-basis: 16%;
   }
 
   .pc-drawer {
-    border-right: 1px solid #efefef;
-    flex-basis: 16%;
     position: sticky;
+    top: 0px;
   }
 
   .content {
     flex-basis: 84%;
-    overflow: scroll;
   }
 
   @media (max-width: ${breakPointMedium}) {
@@ -66,7 +69,7 @@ const Styled = styled.div`
       margin-top: 24px;
     }
 
-    .pc-drawer {
+    .pc-drawer-container {
       display: none;
     }
 
@@ -97,9 +100,11 @@ const Blog: NextPage<Props> = ({ content, blogData }) => {
               <Divider></Divider>
             </div>
             <div className="content-wrapper">
-              <div className="pc-drawer">
-                <DrawerContent></DrawerContent>
-              </div>
+              <aside className="pc-drawer-container">
+                <div className="pc-drawer">
+                  <DrawerContent></DrawerContent>
+                </div>
+              </aside>
               <div className="content">
                 <Layout route={router.route}>
                   <BlogContent

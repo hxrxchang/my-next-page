@@ -4,7 +4,7 @@ title: 'TypeScriptでNode.jsをさくっと書けるGitHub Template Repository�
 description: 'TypeScriptでNode.jsをさくっと書けるGitHub Template Repository を作成した'
 embedTypes: ['twitter']
 createdAt: '2021-01-27'
-updatedAt: '2020-01-27'
+updatedAt: '2021-01-27'
 ---
 
 先日会社で t_wada さんの TDD 研修を受講した。

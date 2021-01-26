@@ -1,7 +1,7 @@
 ---
 id: 'ts-node-template'
-title: 'TypeScriptでNode.jsをさくっと書けるGitHub Template Repositoryを作成した'
-description: 'TypeScriptでNode.jsをさくっと書けるGitHub Template Repository を作成した'
+title: 'Node.jsをTypeScriptでさくっと書けるGitHub Template Repositoryを作成した'
+description: 'Node.jsをTypeScriptでさくっと書けるGitHub Template Repositoryを作成した'
 embedTypes: ['twitter']
 createdAt: '2021-01-27'
 updatedAt: '2021-01-27'

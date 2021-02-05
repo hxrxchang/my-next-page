@@ -9,6 +9,7 @@ import { CustomHead } from '../../components/custom-head';
 import { DrawerContainer } from '../../components/drawer-container';
 import { DrawerContent } from '../../components/drawer-content';
 import { Footer } from '../../components/footer';
+import { Layout } from '../../components/layout';
 import { BlogData } from '../../models';
 import { getAllBlogIds, getBlogData } from '../../repositories/blogs';
 import { breakPointMedium } from '../../styles';
@@ -105,14 +106,16 @@ const Blog: NextPage<Props> = ({ content, blogData }) => {
                 </div>
               </aside>
               <div className="content">
-                <BlogContent
-                  id={blogData.id}
-                  title={blogData.title}
-                  createdAt={blogData.createdAt}
-                  updatedAt={blogData.updatedAt}
-                  content={content}
-                  embedTypes={blogData.embedTypes}
-                ></BlogContent>
+                <Layout route={router.route}>
+                  <BlogContent
+                    id={blogData.id}
+                    title={blogData.title}
+                    createdAt={blogData.createdAt}
+                    updatedAt={blogData.updatedAt}
+                    content={content}
+                    embedTypes={blogData.embedTypes}
+                  ></BlogContent>
+                </Layout>
                 <div className="footer">
                   <Footer></Footer>
                 </div>

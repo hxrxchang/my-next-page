@@ -3,11 +3,8 @@ import { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
 import React, { useEffect } from 'react';
 import ReactGA from 'react-ga';
-import styled, { createGlobalStyle } from 'styled-components';
-import { Footer } from '../components/footer';
-import { Header } from '../components/header';
+import { createGlobalStyle } from 'styled-components';
 import theme from '../material/theme';
-import { breakPointMedium, breakPointSmall } from '../styles';
 
 const gaTrackingId = process.env.NEXT_PUBLIC_GA_TRACKING_ID as string;
 ReactGA.initialize(gaTrackingId);
@@ -44,33 +41,8 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 
-const Styled = styled.div`
-  .app-wrapper {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    padding: 0 14%;
-  }
-
-  .contents-wrapper {
-    flex-grow: 1;
-  }
-
-  @media (max-width: ${breakPointMedium}) {
-    .app-wrapper {
-      padding: 0 8%;
-    }
-  }
-
-  @media (max-width: ${breakPointSmall}) {
-    .app-wrapper {
-      padding: 0 2%;
-    }
-  }
-`;
-
 export default function MyApp({ Component, pageProps }: AppProps) {
-  const { route, asPath } = useRouter();
+  const { asPath } = useRouter();
 
   useEffect(() => {
     const jssStyles = document.querySelector('#jss-server-side');
@@ -87,25 +59,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     <>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
-        <Styled>
-          {route === '/blog/[id]' ? (
-            // ブログ記事ページ用
-            <Component {...pageProps} />
-          ) : (
-            // ブログ記事以外
-            <div className="app-wrapper">
-              <div className="contents-wrapper">
-                {route !== '/_error' && <Header />}
-                <Component {...pageProps} />
-              </div>
-              {route !== '/_error' && (
-                <div className="footer-wrapper">
-                  <Footer />
-                </div>
-              )}
-            </div>
-          )}
-        </Styled>
+        <Component {...pageProps} />
       </ThemeProvider>
     </>
   );

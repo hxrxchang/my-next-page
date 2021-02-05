@@ -81,12 +81,13 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     ReactGA.pageview(asPath);
   }, [asPath]);
+
   return (
     <>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
-        {route === '/blog/[id]' ? (
-          // ブログ記事ページ用
+        {route === '/blog/[id]' || route === '/_error' ? (
+          // ブログ記事ページとエラーページはページの内容をそのまま
           <Component {...pageProps} />
         ) : (
           // ブログ記事以外

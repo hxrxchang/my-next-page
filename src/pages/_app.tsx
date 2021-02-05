@@ -82,7 +82,6 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
     ReactGA.pageview(asPath);
   }, [asPath]);
-
   return (
     <>
       <GlobalStyle />
@@ -93,16 +92,15 @@ export default function MyApp({ Component, pageProps }: AppProps) {
             <Component {...pageProps} />
           ) : (
             // ブログ記事以外
+            // Safariでページ切り替え時に画像を再読み込みさせないためにここで共通化している
             <div className="app-wrapper">
               <div className="contents-wrapper">
-                {route !== '/_error' && <Header />}
-                <Component {...pageProps} />
+                <Header />
+                <main>
+                  <Component {...pageProps} />
+                </main>
               </div>
-              {route !== '/_error' && (
-                <div className="footer-wrapper">
-                  <Footer />
-                </div>
-              )}
+              <Footer />
             </div>
           )}
         </Styled>

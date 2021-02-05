@@ -46,14 +46,12 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const Styled = styled.div`
-  .app-wrapper {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    padding: 0 14%;
-  }
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 0 14%;
 
-  .contents-wrapper {
+  .app-wrapper {
     flex-grow: 1;
   }
 
@@ -87,25 +85,23 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     <>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
-        <Styled>
-          {route === '/blog/[id]' ? (
-            // ブログ記事ページ用
-            <Component {...pageProps} />
-          ) : (
-            // ブログ記事以外
-            // Safariでページ切り替え時に画像を再読み込みさせないためにここで共通化している
+        {route === '/blog/[id]' ? (
+          // ブログ記事ページ用
+          <Component {...pageProps} />
+        ) : (
+          // ブログ記事以外
+          // Safariでページ切り替え時に画像を再読み込みさせないためにここで共通化している
+          <Styled>
             <div className="app-wrapper">
-              <div className="contents-wrapper">
-                <Header />
-                <Menu route={route} />
-                <main>
-                  <Component {...pageProps} />
-                </main>
-              </div>
-              <Footer />
+              <Header />
+              <Menu route={route} />
+              <main>
+                <Component {...pageProps} />
+              </main>
             </div>
-          )}
-        </Styled>
+            <Footer />
+          </Styled>
+        )}
       </ThemeProvider>
     </>
   );

@@ -87,11 +87,11 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       <GlobalStyle />
       <ThemeProvider theme={theme}>
         {route === '/blog/[id]' || route === '/_error' ? (
-          // ブログ記事ページとエラーページはページの内容をそのまま
+          // ブログ記事ページとエラーページはページの内容をそのまま表示する
           <Component {...pageProps} />
         ) : (
           // ブログ記事以外
-          // Safariでページ切り替え時に画像を再読み込みさせないためにここで共通化している
+          // Safariでページ切り替え時にヘッダーのアイコン画像を再読み込みさせないためにここで共通化している
           <Styled>
             <div className="app-wrapper">
               <Header />

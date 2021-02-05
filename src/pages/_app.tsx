@@ -6,6 +6,7 @@ import ReactGA from 'react-ga';
 import styled, { createGlobalStyle } from 'styled-components';
 import { Footer } from '../components/footer';
 import { Header } from '../components/header';
+import { Menu } from '../components/menu';
 import theme from '../material/theme';
 import { breakPointMedium, breakPointSmall } from '../styles';
 
@@ -96,6 +97,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
             <div className="app-wrapper">
               <div className="contents-wrapper">
                 <Header />
+                <Menu route={route} />
                 <main>
                   <Component {...pageProps} />
                 </main>

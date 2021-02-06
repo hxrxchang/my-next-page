@@ -56,15 +56,11 @@ const Styled = styled.div`
   }
 
   @media (max-width: ${breakPointMedium}) {
-    .app-wrapper {
-      padding: 0 8%;
-    }
+    padding: 0 8%;
   }
 
   @media (max-width: ${breakPointSmall}) {
-    .app-wrapper {
-      padding: 0 2%;
-    }
+    padding: 0 2%;
   }
 `;
 

@@ -1,27 +1,35 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
-import { BlogData } from '../models';
+import { BlogData, PagenationInfo } from '../models';
 
 const blogsDirectory = path.join(process.cwd(), '/data-sources/blogs');
+const blogItemLengthPerPage = 2;
 
-export function getSortedBlogsData(): BlogData[] {
-  const fileNames = fs.readdirSync(blogsDirectory);
+export function getPagenatedSortedBlogsData(pageId: number): BlogData[] {
+  const sortedBlogData = getSortedBlogsData();
+  const from = (pageId - 1) * blogItemLengthPerPage;
+  const to = pageId * blogItemLengthPerPage;
+  return sortedBlogData.slice(from, to);
+}
 
-  const allBlogsData = fileNames.map((fileName) => {
-    const fullPath = path.join(blogsDirectory, fileName);
-    const fullContents = fs.readFileSync(fullPath, 'utf8');
-    const matterResult = matter(fullContents);
-    return { ...matterResult.data };
-  }) as BlogData[];
+export function getBlogsPagePaths(): { params: { id: string } }[] {
+  const paths: { params: { id: string } }[] = [];
+  const pagesLength = getPagesLength();
+  for (let i = 1; i <= pagesLength; i++) {
+    paths.push({ params: { id: `${i}` } });
+  }
+  return paths;
+}
 
-  return allBlogsData.sort((a, b) => {
-    if (a.createdAt < b.createdAt) {
-      return 1;
-    } else {
-      return -1;
-    }
-  });
+export function getPagenationInfo(pageId: number): PagenationInfo {
+  const pagesLength = getPagesLength();
+  const hasNext = pageId + 1 <= pagesLength;
+  const hasPrev = pageId - 1 > 0;
+  return {
+    hasNext,
+    hasPrev,
+  };
 }
 
 export function getAllBlogIds(): { params: { id: string } }[] {
@@ -43,4 +51,30 @@ export function getBlogData(id: string): { content: string; blogData: BlogData }
     content,
     blogData: data as BlogData,
   };
+}
+
+function getSortedBlogsData(): BlogData[] {
+  const fileNames = fs.readdirSync(blogsDirectory);
+  const allBlogsData = fileNames.map((fileName) => {
+    const fullPath = path.join(blogsDirectory, fileName);
+    const fullContents = fs.readFileSync(fullPath, 'utf8');
+    const matterResult = matter(fullContents);
+    return { ...matterResult.data };
+  }) as BlogData[];
+
+  return allBlogsData.sort((a, b) => {
+    if (a.createdAt < b.createdAt) {
+      return 1;
+    } else {
+      return -1;
+    }
+  });
+}
+
+function getPagesLength(): number {
+  const allBlogsLength = fs.readdirSync(blogsDirectory).length;
+  const result = Math.floor(allBlogsLength / blogItemLengthPerPage);
+  const remainder = allBlogsLength % blogItemLengthPerPage;
+  const pagesLength = remainder === 0 ? result : result + 1;
+  return pagesLength;
 }

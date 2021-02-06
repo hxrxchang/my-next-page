@@ -1,11 +1,14 @@
+import Link from 'next/link';
 import React from 'react';
 import styled from 'styled-components';
-import { BlogData } from '../models';
+import { BlogData, PagenationInfo } from '../models';
 import { breakPointMedium, breakPointSmall } from '../styles';
 import { BlogLink } from './blog-link';
 
 type Props = {
   blogDataList: BlogData[];
+  pageId: number;
+  pagenationInfo: PagenationInfo;
 };
 
 const Styled = styled.div`
@@ -13,6 +16,10 @@ const Styled = styled.div`
 
   .blog-list {
     padding-top: 10px;
+  }
+
+  .pagenation {
+    display: flex;
   }
 
   @media (max-width: ${breakPointMedium}) {
@@ -25,7 +32,7 @@ const Styled = styled.div`
   }
 `;
 
-export const BlogList: React.FC<Props> = ({ blogDataList }) => {
+export const BlogList: React.FC<Props> = ({ blogDataList, pageId, pagenationInfo }) => {
   return (
     <>
       <Styled>
@@ -34,6 +41,10 @@ export const BlogList: React.FC<Props> = ({ blogDataList }) => {
             <BlogLink key={blogData.id} id={blogData.id} title={blogData.title} createdAt={blogData.createdAt} />
           ))}
         </ul>
+        <div className="pagenation">
+          <div className="pagenation-link-wrapper">{pagenationInfo.hasPrev && <Link href={`/blogs/page/${pageId - 1}`}>Prev</Link>}</div>
+          <div className="pagenation-link-wrapper">{pagenationInfo.hasNext && <Link href={`/blogs/page/${pageId + 1}`}>Next</Link>}</div>
+        </div>
       </Styled>
     </>
   );

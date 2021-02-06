@@ -6,6 +6,7 @@ import ReactGA from 'react-ga';
 import styled, { createGlobalStyle } from 'styled-components';
 import { Footer } from '../components/footer';
 import { Header } from '../components/header';
+import { Menu } from '../components/menu';
 import theme from '../material/theme';
 import { breakPointMedium, breakPointSmall } from '../styles';
 
@@ -45,27 +46,21 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const Styled = styled.div`
-  .app-wrapper {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    padding: 0 14%;
-  }
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 0 14%;
 
-  .contents-wrapper {
+  .app-wrapper {
     flex-grow: 1;
   }
 
   @media (max-width: ${breakPointMedium}) {
-    .app-wrapper {
-      padding: 0 8%;
-    }
+    padding: 0 8%;
   }
 
   @media (max-width: ${breakPointSmall}) {
-    .app-wrapper {
-      padding: 0 2%;
-    }
+    padding: 0 2%;
   }
 `;
 
@@ -87,25 +82,23 @@ export default function MyApp({ Component, pageProps }: AppProps) {
     <>
       <GlobalStyle />
       <ThemeProvider theme={theme}>
-        <Styled>
-          {route === '/blog/[id]' ? (
-            // ブログ記事ページ用
-            <Component {...pageProps} />
-          ) : (
-            // ブログ記事以外
+        {route === '/blog/[id]' || route === '/_error' ? (
+          // ブログ記事ページとエラーページはページの内容をそのまま表示する
+          <Component {...pageProps} />
+        ) : (
+          // ブログ記事以外
+          // Safariでページ切り替え時にヘッダーのアイコン画像を再読み込みさせないためにここで共通化している
+          <Styled>
             <div className="app-wrapper">
-              <div className="contents-wrapper">
-                {route !== '/_error' && <Header />}
+              <Header />
+              <Menu route={route} />
+              <main>
                 <Component {...pageProps} />
-              </div>
-              {route !== '/_error' && (
-                <div className="footer-wrapper">
-                  <Footer />
-                </div>
-              )}
+              </main>
             </div>
-          )}
-        </Styled>
+            <Footer />
+          </Styled>
+        )}
       </ThemeProvider>
     </>
   );

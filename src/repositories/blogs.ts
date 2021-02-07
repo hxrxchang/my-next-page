@@ -4,7 +4,7 @@ import matter from 'gray-matter';
 import { BlogData, PagenationInfo } from '../models';
 
 const blogsDirectory = path.join(process.cwd(), '/data-sources/blogs');
-const blogItemLengthPerPage = 2;
+const blogItemLengthPerPage = 10;
 
 export function getPagenatedSortedBlogsData(pageId: number): BlogData[] {
   const sortedBlogData = getSortedBlogsData();
@@ -73,8 +73,8 @@ function getSortedBlogsData(): BlogData[] {
 
 function getPagesLength(): number {
   const allBlogsLength = fs.readdirSync(blogsDirectory).length;
-  const result = Math.floor(allBlogsLength / blogItemLengthPerPage);
+  const quotient = Math.floor(allBlogsLength / blogItemLengthPerPage);
   const remainder = allBlogsLength % blogItemLengthPerPage;
-  const pagesLength = remainder === 0 ? result : result + 1;
+  const pagesLength = remainder === 0 ? quotient : quotient + 1;
   return pagesLength;
 }

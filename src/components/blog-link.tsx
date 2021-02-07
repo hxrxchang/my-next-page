@@ -36,7 +36,7 @@ interface Props {
 export const BlogLink: React.FC<Props> = ({ id, title, createdAt }) => {
   return (
     <Styled>
-      <Link href={`blog/${id}`}>
+      <Link href={`/blog/${id}`}>
         <a className="link">
           <h2 className="title">{title}</h2>
         </a>

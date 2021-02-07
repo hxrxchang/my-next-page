@@ -9,3 +9,8 @@ export type BlogData = {
   image?: string;
   embedTypes: EmbedType[];
 };
+
+export interface PagenationInfo {
+  hasNext: boolean;
+  hasPrev: boolean;
+}

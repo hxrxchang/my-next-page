@@ -38,26 +38,24 @@ const Styled = styled.div`
 
 export const Menu: React.FC<MenuProps> = ({ route }: MenuProps) => {
   return (
-    <>
-      <Styled>
-        <div className="menu-list">
-          <div className={route === '/' ? 'menu-item selected' : 'menu-item not-selected'}>
-            <Link href="/">
-              <a>Profile</a>
-            </Link>
-          </div>
-          <div className={route === '/accounts' ? 'menu-item selected' : 'menu-item not-selected'}>
-            <Link href="/accounts">
-              <a>Accounts</a>
-            </Link>
-          </div>
-          <div className={route === '/blogs' || route === '/blogs/page/[id]' ? 'menu-item selected' : 'menu-item not-selected'}>
-            <Link href="/blogs">
-              <a>Blogs</a>
-            </Link>
-          </div>
+    <Styled>
+      <div className="menu-list">
+        <div className={route === '/' ? 'menu-item selected' : 'menu-item not-selected'}>
+          <Link href="/">
+            <a>Profile</a>
+          </Link>
         </div>
-      </Styled>
-    </>
+        <div className={route === '/accounts' ? 'menu-item selected' : 'menu-item not-selected'}>
+          <Link href="/accounts">
+            <a>Accounts</a>
+          </Link>
+        </div>
+        <div className={route === '/blogs' || route === '/blogs/page/[id]' ? 'menu-item selected' : 'menu-item not-selected'}>
+          <Link href="/blogs">
+            <a>Blogs</a>
+          </Link>
+        </div>
+      </div>
+    </Styled>
   );
 };

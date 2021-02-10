@@ -84,39 +84,37 @@ export const BlogLayout: React.FC<Props> = ({ content, blogData }) => {
   }, []);
 
   return (
-    <>
-      <Styled>
-        <DrawerContainer isOpen={isSpDrawerOpen} changeSidenav={changeIsDrawerOpen}>
-          <div className="wrapper">
-            <div className="sp-header">
-              <MenuIcon onClick={changeIsDrawerOpen} fontSize="large"></MenuIcon>
-              <Divider></Divider>
-            </div>
-            <div className="content-wrapper">
-              <aside className="pc-drawer-container">
-                <div className="pc-drawer">
-                  <DrawerContent></DrawerContent>
-                </div>
-              </aside>
-              <div className="content">
-                <main>
-                  <BlogContent
-                    id={blogData.id}
-                    title={blogData.title}
-                    createdAt={blogData.createdAt}
-                    updatedAt={blogData.updatedAt}
-                    content={content}
-                    embedTypes={blogData.embedTypes}
-                  ></BlogContent>
-                </main>
-                <div className="footer">
-                  <Footer></Footer>
-                </div>
+    <Styled>
+      <DrawerContainer isOpen={isSpDrawerOpen} changeSidenav={changeIsDrawerOpen}>
+        <div className="wrapper">
+          <div className="sp-header">
+            <MenuIcon onClick={changeIsDrawerOpen} fontSize="large"></MenuIcon>
+            <Divider></Divider>
+          </div>
+          <div className="content-wrapper">
+            <aside className="pc-drawer-container">
+              <div className="pc-drawer">
+                <DrawerContent></DrawerContent>
+              </div>
+            </aside>
+            <div className="content">
+              <main>
+                <BlogContent
+                  id={blogData.id}
+                  title={blogData.title}
+                  createdAt={blogData.createdAt}
+                  updatedAt={blogData.updatedAt}
+                  content={content}
+                  embedTypes={blogData.embedTypes}
+                ></BlogContent>
+              </main>
+              <div className="footer">
+                <Footer></Footer>
               </div>
             </div>
           </div>
-        </DrawerContainer>
-      </Styled>
-    </>
+        </div>
+      </DrawerContainer>
+    </Styled>
   );
 };

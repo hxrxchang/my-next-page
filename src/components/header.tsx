@@ -76,19 +76,17 @@ const Styled = styled.header`
 
 export const Header: React.FC<{}> = () => {
   return (
-    <>
-      <Styled>
-        <div className="profile-image-container">
-          <div className="profile-image-wrapper">
-            {/* <Image className="profile-image" src="/chowder.jpeg" alt="profile image" width={200} height={200} unoptimized={true} /> */}
-            <img className="profile-image" src="/chowder.jpeg" alt="profile image" />
-          </div>
+    <Styled>
+      <div className="profile-image-container">
+        <div className="profile-image-wrapper">
+          {/* <Image className="profile-image" src="/chowder.jpeg" alt="profile image" width={200} height={200} unoptimized={true} /> */}
+          <img className="profile-image" src="/chowder.jpeg" alt="profile image" />
         </div>
-        <div className="profile-wrapper">
-          <h1 className="profile-name">Yuto Hara</h1>
-          <p className="profile-description">Web Application Developer</p>
-        </div>
-      </Styled>
-    </>
+      </div>
+      <div className="profile-wrapper">
+        <h1 className="profile-name">Yuto Hara</h1>
+        <p className="profile-description">Web Application Developer</p>
+      </div>
+    </Styled>
   );
 };

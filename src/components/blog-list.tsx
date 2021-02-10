@@ -44,18 +44,16 @@ const Styled = styled.div`
 
 export const BlogList: React.FC<Props> = ({ blogDataList, pageId, pagenationInfo }) => {
   return (
-    <>
-      <Styled>
-        <ul className="blog-list">
-          {blogDataList.map((blogData) => (
-            <BlogLink key={blogData.id} id={blogData.id} title={blogData.title} createdAt={blogData.createdAt} />
-          ))}
-        </ul>
-        <div className="pagenation">
-          <div className="pagenation-link-wrapper">{pagenationInfo.hasPrev && <Link href={`/blogs/page/${pageId - 1}`}>←Prev</Link>}</div>
-          <div className="pagenation-link-wrapper">{pagenationInfo.hasNext && <Link href={`/blogs/page/${pageId + 1}`}>→Next</Link>}</div>
-        </div>
-      </Styled>
-    </>
+    <Styled>
+      <ul className="blog-list">
+        {blogDataList.map((blogData) => (
+          <BlogLink key={blogData.id} id={blogData.id} title={blogData.title} createdAt={blogData.createdAt} />
+        ))}
+      </ul>
+      <div className="pagenation">
+        <div className="pagenation-link-wrapper">{pagenationInfo.hasPrev && <Link href={`/blogs/page/${pageId - 1}`}>←Prev</Link>}</div>
+        <div className="pagenation-link-wrapper">{pagenationInfo.hasNext && <Link href={`/blogs/page/${pageId + 1}`}>→Next</Link>}</div>
+      </div>
+    </Styled>
   );
 };

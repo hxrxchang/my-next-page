@@ -11,10 +11,8 @@ const Styled = styled.div`
 
 export const Works: React.FC<{ content: string }> = ({ content }) => {
   return (
-    <div>
-      <Styled>
-        <ReactMarkdown source={content} />
-      </Styled>
-    </div>
+    <Styled>
+      <ReactMarkdown source={content} />
+    </Styled>
   );
 };

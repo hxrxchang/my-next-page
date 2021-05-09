@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build && next export",
-    "format": "yarn prettier --write .",
-    "prettier:check": "yarn prettier --check ."
+    "format": "prettier --write .",
+    "prettier:check": "prettier --check ."
   },
   "keywords": [],
   "author": "",

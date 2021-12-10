@@ -85,7 +85,7 @@ export const Header: React.FC<{}> = () => {
       </div>
       <div className="profile-wrapper">
         <h1 className="profile-name">Yuto Hara</h1>
-        <p className="profile-description">Web Application Developer</p>
+        <p className="profile-description">Software Engineer</p>
       </div>
     </Styled>
   );

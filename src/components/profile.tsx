@@ -1,18 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
+import { breakPointSmall } from '../styles';
 
 const Styled = styled.div`
-  display: flex;
-  justify-content: space-around;
+  width: 80%;
+  margin: 0 auto;
+
+  @media (max-width: ${breakPointSmall}) {
+    width: 100%;
+    margin: 0;
+  }
 `;
 
 export const Profile: React.FC<{ content: string }> = ({ content }) => {
   return (
     <Styled>
-      <div>
-        <ReactMarkdown source={content} />
-      </div>
+      <ReactMarkdown source={content} />
     </Styled>
   );
 };

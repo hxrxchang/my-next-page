@@ -53,7 +53,7 @@ export function getBlogData(id: string): { content: string; blogData: BlogData }
   };
 }
 
-function getSortedBlogsData(): BlogData[] {
+export function getSortedBlogsData(): BlogData[] {
   const fileNames = fs.readdirSync(blogsDirectory);
   const allBlogsData = fileNames.map((fileName) => {
     const fullPath = path.join(blogsDirectory, fileName);

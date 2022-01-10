@@ -6,7 +6,7 @@ export async function main() {
   const origin = 'https://hxrxchang.dev';
   const feed = new RSS({
     title: 'hxrxchang.dev/blogs',
-    description: 'Yutp Hara のブログ',
+    description: 'Yuto Hara のブログ',
     site_url: `${origin}/blogs`,
     feed_url: `${origin}/feed.xml`,
     language: 'ja',

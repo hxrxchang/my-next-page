@@ -8,7 +8,7 @@
     "build": "next build && next export",
     "format": "prettier --write .",
     "prettier:check": "prettier --check .",
-    "generateFeed": "ts-node -O '{\"module\":\"commonjs\"}' cmd/generateFeedXml.ts"
+    "generateFeed": "ts-node cmd/generateFeedXml.ts"
   },
   "keywords": [],
   "author": "",

@@ -8,7 +8,7 @@ export async function main() {
     title: 'hxrxchang.dev/blogs',
     description: 'Yutp Hara のブログ',
     site_url: `${origin}/blogs`,
-    feed_url: `${origin}/public/feed.xml`,
+    feed_url: `${origin}/feed.xml`,
     language: 'ja',
   });
 

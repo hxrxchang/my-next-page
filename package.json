@@ -24,7 +24,7 @@
     "react-ga": "3.3.0",
     "react-markdown": "5.0.3",
     "react-syntax-highlighter": "15.4.5",
-    "remark-gfm": "^1.0.0",
+    "remark-gfm": "^3.0.0",
     "rss": "^1.2.2",
     "styled-components": "5.3.3"
   },

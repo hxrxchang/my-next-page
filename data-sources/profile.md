@@ -1,19 +1,30 @@
 ## About
 
-B to B to C SaaS を提供するスタートアップでソフトウェアエンジニアとして働いています。
+宿泊・レストラン予約サイトを運営する会社でソフトウェアエンジニアとして働いています。
 
-Web フロントエンド、バックエンド、インフラの全領域に精通してシステム全体の安定性に貢献できるようになりたいです。  
-現在は特に、DevOps, Site Reliability Engineering に関心があります。
+Web フロントエンド、バックエンド、インフラの垣根なく、プロダクトに必要なことは何でもできるエンジニアになりたいです。
 
-猫、犬、横浜 DeNA ベイスターズ、食べることが好きです。
+現在は仕事面では主に、WEB フロントエンドアプリケーション設計、GraphQL、Observability、 CI/CD に、  
+プライベートでは、アルゴリズム、競技プログラミング、関数型プログラミング、数学などに関心があります。
+
+猫、ランニング、横浜 DeNA ベイスターズ、お酒、グルメ、旅行が好きです。
+
+## Accounts
+
+- [Twitter](https://twitter.com/hxrxchang)
+- [GitHub](https://github.com/hxrxchang)
+- [Wantedly](https://www.wantedly.com/id/hxrxchang)
+- [AtCoder](https://atcoder.jp/users/hxrxchang)
 
 ## Skills
 
 - AWS
+- Go
 - TypeScript
-- Angular
-- React
-- Next.js
-- Node.js
+  - Vue.js
+  - Angular
+  - React
+  - Next.js
+  - Node.js
 - Ruby
-- Ruby on Rails
+  - Ruby on Rails

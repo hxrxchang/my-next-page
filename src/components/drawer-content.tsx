@@ -55,15 +55,12 @@ export const DrawerContent: React.FC<{}> = () => {
         <div className="profile-image-container">
           <div className="profile-image-wrapper">
             {/* <Image src="/chowder.jpeg" className="profile-image" alt="profile image" width={120} height={120} unoptimized={true} /> */}
-            <img src="/tuna.jpeg" className="profile-image" alt="profile image" />
+            <img src="/tuna2.jpeg" className="profile-image" alt="profile image" />
           </div>
         </div>
         <p className="name">Yuto Hara</p>
         <Link href="/">
           <a className="link">Profile</a>
-        </Link>
-        <Link href="/accounts">
-          <a className="link">Accounts</a>
         </Link>
       </div>
     </Styled>

@@ -62,9 +62,6 @@ export const DrawerContent: React.FC<{}> = () => {
         <Link href="/">
           <a className="link">Profile</a>
         </Link>
-        <Link href="/accounts">
-          <a className="link">Accounts</a>
-        </Link>
       </div>
     </Styled>
   );

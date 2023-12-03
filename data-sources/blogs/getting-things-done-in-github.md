@@ -125,7 +125,7 @@ GitHub Actions ではワークフローを別のリポジトリや第三者が�
 https://docs.github.com/ja/actions/creating-actions/publishing-actions-in-github-marketplace#about-publishing-actions
 
 また、アクションの種類に Docker, JavaScript, 複合アクション の 3 つがありますが、  
-Docker は当然 Docker ファイルが必要ですし、JavaScript は当然実装言語が制限されるので、複合アクションを使うのがいつも通りの書き味で書けて、一番簡単かなと思いました。  
+Docker は Dockerfile or image が必要ですし、JavaScript は当然実装言語が制限されるので、複合アクションを使うのがいつも通りの書き味で書けて、一番簡単かなと思いました。  
 https://docs.github.com/ja/actions/creating-actions/creating-a-composite-action にあるチュートリアルをやることで流れを掴むことができました。
 
 ### 環境変数

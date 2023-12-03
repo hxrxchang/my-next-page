@@ -2,7 +2,7 @@
 id: 'getting-things-done-in-github'
 title: 'GitHub Issues と GitHub Actions でいい感じにタスク管理できるツールを作った'
 description: 'この記事は 一休 Advent Calendar 2023 の 3 日目の記事です。 '
-embedTypes: []
+embedTypes: ['twitter']
 createdAt: '2023-12-03'
 updatedAt: '2023-12-03'
 ---

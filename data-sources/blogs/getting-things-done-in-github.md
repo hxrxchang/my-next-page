@@ -139,6 +139,6 @@ https://docs.github.com/ja/actions/learn-github-actions/variables#default-enviro
 
 ## まとめ
 
-カスタムアクションを公開するのは始めてでしたが、とても簡単であること分かりました。  
+カスタムアクションを公開するのは初めてでしたが、とても簡単であること分かりました。  
 GitHub Actions に少し詳しくなれた気がします。  
 GitHub Issue でのタスク管理に興味がある人はぜひ使ってフィードバックを頂けると嬉しいです。

@@ -47,7 +47,7 @@ jobs:
           TIME_ZONE: 'Asia/Tokyo' #オプショナル。デフォルトはUTC
 ```
 
-タスク管理用のリポジトリを作成し、 ↑ のように GitHub Actions を設定することで、前日の Issue から未完了のタスクだけを抽出して新しい Issue を作成できます。
+タスク管理用のリポジトリを作成し、 ↑ のように毎日特定の時間に実行されるように GitHub Actions を設定することで、前日の Issue から未完了のタスクだけを抽出して新しい Issue を作成できます。  
 `uses`のところで https://github.com/hxrxchang/gtd-manager/blob/main/action.yml で定義したカスタムアクションを利用することを宣言しています。
 
 入れ子構造を保つことができる他、Issue 本文中のタスクだけでなく、コメントに記載したタスクも抽出できます。  
@@ -125,8 +125,17 @@ GitHub Actions ではワークフローを別のリポジトリや第三者が�
 https://docs.github.com/ja/actions/creating-actions/publishing-actions-in-github-marketplace#about-publishing-actions
 
 また、アクションの種類に Docker, JavaScript, 複合アクション の 3 つがありますが、  
-Docker は当然 Docker ファイルが必要ですし、JavaScript は当然実装言語が制限されるので、複合アクションを使うのがいつも通りの書き味で書けて、一番簡単かなと思いました。　　
+Docker は当然 Docker ファイルが必要ですし、JavaScript は当然実装言語が制限されるので、複合アクションを使うのがいつも通りの書き味で書けて、一番簡単かなと思いました。  
 https://docs.github.com/ja/actions/creating-actions/creating-a-composite-action にあるチュートリアルをやることで流れを掴むことができました。
+
+### 環境変数
+
+GitHub Actions では `GITHUB` prefix を持つ便利な環境変数が設定されています。  
+https://docs.github.com/ja/actions/learn-github-actions/variables#default-environment-variables  
+今回は、GitHub の API を叩くのにリポジトリ名が必要だったのですが、外から渡す必要がなく `GITHUB_REPOSITORY` で既に設定されていました。
+
+また、`secrets.GITHUB_TOKEN` にトークンが自動生成されているため、自らトークンを作成することなく安全に利用できます。  
+デフォルトでは書き込み権限がありませんが、リポジトリの設定から書き込み権限を付与できます。
 
 ## まとめ
 

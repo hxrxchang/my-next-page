@@ -11,6 +11,7 @@ updatedAt: '2024-02-09'
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">しんぺいさんが書いたWEB DB PRESSのデータ構造の基礎知識を4年ぶりくらいに読み返しているが、AtCoderやっているおかげで前よりめちゃくちゃ理解できているのと、改めていい内容だなと感じている。 <a href="https://t.co/nx9GQqzwso">pic.twitter.com/nx9GQqzwso</a></p>&mdash; はら (@hxrxchang) <a href="https://twitter.com/hxrxchang/status/1754888266636300511?ref_src=twsrc%5Etfw">February 6, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 4 年くらい振りに読み返してみた。  
+[WEB+DB PRESS Vol.91](https://gihyo.jp/magazine/wdpress/archive/2016/vol91)  
 AtCoder をやっていて、どんなデータ構造を使うと計算量を減らせるかという知識は身についたが、そのデータ構造の中身についてはよく分かってないなということで、この本を思い出した。
 まさに今知りたいこととドンピシャの内容でたくさん学びがあった。  
 特にハッシュテーブル(連想配列)の構造は知らなかったので学びが大きかった。なぜキーを指定して値を取得するのが O(1) で出来るのか説明できるようになった。  
@@ -75,3 +76,5 @@ B+木は、木をルートから探索せずともリーフノードに全部の
 
 基礎的なデータ構造の実装に、Go だと構造体やスライスを所与のものとして使ったが、ではそれらはどう実装すればいいのかというのはコンパイラを知れば分かるのだろうか。  
 プログラミング言語を作るにあたり、どこまで別の言語で実装して、どこからその言語自身で実装できるのかみたいなことを知りたいと思った。
+
+ということで、[WEB+DB PRESS Vol.91](https://gihyo.jp/magazine/wdpress/archive/2016/vol91)　大変おすすめです。

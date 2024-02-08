@@ -3,6 +3,7 @@ id: 'data-structure-basics'
 title: 'WEB+DB PRESS Vol.91 「データ構造の基礎知識」 を読んだ'
 description: 'WEB+DB PRESS Vol.91 「データ構造の基礎知識 すぐに使えてずっと役立つ！」を読んで、サンプルコードを Go で実装してみました'
 embedTypes: ['twitter']
+image: 'blogs/data-structure-basics/webdb-press-image.jpeg'
 createdAt: '2024-02-09'
 updatedAt: '2024-02-09'
 ---

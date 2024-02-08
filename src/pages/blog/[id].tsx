@@ -16,7 +16,13 @@ const Blog: NextPage<Props> = ({ content, blogData }) => {
 
   return (
     <>
-      <CustomHead title={blogData.title} page={router.asPath} description={blogData.description} type="website"></CustomHead>
+      <CustomHead
+        title={blogData.title}
+        page={router.asPath}
+        description={blogData.description}
+        image={blogData.image}
+        type="website"
+      ></CustomHead>
       <BlogLayout content={content} blogData={blogData}></BlogLayout>
     </>
   );

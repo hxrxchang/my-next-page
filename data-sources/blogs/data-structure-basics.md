@@ -5,10 +5,10 @@ description: 'WEB+DB PRESS Vol.91 「データ構造の基礎知識 すぐに使
 embedTypes: ['twitter']
 image: 'blogs/data-structure-basics/webdb-press-image.jpeg'
 createdAt: '2024-02-09'
-updatedAt: '2024-02-09'
+updatedAt: '2024-02-15'
 ---
 
-<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">しんぺいさんが書いたWEB DB PRESSのデータ構造の基礎知識を4年ぶりくらいに読み返しているが、AtCoderやっているおかげで前よりめちゃくちゃ理解できているのと、改めていい内容だなと感じている。 <a href="https://t.co/nx9GQqzwso">pic.twitter.com/nx9GQqzwso</a></p>&mdash; はら (@hxrxchang) <a href="https://twitter.com/hxrxchang/status/1754888266636300511?ref_src=twsrc%5Etfw">February 6, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet"><p lang="ja" dir="ltr">しんぺいさんが書いたWEB DB PRESSのデータ構造の基礎知識を4年ぶりくらいに読み返しているが、AtCoderやっているおかげで前よりめちゃくちゃ理解できているのと、改めていい内容だなと感じている。 <a href="https://t.co/nx9GQqzwso">pic.twitter.com/nx9GQqzwso</a></p>&mdash; はら (@hxrxchang) <a href="https://twitter.com/hxrxchang/status/1754888266636300511?ref_src=twsrc%5Etfw">February 6, 2024</a></blockquote>
 
 4 年くらい振りに読み返してみた。  
 [WEB+DB PRESS Vol.91](https://gihyo.jp/magazine/wdpress/archive/2016/vol91)  
@@ -24,6 +24,9 @@ AtCoder をやっていて、どんなデータ構造を使うと計算量を減
 https://github.com/hxrxchang/data-structure-go
 
 ジェネリクスの勉強のいい機会にもなった。二分探索木で値の比較をするので比較演算が可能であることを保証する型定義をどうやるか悩んで、`constraints.Ordered` の存在を初めて知れた。
+
+追記: (2024-02-15)  
+Ordered は 標準の cmp pakcage に入っていた。 https://pkg.go.dev/cmp#Ordered
 
 以下に解説されていたデータ構造を簡単に説明する。
 

@@ -1,9 +1,7 @@
-import { Divider } from '@material-ui/core';
-import MenuIcon from '@material-ui/icons/Menu';
+'use client';
+
 import React, { useCallback, useState } from 'react';
-import styled from 'styled-components';
 import { BlogData } from '../models';
-import { breakPointMedium } from '../styles';
 import { BlogContent } from './blog-content';
 import { DrawerContainer } from './drawer-container';
 import { DrawerContent } from './drawer-content';
@@ -14,68 +12,24 @@ type Props = {
   blogData: BlogData;
 };
 
-const Styled = styled.div`
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-
-  .sp-header {
-    display: none;
-  }
-
-  .drawer-not-sp {
-    width: 240px;
-    flex-shrink: 0;
-  }
-
-  .content-wrapper {
-    display: flex;
-    min-height: 100vh;
-  }
-
-  .pc-drawer-container {
-    border-right: 1px solid #efefef;
-    flex-basis: 16%;
-  }
-
-  .pc-drawer {
-    position: sticky;
-    top: 0px;
-  }
-
-  .content {
-    flex-basis: 84%;
-  }
-
-  @media (max-width: ${breakPointMedium}) {
-    padding: 0 2%;
-
-    .sp-header {
-      display: flex;
-      position: fixed;
-      width: 100%;
-      background: white;
-      z-index: 1;
-    }
-
-    .content-wrapper {
-      margin-top: 24px;
-    }
-
-    .pc-drawer-container {
-      display: none;
-    }
-
-    .content {
-      flex-basis: 100%;
-      overflow: visible;
-      max-width: 100%;
-      word-break: break-word;
-    }
-  }
-`;
+const MenuIcon: React.FC<{ onClick: () => void }> = ({ onClick }) => (
+  <svg
+    onClick={onClick}
+    width="32"
+    height="32"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    className="cursor-pointer"
+  >
+    <line x1="3" y1="6" x2="21" y2="6" />
+    <line x1="3" y1="12" x2="21" y2="12" />
+    <line x1="3" y1="18" x2="21" y2="18" />
+  </svg>
+);
 
 export const BlogLayout: React.FC<Props> = ({ content, blogData }) => {
   const [isSpDrawerOpen, setIsSpDrawerOpen] = useState(false);
@@ -84,20 +38,19 @@ export const BlogLayout: React.FC<Props> = ({ content, blogData }) => {
   }, []);
 
   return (
-    <Styled>
+    <div className="px-[2%] md:px-0">
       <DrawerContainer isOpen={isSpDrawerOpen} changeSidenav={changeIsDrawerOpen}>
-        <div className="wrapper">
-          <div className="sp-header">
-            <MenuIcon onClick={changeIsDrawerOpen} fontSize="large"></MenuIcon>
-            <Divider></Divider>
+        <div className="flex flex-col min-h-screen">
+          <div className="flex fixed w-full bg-white z-10 border-b border-gray-200 md:hidden">
+            <MenuIcon onClick={changeIsDrawerOpen} />
           </div>
-          <div className="content-wrapper">
-            <aside className="pc-drawer-container">
-              <div className="pc-drawer">
-                <DrawerContent></DrawerContent>
+          <div className="flex min-h-screen mt-6 md:mt-0">
+            <aside className="hidden md:block border-r border-gray-200 basis-[16%]">
+              <div className="sticky top-0">
+                <DrawerContent />
               </div>
             </aside>
-            <div className="content">
+            <div className="basis-full overflow-visible max-w-full break-words md:basis-[84%]">
               <main>
                 <BlogContent
                   id={blogData.id}
@@ -106,15 +59,13 @@ export const BlogLayout: React.FC<Props> = ({ content, blogData }) => {
                   updatedAt={blogData.updatedAt}
                   content={content}
                   embedTypes={blogData.embedTypes}
-                ></BlogContent>
+                />
               </main>
-              <div className="footer">
-                <Footer></Footer>
-              </div>
+              <Footer />
             </div>
           </div>
         </div>
       </DrawerContainer>
-    </Styled>
+    </div>
   );
 };

@@ -1,18 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
-
-const Styled = styled.div`
-  margin-top: 50px;
-
-  display: flex;
-  justify-content: space-around;
-`;
 
 export const Works: React.FC<{ content: string }> = ({ content }) => {
   return (
-    <Styled>
+    <div className="mt-12 flex justify-around">
       <ReactMarkdown source={content} />
-    </Styled>
+    </div>
   );
 };

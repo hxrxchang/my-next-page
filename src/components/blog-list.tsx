@@ -18,8 +18,20 @@ export const BlogList: React.FC<Props> = ({ blogDataList, pageId, pagenationInfo
         ))}
       </ul>
       <div className="flex justify-between px-[8%] sm:px-0">
-        <div className="font-bold text-xl">{pagenationInfo.hasPrev && <Link href={`/blogs/page/${pageId - 1}`}><span>Prev</span></Link>}</div>
-        <div className="font-bold text-xl">{pagenationInfo.hasNext && <Link href={`/blogs/page/${pageId + 1}`}><span>Next</span></Link>}</div>
+        <div className="font-bold text-xl">
+          {pagenationInfo.hasPrev && (
+            <Link href={`/blogs/page/${pageId - 1}`}>
+              <span>Prev</span>
+            </Link>
+          )}
+        </div>
+        <div className="font-bold text-xl">
+          {pagenationInfo.hasNext && (
+            <Link href={`/blogs/page/${pageId + 1}`}>
+              <span>Next</span>
+            </Link>
+          )}
+        </div>
       </div>
     </div>
   );

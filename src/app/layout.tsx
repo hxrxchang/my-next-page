@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     default: 'hxrxchang',
     template: '%s | hxrxchang',
   },
-  description: "@hxrxchangのWebsite",
+  description: '@hxrxchangのWebsite',
   icons: {
     icon: '/tuna2.jpeg',
   },

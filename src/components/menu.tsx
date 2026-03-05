@@ -6,9 +6,9 @@ type MenuProps = {
 };
 
 export const Menu: React.FC<MenuProps> = ({ route }) => {
-  const baseClass = "font-bold cursor-pointer";
-  const selectedClass = "border-b-4 border-red-500";
-  const notSelectedClass = "hover:border-b-4 hover:border-gray-400";
+  const baseClass = 'font-bold cursor-pointer';
+  const selectedClass = 'border-b-4 border-red-500';
+  const notSelectedClass = 'hover:border-b-4 hover:border-gray-400';
 
   return (
     <nav className="border-b border-gray-200">

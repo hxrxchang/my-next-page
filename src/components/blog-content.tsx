@@ -2,7 +2,8 @@
 
 import React, { useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
-import gfm from 'remark-gfm';
+import remarkGfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
 import { CodeBlock } from './code-block';
 import { EmbedType } from '../models';
 import { isTwitterEmbed } from '../domains/blog';
@@ -38,11 +39,16 @@ export const BlogContent: React.FC<{
         <br />
         <span>updated_at: {updatedAt}</span>
         <br />
-        <a className="no-underline hover:underline" href={`https://github.com/hxrxchang/my-next-page/commits/main/data-sources/blogs/${id}.md`}>
+        <a
+          className="no-underline hover:underline"
+          href={`https://github.com/hxrxchang/my-next-page/commits/main/data-sources/blogs/${id}.md`}
+        >
           編集履歴
         </a>
       </div>
-      <ReactMarkdown source={content} plugins={[gfm]} renderers={{ code: CodeBlock }} escapeHtml={false} />
+      <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} components={{ code: CodeBlock }}>
+        {content}
+      </ReactMarkdown>
     </div>
   );
 };

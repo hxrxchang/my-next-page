@@ -1,5 +1,5 @@
-@import "tailwindcss/theme" layer(theme);
-@import "tailwindcss/utilities" layer(utilities);
+@import 'tailwindcss/theme' layer(theme);
+@import 'tailwindcss/utilities' layer(utilities);
 
 @source "../components/**/*.tsx";
 @source "./**/*.tsx";
@@ -20,22 +20,25 @@ body {
   line-height: 1.8;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   line-height: 1.4;
 }
 
 table {
   border-collapse: collapse;
-  border: 1px solid #CCC;
+  border: 1px solid #ccc;
 }
 
-th, td {
+th,
+td {
   padding: 5px 10px;
-  border: 1px solid #CCC;
+  border: 1px solid #ccc;
 }
 
 th {
-  background: #EEE;
+  background: #eee;
 }
 
 a {

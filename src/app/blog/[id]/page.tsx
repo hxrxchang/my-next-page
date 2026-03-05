@@ -23,9 +23,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       description: blogData.description,
       type: 'article',
       url: `${process.env.NEXT_PUBLIC_URL}/blog/${id}`,
-      images: blogData.image
-        ? [`${process.env.NEXT_PUBLIC_URL}/${blogData.image}`]
-        : [`${process.env.NEXT_PUBLIC_URL}/tuna2.jpeg`],
+      images: blogData.image ? [`${process.env.NEXT_PUBLIC_URL}/${blogData.image}`] : [`${process.env.NEXT_PUBLIC_URL}/tuna2.jpeg`],
     },
   };
 }

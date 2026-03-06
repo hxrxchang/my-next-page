@@ -1,68 +1,22 @@
 import React from 'react';
 import Link from 'next/link';
-// import Image from 'next/image';
-import styled from 'styled-components';
-import { Divider } from '@material-ui/core';
-
-const Styled = styled.div`
-  .profile {
-    padding-top: 20vh;
-  }
-
-  .link {
-    cursor: pointer;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    margin-bottom: 20px;
-  }
-
-  .profile-image-container {
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-  }
-
-  .profile-image-wrapper {
-    width: 120px;
-    height: 120px;
-  }
-
-  .profile-image {
-    border-radius: 50%;
-    width: 100%;
-  }
-
-  .name {
-    text-align: center;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-
-  .blog-link {
-    font-weight: bold;
-  }
-`;
 
 export const DrawerContent: React.FC<{}> = () => {
   return (
-    <Styled>
-      <div className="profile">
-        <Link href="/blogs">
-          <a className="link blog-link">ブログ一覧に戻る</a>
-        </Link>
-        <Divider></Divider>
-        <div className="profile-image-container">
-          <div className="profile-image-wrapper">
-            {/* <Image src="/chowder.jpeg" className="profile-image" alt="profile image" width={120} height={120} unoptimized={true} /> */}
-            <img src="/tuna2.jpeg" className="profile-image" alt="profile image" />
-          </div>
+    <div className="pt-[20vh]">
+      <Link href="/blogs" className="cursor-pointer no-underline block text-center mb-5 font-bold">
+        <span>ブログ一覧に戻る</span>
+      </Link>
+      <hr className="border-0 border-t border-gray-200 my-2.5" />
+      <div className="mt-5 flex justify-center">
+        <div className="w-[120px] h-[120px]">
+          <img src="/tuna2.jpeg" className="rounded-full w-full" alt="profile image" />
         </div>
-        <p className="name">Yuto Hara</p>
-        <Link href="/">
-          <a className="link">Profile</a>
-        </Link>
       </div>
-    </Styled>
+      <p className="text-center font-bold mb-5">Yuto Hara</p>
+      <Link href="/" className="cursor-pointer no-underline block text-center mb-5">
+        <span>Profile</span>
+      </Link>
+    </div>
   );
 };

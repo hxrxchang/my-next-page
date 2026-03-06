@@ -1,56 +1,29 @@
 import React from 'react';
 import Link from 'next/link';
-import styled from 'styled-components';
 
 type MenuProps = {
   route: string;
 };
 
-const Styled = styled.div`
-  border-bottom: 1px solid #efefef;
+export const Menu: React.FC<MenuProps> = ({ route }) => {
+  const baseClass = 'font-bold cursor-pointer';
+  const selectedClass = 'border-b-4 border-red-500';
+  const notSelectedClass = 'hover:border-b-4 hover:border-gray-400';
 
-  .menu-list {
-    list-style: none;
-    display: flex;
-    justify-content: space-around;
-  }
-
-  .menu-item {
-    font-weight: bold;
-    cursor: pointer;
-  }
-
-  .selected {
-    border-bottom: 4px solid red;
-  }
-
-  .not-selected:hover {
-    border-bottom: 4px solid silver;
-  }
-
-  a {
-    text-decoration: none;
-    color: black;
-    display: block;
-    padding-bottom: 10px;
-  }
-`;
-
-export const Menu: React.FC<MenuProps> = ({ route }: MenuProps) => {
   return (
-    <Styled>
-      <div className="menu-list">
-        <div className={route === '/' ? 'menu-item selected' : 'menu-item not-selected'}>
-          <Link href="/">
-            <a>Profile</a>
+    <nav className="border-b border-gray-200">
+      <div className="flex justify-around">
+        <div className={`${baseClass} ${route === '/' ? selectedClass : notSelectedClass}`}>
+          <Link href="/" className="block pb-2.5 text-black no-underline">
+            Profile
           </Link>
         </div>
-        <div className={route === '/blogs' || route === '/blogs/page/[id]' ? 'menu-item selected' : 'menu-item not-selected'}>
-          <Link href="/blogs">
-            <a>Blogs</a>
+        <div className={`${baseClass} ${route === '/blogs' || route === '/blogs/page/[id]' ? selectedClass : notSelectedClass}`}>
+          <Link href="/blogs" className="block pb-2.5 text-black no-underline">
+            Blogs
           </Link>
         </div>
       </div>
-    </Styled>
+    </nav>
   );
 };

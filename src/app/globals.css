@@ -1,0 +1,83 @@
+@import 'tailwindcss/theme' layer(theme);
+@import 'tailwindcss/utilities' layer(utilities);
+
+@source "../components/**/*.tsx";
+@source "./**/*.tsx";
+
+@theme {
+  --color-primary: #556cd6;
+  --color-secondary: #19857b;
+  --breakpoint-sm: 700px;
+  --breakpoint-md: 960px;
+}
+
+/* Original global styles */
+body {
+  font-family: sans-serif;
+  padding: 0;
+  margin: 0;
+  word-break: break-word;
+  line-height: 1.8;
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.4;
+}
+
+table {
+  border-collapse: collapse;
+  border: 1px solid #ccc;
+}
+
+th,
+td {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+}
+
+th {
+  background: #eee;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Blog content styles */
+.blog-content img {
+  max-width: 100%;
+}
+
+@media (min-width: 960px) {
+  .blog-content img {
+    max-width: 60%;
+  }
+}
+
+.blog-content blockquote {
+  border-left: 3px solid gray;
+  color: gray;
+  padding: 8px;
+}
+
+.blog-content code {
+  background: rgba(33, 90, 160, 0.07);
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.blog-content .iframe-wrapper {
+  width: 100%;
+}
+
+@media (min-width: 960px) {
+  .blog-content .iframe-wrapper {
+    width: 60%;
+  }
+}
+
+.blog-content a:hover {
+  text-decoration: underline;
+}

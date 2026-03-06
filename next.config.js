@@ -1,3 +1,10 @@
-const withPlugins = require('next-compose-plugins');
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  output: 'export',
+  reactStrictMode: true,
+  images: {
+    unoptimized: true,
+  },
+};
 
-module.exports = withPlugins([], {});
+module.exports = nextConfig;

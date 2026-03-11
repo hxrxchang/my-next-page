@@ -1,10 +1,10 @@
 ---
 id: 'atcoder-tui-viewer'
-title: 'AtCoderの問題をterminalで表示するCLIを(codexが)作った'
-description: 'AtCoderの問題をterminalで表示するCLIを(codexが)作った'
+title: 'AtCoderの問題をterminalで表示するCLIを(Codexが)作った'
+description: 'AtCoderの問題をterminalで表示するCLIを(Codexが)作った'
 embedTypes: ['twitter']
-createdAt: '2026-03-10'
-updatedAt: '2026-03-10'
+createdAt: '2026-03-11'
+updatedAt: '2026-03-11'
 ---
 
 ## 作ったもの

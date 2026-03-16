@@ -1,43 +1,38 @@
 ## About
 
-宿泊・レストラン予約サイトを運営する会社でソフトウェアエンジニアとして働いています。
+Web 系の会社でソフトウェアエンジニアとして働いています。
 
-Web フロントエンド、バックエンド、インフラの垣根なく、プロダクトに必要なことは何でもできるエンジニアになりたいです。
+プロダクトエンジニアとしてフロントエンド、バックエンド、インフラ問わず幅広く経験して来ました。  
+今後はバックエンドと DB を中心に専門性を高めて行きたいです。
 
-現在は仕事面では主に、
-
-- Go
-- アプリケーション設計
-- GraphQL
-- Observability
-- 開発者体験の向上
-
-プライベートでは、
-
+- アルゴリズム、競技プログラミング(現在 AtCoder 緑)
 - 並行処理
-- インタプリタ・コンパイラ
-- アルゴリズム、競技プログラミング
+- データベースの内部実装と効率的な使用方法
+- 関数型プログラミング
+- アプリケーション設計
+- Observability
+- ソフトウェア工学
 
-などに関心があります。
+などに関心があります。  
+業務に直結する知識ともっと基礎的なコンピュータサイエンス両面をバランスよく学習していきたいです。
 
-猫、ランニング、横浜 DeNA ベイスターズ、お酒、グルメ、旅行が好きです。
+猫、ランニング、筋トレ、グルメ、HIPHOP etc が趣味です。
 
 ## Accounts
 
-- [Twitter](https://twitter.com/hxrxchang)
+- [AtCoder](https://atcoder.jp/users/hxrxchang)
+- [X](https://x.com/hxrxchang)
 - [GitHub](https://github.com/hxrxchang)
 - [Wantedly](https://www.wantedly.com/id/hxrxchang)
-- [AtCoder](https://atcoder.jp/users/hxrxchang)
 
 ## Skills
 
 - AWS
 - Go
 - TypeScript
-  - Vue.js
+  - Vue.js / Nuxt
   - Angular
-  - React
-  - Next.js
+  - React / Next.js
   - Node.js
 - Ruby
   - Ruby on Rails

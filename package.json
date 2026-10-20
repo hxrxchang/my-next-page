@@ -22,7 +22,7 @@
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-markdown": "^10.1.0",
-    "react-syntax-highlighter": "15.4.5",
+    "react-syntax-highlighter": "15.6.6",
     "rehype-raw": "^7.0.0",
     "remark-gfm": "^4.0.1",
     "rss": "^1.2.2"
@@ -32,7 +32,7 @@
     "@tailwindcss/typography": "^0.5.19",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "@types/react-syntax-highlighter": "13.5.2",
+    "@types/react-syntax-highlighter": "15.5.13",
     "@types/rss": "0.0.29",
     "autoprefixer": "^10.4.27",
     "postcss": "^8.5.8",
